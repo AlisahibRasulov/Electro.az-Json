@@ -1,0 +1,119 @@
+.header{
+  background: #15161D;
+  .header-content{
+    // background: #15161D;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    .logo{
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        // .logo-img{
+        // // height: 50px,
+
+        // }
+        .logo-name{
+          a{
+            text-decoration: none;
+          }
+          span{
+            color: #D10024;
+          }
+        }
+
+        .play-logo{
+            background-color: #fff;
+            // overflow: hidden;
+            border-radius: 50%;
+            // width: 10em;
+            // height: 10em;
+            animation: bounceIn 0.6s;
+            transform: rotate(0deg) scale(1) translateZ(0);
+            transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
+            cursor: pointer;
+            &:hover{
+                transform: rotate(10deg) scale(1.1);
+            }
+        }
+        
+@keyframes bounceIn {
+    0% {
+      opacity: 1;
+      transform: scale(.3);
+    } 
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    } 
+  
+    70% {
+      opacity: 1;
+      transform: scale(.9);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+        .logo-name{
+            display: flex;  
+            align-items: center;  
+            a{
+            color: #fff;
+            // text-decoration: none;
+            }
+        }
+    }
+    .search{
+    display: flex;
+    align-items: center;
+    // .search-icon{
+    //     path{
+    //         // stroke:#fff;
+    //         fill:#aaa;
+    //     }
+    //     &:hover path {
+    //         fill: #D10024;
+    //       }
+    // }
+    .search-input{
+        border-radius: 40px 0px 0px 40px;
+    }
+    .search-btn{
+        border-radius: 0px 40px 40px 0px;
+    }
+    }
+    .header-icons{
+        width: 80px;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        .like_header-icon{
+            // path{
+            //     stroke: #fff;
+            // }
+
+            &:hover path {
+                stroke: #D10024;
+              }
+        }
+        .basket_header-icon{
+            // path{
+            //     fill: #fff;
+            // }
+            &:hover path {
+                stroke: #D10024;
+                fill: #D10024;
+              }
+        }
+    }
+}
+
+
+}

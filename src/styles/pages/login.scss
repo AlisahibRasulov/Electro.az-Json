@@ -1,0 +1,39 @@
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .login-cart{
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        flex-direction: column;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2);
+        /* min-width: 44px; */
+        width: 350px;
+        height: 300px;
+        padding: 10px;
+        background-color: #fff;
+        .login-username,.login-email,.login-password{
+        padding: 10px 10px;
+        width: 320px;
+        height: 50px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+        // padding: ;
+        &:focus{
+            outline: none;
+            border-color: #D10024;
+        }
+    }
+    .login-btn{
+        width: 100%;
+        background-color: #D10024;
+    }
+    }
+
+
+}

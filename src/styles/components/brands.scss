@@ -1,0 +1,33 @@
+.brands{
+    margin-top: 5rem;
+    .brands-item{
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 48px 58px; */
+    justify-content: center;
+    align-items: center;
+    width: 69.4rem;
+    height: 14rem;
+    margin-top: 5rem;
+    .brands-border{
+    display: flex;
+    align-items: center;
+    display: block;
+    overflow: hidden;
+    width: 12rem;
+    height: 8rem;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    display: flex;
+    align-self: center;
+    img{
+        margin: 0 auto;
+    }
+}
+}
+}
