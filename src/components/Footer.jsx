@@ -15,10 +15,6 @@ function Footer() {
         <Link to="product/all-products">Məhsullar</Link>
         <Link to="/about">Haqqımızda</Link>
         <Link to="/contact">Əlaqə</Link>
-          {/* <NavLink to={"/"}>Əsas Səhifə</NavLink>
-          <NavLink to={"product/all-products"}>Məhsullar</NavLink>
-          <NavLink to={"/about"}>Haqqımızda</NavLink>
-          <NavLink to={"/contact"}>Əlaqə</NavLink> */}
         </div>
        
       </div>

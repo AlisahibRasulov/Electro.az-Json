@@ -37,7 +37,7 @@ const imageStyle = {
     // objectFit:"cover"
 }
 
-const Carousel3 = () => {
+const CarouselImg = () => {
 //   const onChange = (currentSlide) => {
 //     console.log(currentSlide);
 //   };
@@ -63,4 +63,4 @@ const Carousel3 = () => {
     
   );
 };
-export default Carousel3;
+export default CarouselImg;

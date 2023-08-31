@@ -1,47 +1,4 @@
-// .dropdown{
-//         position: relative;
-//         display: inline-block;
-//         // font-family: Arial, sans-serif;
-//         margin-left:5px;
-//         .dropdown-btn{
-//             background-color: #fff;
-//             border: 1px solid #ccc;
-//             border-radius: 40px 0 0 40px ;
-//             height: 48px;
-//             padding: 12px 20px;
-//             cursor: pointer;
-//         };
-//         .options-list{
-//             position: absolute;
-//             top: 100%;
-//             left: 15px;
-//             background-color: #fff;
-//             padding: 5px;
-//             list-style: none;
-//             margin: 0;
-//             border-radius: 4px;
-//             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-//             transition: all 0.3s linear;
-//             .option{
-//                 cursor: pointer;
-//                 padding: 5px;
-//                 border-bottom: 1px solid #ccc;
-//                 color:#15161D;
-//                 &:hover{
-//                     background-color: #15161D;
-//                     color: #fff;
-//                 }
-//             }
-            
-//         }
-
-// }
-// $color_1: #15161D;
-// $color_2:#fff;
-// $background-color_1: #fff;
-// $background-color_2: #D10024;
-// .dropdown-content{
-	.dropdown {
+.dropdown {
 		position: relative;
 		// padding: 5px 10px;
 		width: 17rem;
@@ -108,7 +65,6 @@
 		}
 		
 	}
-	
 	.dropdown.open {
 		.dropdown-menu {
 			opacity: 1;
@@ -118,47 +74,3 @@
 			flex-direction: column;
 		}
 	}
-// }
-
-
-// .dropdown {
-//     position: relative;
-//   }
-  
-//   .dropdown-toggle-btn {
-//     background: none;
-//     border: none;
-//     cursor: pointer;
-//     padding: 10px;
-//   }
-  
-//   .dropdown-menu ul{
-//     position: absolute;
-//     top: 100%;
-//     left: 0;
-//     width: 200px;
-//     background-color: #333;
-//     color: #fff;
-//     list-style: none;
-//     padding: 0;
-//     margin: 0;
-//     opacity: 0;
-//     pointer-events: none;
-//     transform: translateY(-10px);
-//     transition: opacity 0.3s ease, transform 0.3s ease;
-//   }
-  
-//   .dropdown.open .dropdown-menu ul{
-//     opacity: 1;
-//     pointer-events: auto;
-//     transform: translateY(0);
-//   }
-  
-//   .dropdown-menu li {
-//     padding: 10px;
-//     transition: background-color 0.3s ease;
-//   }
-  
-//   .dropdown-menu li:hover {
-//     background-color: #444;
-//   }

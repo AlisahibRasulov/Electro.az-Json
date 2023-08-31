@@ -103,7 +103,10 @@
                 stroke: #D10024;
               }
         }
-        .basket_header-icon{
+        .header-basket{
+          cursor: pointer;
+          position: relative;
+          .basket_header-icon{
             // path{
             //     fill: #fff;
             // }
@@ -112,6 +115,20 @@
                 fill: #D10024;
               }
         }
+        .basket_header-counter{
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width:18px;
+          color: #fff;
+          background-color: #D10024;
+          border-radius: 50%;
+          padding: 1px 2px 1px 2px;
+          font-size: 12px;
+          text-align: center;
+        }
+        }
+       
     }
 }
 

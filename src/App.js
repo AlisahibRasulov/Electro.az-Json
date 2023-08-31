@@ -23,11 +23,11 @@ import Basket from "./pages/Basket";
 // import CategoryDropdown from './components/Test';
 // import ProductList from './components/Test2';
 
-import AllProducts from "./pages/Products/AllProducts";
-import Computers from "./pages/Products/Computers";
-import Phones from "./pages/Products/Phones";
-import Cameras from "./pages/Products/Cameras";
-import Accessories from "./pages/Products/Accessories";
+import AllProducts from "./pages/Products/AllProducts/AllProducts";
+import Computers from "./pages/Products/Computers/Computers";
+import Phones from "./pages/Products/Phones/Phones";
+import Cameras from "./pages/Products/Cameras/Cameras";
+import Accessories from "./pages/Products/Accessories/Accessories";
 
 
 // ? icons

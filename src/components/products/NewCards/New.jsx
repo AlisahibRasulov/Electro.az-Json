@@ -1,12 +1,10 @@
 import React from 'react'
 import axios from "axios";
-// import {NewCardsData} from "../datas/CardsData"
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Button from "./library/Button";
 
-import {CardLikeHeartIcon} from "../svg"
-import { CardBasketIcon } from '../svg';
+import Cards from "./Cards";
+
 
 // ? Swipper slide cart
 // Import Swiper React components
@@ -19,36 +17,21 @@ import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
-const NewCards = () => {
+const New = () => {
   const [productData, setProductData] = useState([]);
-  const [refresh, setRefresh] = useState(true);
+  // const [refresh, setRefresh] = useState(true);
   useEffect(()=>{
-
-  
-    //  axios.request(options).then((response)=>{
-    //   // console.log(response.data.result.seller);
-    //   setProductData(response.data.result.seller)
-    //  }).catch ((error)=>{
-    //     console.error(error);
-    //   })
-  
-  
-      axios("http://35.184.181.250:9096/api/computer-product/new-product/all").then((res)=>{
+    axios("http://35.184.181.250:9096/api/computer-product/new-product/all").then((res)=>{
         console.log(res.data) 
         setProductData(res.data)
       })
-      // fetch("https://dummyjson.com/products/1")
-      // .then(response => response.json())
-      // .then(response => console.log(response));
-  
-  
-   
-    },[refresh])
+    },[])
   return (
     
     <div className='new-card'>
          <div className="container">
       <div className="new-card_content">
+        <h1>Yeni Məhsullar</h1>
       <Swiper
         slidesPerView={1}
         loop = {true}
@@ -79,13 +62,14 @@ const NewCards = () => {
             // spaceBetween: 50,
           },
         }}
-        modules={[Pagination,Navigation, Autoplay]}
+        modules={[Navigation, Autoplay]}
         className="swiper"
       >
       
         {productData.map((item)=>(
-        <SwiperSlide className='swiper-slide_card' key={item.id}>
-          <div className='small-box'>New</div>
+        <SwiperSlide>
+           <Cards key={item.id} data={item}/>
+          {/* <div className='small-box'>New</div>
           <div className='like_icon-box'>
             <CardLikeHeartIcon className="like_icon"/>
           </div>
@@ -94,19 +78,12 @@ const NewCards = () => {
         <div className='card-price'>{item.price} ₼</div>
     <div className="card-view">
       <Button className='card-btn'><CardBasketIcon className="card-btn_basket"/> <div className='card-btn_text'>Səbətə at</div> </Button>
-    </div>
+    </div> */}
         </SwiperSlide>
      
       ))}
        
-        {/* <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
+    
       
         </Swiper>
     </div>
@@ -115,4 +92,4 @@ const NewCards = () => {
   )
 }
 
-export default NewCards
+export default New

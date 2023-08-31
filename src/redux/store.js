@@ -1,10 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from './slices/addToCartSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from './slices/CounterSlice';
+import addToCardReducer from './slices/addToCardSlice';
+import addToBasketReducer from './slices/addToBasketSlice';
 
-const store = configureStore({
-  reducer: {
-    cart: cartReducer,
-  },
+const store=configureStore({
+    reducer:{
+        counter:counterReducer,
+        addToCard:addToCardReducer,
+        basket:addToBasketReducer,
+    },
 });
-
-export default store
+export default store;

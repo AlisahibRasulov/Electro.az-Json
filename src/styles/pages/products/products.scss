@@ -76,17 +76,22 @@
       .card-btn{
         width: 210px;
         background-color: #D10024;
+        border: none;
         // display: flex;
         // justify-content: space-evenly;
         font-size: 18px;
         -webkit-transition: 0.2s all;
         transition: 0.2s all;
         
-        .card-btn_basket{
+        .card-btn_icon{
           display: flex;
           align-self: center;
           
         }
+        // .card-btn_checkout{
+        //   display: flex;
+        //   align-self: center;
+        // }
         .card-btn_text{
           display: flex;
           align-self: center;

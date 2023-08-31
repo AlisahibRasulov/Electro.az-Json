@@ -1,40 +1,30 @@
-
 // ? grid 
 @import "./base/grid.scss";
 
-// ? components
-@import "./components/alert.scss";
-@import "./components/button.scss";
+// ? COMPONENTS
+ //  ? library
+@import "./components/library/alert.scss";
+@import "./components/library/input.scss";
+@import "./components/library/label.scss";
+@import "./components/library/textarea.scss";
+@import "./components/library/button.scss";
+
+  //   ? my proyekt
 @import "./components/card.scss";
 @import "./components/footer.scss";
-@import "./components/input.scss";
-@import "./components/label.scss";
-@import "./components/textarea.scss";
 @import "./components/navbar.scss";
 @import "./components/header.scss";
 @import "./components/dropdown.scss";
-@import "./components/sidebar.scss";
-@import "./components/carousel.scss";
-@import "./components/main-content.scss";
 @import "./components/brands.scss";
-@import "./components/all-cards.scss";
 @import "./components/new-cards.scss";
 @import "./components/discount-card.scss";
-@import "./components/dropdown2.scss";
 
-// ? pages
+
+// ? PAGES
 @import "./pages/signup.scss";
 @import "./pages/login.scss";
-
 @import "./pages/about.scss";
-
+@import "./pages/basket.scss";
 
 // ? products pages
 @import "./pages/products/products.scss";
-// @import "./pages/products/computers.scss";
-// @import "./pages/products/phones.scss";
-// @import "./pages/products/cameras.scss";
-
-@import "./components/test.scss"
-
-
