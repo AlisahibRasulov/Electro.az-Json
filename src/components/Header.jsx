@@ -18,7 +18,8 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
-  const basket1=useSelector((state)=> state.addToCard);
+  // const like=useSelector((state)=> state.addToCard);
+  const like=useSelector((state)=> state.like.length);
   const basket = useSelector((state)=> state.basket.length)
   return (
     <>
@@ -34,8 +35,14 @@ const Header = () => {
           <Button className='search-btn' btn-type='secondary' icon={<SearchIcon/>}></Button>
           </div>
           <div className="header-icons">
-            <HeaderLikeHeartIcon className="like_header-icon"/>
-            <div to="/basket" className='header-basket' onClick={()=>navigate(`/basket`)}><HeaderBasketIcon className="basket_header-icon"/><div className='basket_header-counter'>{basket}</div></div>
+            <button to="/like" className="like_header" onClick={()=>navigate(`/like`)}>
+            <HeaderLikeHeartIcon className="like_header-icon"/><div className='like_header-counter'>{like}</div>
+
+            </button>
+            <button to="/basket" onClick={()=>navigate(`/basket`)} className="basket_header">
+           <HeaderBasketIcon className="basket_header-icon"/>
+           <div className='basket_header-counter'>{basket}</div>
+            </button>
           </div>
       </div>
      </div>

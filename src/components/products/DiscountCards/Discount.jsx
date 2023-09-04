@@ -38,6 +38,7 @@ const Discount = () => {
 <div className="discount-card">
   <div className="container">
     <div className="discount-card_content">
+      <h1>Endirimli Məhsullar</h1>
       <Swiper
         slidesPerView={1}
         loop = {true}

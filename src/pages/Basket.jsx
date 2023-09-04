@@ -15,18 +15,20 @@ const Basket = ({data}) => {
   const navigate = useNavigate();
     const counter=useSelector((state)=> state.counter);
     const basketItems=useSelector((state)=>state.basket);
+    const totalPrice=useSelector((state)=>state.basket.quantity * state.basket.price);
+    // const { items, totalPrice } = useSelector((state) => state.basket);
     const basketCount = useSelector((state)=>state.basket.length);
-    const totalPrice = useSelector(state => state.basket.totalPrice);
+    // const totalPrice = useSelector(state => state.basket.totalPrice);
     const dispatch=useDispatch();
 
    
     const handleAllDeletedToBasket=()=>{
       dispatch(removeBasketAll());
-      dispatch(removeAllCard())
+      // dispatch(removeAllCard())
     }
     const handleDeletedToBasket=(productId)=>{
       dispatch(removeBasket(productId));
-      dispatch(removeCard());
+      // dispatch(removeCard());
     }
 
     const handleIncrement=(productId) => {
@@ -48,6 +50,7 @@ const Basket = ({data}) => {
   
     
   return (
+    
     <div className='basket'>
         <div className='basket-header'>Səbət({basketCount}məhsul)</div>
         {basketItems.length > 0 ? (
@@ -75,20 +78,33 @@ const Basket = ({data}) => {
                   </div>
                 </td>
                 <td>
+                  {data.discounts[0]?.currentPrice ? (
+                  <>
+                  <del>
+                    <div className='card-price'>{(data.price * data.quantity).toFixed(2)} ₼</div>
+                  </del>
+                  <div className='card-discount-price'>{data.discounts[0].currentPrice * data.quantity} ₼</div>
+                  </>
+                ) : (
+                  <div className='card-price'>{(data.price * data.quantity).toFixed(3)} ₼</div>
+                )}
+                </td>
+                {/* <td>
                 {data.discounts[0]?.currentPrice ? (
                           <del>
-                            <div className='card-price'>{data.price} ₼</div>
+                            <div className='card-price'>{data.price}₼ </div>
                           </del>
                         ) : (
-                          <div className='card-price'>{data.price} ₼</div>
+                          <div className='card-price'>{data.price}₼</div>
                         )}
                         
                             <div className='card-discount-price'>
                               {data.discounts[0]?.currentPrice
-                                ? `${data.discounts[0].currentPrice} ₼`
+                                ? `${data.discounts[0].currentPrice}  ₼`
                                 : ''}
                             </div>
-                </td>
+                </td> */}
+                {/* <td> <p>Toplam Fiyat: {data.price * data.quantity} ₼</p></td> */}
                 {/* <td><button onClick={()=>navigate(`/product-detail/${item.id}`)}>Details</button></td>
                 <td><button onClick={()=>deletedItem(item.id)}>Delete</button></td>  */}
               </tr>
@@ -98,12 +114,12 @@ const Basket = ({data}) => {
         </tbody> 
       </table>
       <Button className='clear-btn' onClick={handleAllDeletedToBasket}>Seçilənləri sil</Button>
-      <p>Toplam Fiyat: {totalPrice} ₼</p>
+      {/* <p>Toplam Fiyat: {totalPrice} ₼</p> */}
 </div>
 ) : (
-  <div>
+  <div className='clear-page'>
     <p>Səbətinizdə məhsul yoxdur</p>
-    <Button onClick={()=>navigate(`/`)}>Əsas Səhifəyə get</Button>
+    <Button className='home-btn' onClick={()=>navigate(`/`)}>Əsas Səhifəyə qayıt</Button>
   </div>
   
   

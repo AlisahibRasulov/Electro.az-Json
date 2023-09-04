@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from "../../library/Button";
-import {CardLikeHeartIcon} from "../../../svg"
+// import {CardLikeHeartIcon} from "../../../svg"
 import { CardBasketIcon } from '../../../svg';
 
 import { useDispatch } from 'react-redux';

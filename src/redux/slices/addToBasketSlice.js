@@ -28,6 +28,7 @@ const addToBasketSlice=createSlice({
       } else {
         existingItem.quantity += 1; // Ürün sayısını artır
       }
+      
        // Fiyat güncellemesi burada yapılıyor
         // state.totalPrice += newItem.price;
     },

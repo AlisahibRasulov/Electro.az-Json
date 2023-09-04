@@ -349,7 +349,7 @@ export const HeaderLikeHeartIcon = (props) => (
     {...props}
   >
     <path
-      stroke="#fff"
+      stroke="#000"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
@@ -359,7 +359,7 @@ export const HeaderLikeHeartIcon = (props) => (
   </svg>
 )
 
-export const CardLikeHeartIcon = (props) => (
+export const CardLikeIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={22}
@@ -368,28 +368,50 @@ export const CardLikeHeartIcon = (props) => (
         {...props}
       >
         <path
-          stroke="#999"
-        //   fill="#999"
+        //   stroke="#000"
+          fill="#888"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={1}
+        //   strokeWidth={1}
           d="M10.993 4.156c-2-2.36-5.333-2.994-7.838-.834s-2.858 5.772-.89 8.327c1.635 2.125 6.585 6.605 8.207 8.055.182.162.272.243.378.275a.499.499 0 0 0 .286 0c.106-.032.197-.113.378-.275 1.623-1.45 6.573-5.93 8.208-8.055 1.967-2.555 1.658-6.19-.89-8.327-2.549-2.137-5.84-1.525-7.839.834Z"
           clipRule="evenodd"
         />
       </svg>
     )
 
+    export const CardLikeFullIcon = (props) => {
+        return (
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={22}
+            height={21}
+            fill="none"
+            {...props}
+          >
+            <path
+              stroke="#D10024"
+              fill="#D10024"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1}
+              d="M10.993 4.156c-2-2.36-5.333-2.994-7.838-.834s-2.858 5.772-.89 8.327c1.635 2.125 6.585 6.605 8.207 8.055.182.162.272.243.378.275a.499.499 0 0 0 .286 0c.106-.032.197-.113.378-.275 1.623-1.45 6.573-5.93 8.208-8.055 1.967-2.555 1.658-6.19-.89-8.327-2.549-2.137-5.84-1.525-7.839.834Z"
+              clipRule="evenodd"
+            />
+            </svg>
+        )
+    }
+
 export const HeaderBasketIcon = (props) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={20}
-      height={18}
+      width={22}
+      height={21}
       fill="none"
       {...props}
     >
       <path
-        fill="#fff"
-        stroke="#fff"
+        fill="none"
+        stroke="#000"
         strokeLinecap="round"
         strokeWidth={2}
         d="M1 1h.606a2 2 0 0 1 1.989 1.783l.81 7.434A2 2 0 0 0 6.394 12h8.652a2 2 0 0 0 1.938-1.506l1.402-7.31a.5.5 0 0 0-.491-.595H3.564m1.06 13.036h.75m-.75.75h.75m10.25-.75h.75m-.75.75h.75M6 16a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm11 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"

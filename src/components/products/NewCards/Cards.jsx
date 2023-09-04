@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from "../../library/Button";
-import {CardLikeHeartIcon} from "../../../svg"
+// import {CardLikeHeartIcon} from "../../../svg"
 import { CardBasketIcon } from '../../../svg';
 
 // ? Redux
@@ -20,7 +20,7 @@ const Cards = ({data}) => {
     <div className='swiper-slide_card'>
          <div className='small-box'>New</div>
           <div className='like_icon-box'>
-            <CardLikeHeartIcon className="like_icon"/>
+            {/* <CardLikeHeartIcon className="like_icon"/> */}
           </div>
         <img src={images[0]?.imagePath} alt="" />
         <div className='card-title'>{title}</div>

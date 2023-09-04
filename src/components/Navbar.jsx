@@ -22,7 +22,7 @@
 // export default ColorSchemesExample;
 
 import React from 'react'
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Dropdown from './Dropdown';
 // import ProductList from './Test';
 // import CategoryDropdown from './Test';
@@ -42,13 +42,10 @@ const Navbar = () => {
         {/* <ProductList/> */}
         {/* <CategoryDropdown/> */}
       
-{/* <ul className='navbar-menu'> */}
+<ul className='navbar-menu'>
   {/* <Link to="/product">Məhsullar/> */}
-        {/* <li>
-            <NavLink to={"/"} onClick={handleReload}>Əsas Səhifə</NavLink>
-        </li>
         <li>
-            <NavLink  to={"/product"}>Məhsullar</NavLink>
+            <NavLink to={"/"}>Əsas Səhifə</NavLink>
         </li>
         <li>
             <NavLink  to={"/about"} >Haqqımızda</NavLink>
@@ -59,16 +56,13 @@ const Navbar = () => {
         <li>
             <NavLink  to={"/login"} >Daxil ol</NavLink>
         </li>
-      </ul>  */}
+      </ul> 
 
-          <nav>
+          {/* <nav>
         <ul className='navbar-menu'>
           <li>
             <Link to="/">Home</Link>
           </li>
-          {/* <li>
-            <Link to="/product"></Link>
-          </li> */}
           <li>
             <Link to="/about">Haqqımızda</Link>
           </li>
@@ -79,7 +73,7 @@ const Navbar = () => {
             <Link to="/login">Daxil ol</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
 </div>
 </div>
 </div>

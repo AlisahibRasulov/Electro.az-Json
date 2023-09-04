@@ -1,44 +1,20 @@
-.carousel-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-//   .card-slider{
-// width: 300px !important;
-//   }
-  .carousel-item {
-    text-align: center;
+.carousel-item{
+  .carousel-content{
     position: relative;
-    // width: 100%;
-    img {
+    margin-top: 20px;
+    height: 400px;
+    color: #fff;
+    line-height: 160px;
+    text-align: center;
+    background-color: #364d79;
+  
+    .carousel-image{
       width: 100%;
-      height: auto;
+      height: 100%;
     }
-    .carousel-desc{
+    .carousel-text{
       position: absolute;
       top: 5px;
-      left: 0;
-      // z-index: 1;
-      
     }
-
   }
-
-// .carousel-item {
-//     position: relative;
-//     img {
-//       width: 100%;
-//       height: auto;
-//     }
-//   }
-  
-//   .legend {
-//     position: absolute;
-//     bottom: 20px;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     color: #fff;
-//     font-size: 16px;
-//     background-color: rgba(0, 0, 0, 0.5);
-//     padding: 8px 16px;
-//   }
+}
