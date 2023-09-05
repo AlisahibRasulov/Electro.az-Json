@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
 // import "../styles/pages/products/products.scss";
 import { useDispatch,  useSelector } from 'react-redux';  
@@ -7,7 +7,8 @@ import { removeCard,removeAllCard } from '../redux/slices/addToCardSlice';
 import { increment, decrement } from '../redux/slices/CounterSlice';
 import Button from '../components/library/Button';
 import { DecrementMinusIcon, DeletedIcon, IncrementPlusIcon } from '../svg';
-
+import { addToBasket } from '../redux/slices/addToBasketSlice';
+// import { useEffect } from "react";
 
 
 
@@ -21,7 +22,13 @@ const Basket = ({data}) => {
     // const totalPrice = useSelector(state => state.basket.totalPrice);
     const dispatch=useDispatch();
 
-   
+    // useEffect(() => {
+    //   const basketData = JSON.parse(localStorage.getItem('basket')) || [];
+    //   // Dispatch an action to populate the Redux store with the basket data
+    //   // You may need to create such an action in your Redux slice
+    //   dispatch(addToBasket(basketData));
+    // }, []);
+
     const handleAllDeletedToBasket=()=>{
       dispatch(removeBasketAll());
       // dispatch(removeAllCard())
@@ -68,7 +75,7 @@ const Basket = ({data}) => {
           {basketItems.map((data)=>{
               return(
               <tr key={data.id}>
-                <td><DeletedIcon className='delete-btn' onClick={()=>handleDeletedToBasket(data.id)}/></td>
+                 <td><button className='delete-btn' onClick={()=>handleDeletedToBasket(data.id)}><DeletedIcon /></button></td>
                 <td><div className='product'><img className='data-img' src={data.images[0]?.imagePath} alt="" /><p className='data-title'>{data.title}</p></div> </td>
                 <td> 
                   <div className="counter-quantity">

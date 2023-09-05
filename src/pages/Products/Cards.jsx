@@ -37,9 +37,10 @@ const Cards = ({data}) => {
         dispatch(removeLike(productId));
       } else {
         dispatch(addToLike(data));
+       
       }
-      
     };
+    
     const handleAddToBasket=()=>{
       if (buttonText === 'Səbətə at'){
         dispatch(addToBasket(data));
@@ -49,6 +50,7 @@ const Cards = ({data}) => {
         setButtonColor('#eee')
         setButtonTextColor('#666')
         setIconBasket(<CartCheckout className="card-btn_icon" />); 
+        localStorage.setItem(`basket_product_${data.id}`, JSON.stringify(data));
         setTimeout(() => {
         setButtonText('Səbətə at'); // Belirli bir süre sonra metni geri değiştir
         setButtonColor('#D10024')
@@ -57,6 +59,8 @@ const Cards = ({data}) => {
       }, 1000)
       }
     }
+
+    
 
     const { discounts,images, title, price } = data;
   return (
@@ -73,13 +77,6 @@ const Cards = ({data}) => {
       </button>
     <img src={images[0]?.imagePath} alt="" />
     <div className='card-title'>{title}</div>
-   {/* {discounts[0]?.currentPrice ? (
-  <del>
-    <div className='card-price'>{price} ₼</div>
-  </del>
-) : (
-  <div className='card-price'>{price} ₼</div>
-)} */}
    {data.discounts[0]?.currentPrice ? (
                   <>
                   <del>
@@ -90,12 +87,6 @@ const Cards = ({data}) => {
                 ) : (
                   <div className='card-price'>{price } ₼</div>
                 )}
-
-    {/* <div className='card-discount-price'>
-      {discounts[0]?.currentPrice
-        ? `${discounts[0].currentPrice} ₼`
-        : ''}
-    </div> */}
     <div className="card-view">
       <Button className='card-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='card-btn_text'>{buttonText}</div> </Button>
     </div>

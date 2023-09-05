@@ -27,7 +27,9 @@
             padding: 20px;
             .delete-btn{
                 cursor: pointer;
-            
+                border: none;
+                background-color: #fff;
+
             }
             .product{
                 display: flex;
@@ -55,11 +57,18 @@
             color: $color_1;
         }
         tr {
+            
             &:nth-child(even) {
                 background-color: $background-color_1;
+                .delete-btn{
+                    background-color: $background-color_1;
+                }
             }
             &:hover {
                 background-color: $background-color_2;
+                .delete-btn{
+                    background-color: $background-color_2;
+                }
             }
         }
     }

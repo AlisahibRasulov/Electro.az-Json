@@ -43,7 +43,7 @@ const Like = ({data}) => {
           {likeItems.map((data)=>{
               return(
               <tr key={data.id}>
-                <td><DeletedIcon className='delete-btn' onClick={()=>handleDeletedToLike(data.id)}/></td>
+                <td><button className='delete-btn' onClick={()=>handleDeletedToLike(data.id)}><DeletedIcon /></button></td>
                 <td><div className='product'><img className='data-img' src={data.images[0]?.imagePath} alt="" /><p className='data-title'>{data.title}</p></div> </td>
                 <td>
                   {data.discounts[0]?.currentPrice ? (

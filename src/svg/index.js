@@ -467,8 +467,8 @@ export const HeaderBasketIcon = (props) => (
   export const DeletedIcon = (props) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={16}
-      height={16}
+      width={17}
+      height={17}
       fill="currentColor"
       className="bi bi-x-lg"
       {...props}
