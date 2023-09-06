@@ -9,8 +9,8 @@ html {
 
   body{
     font-family: Montserrat,sans-serif;
-    background-color: #fff;
-    // background-color: #ddd;
+    // background-color: #fff;
+    background-color: #f3f3f3;
     // min-width: 320px;
     // height: 200vh;
     min-height: 100%;
@@ -538,5 +538,12 @@ html {
       width: 1140px;
     }
   }
-  
+
+
+  @media (min-width: 1400px) {
+    .container {
+      width: 1320px;
+    }
+  }
+
   

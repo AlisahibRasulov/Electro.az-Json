@@ -53,14 +53,14 @@ export const imageData = [
         id:10,
         image:Brand10,
     },
-    // {
-    //     id:11,
-    //     image:Brand11,
-    // },
-    // {
-    //     id:12,
-    //     image:Brand12,
-    // }
+    {
+        id:11,
+        image:Brand11,
+    },
+    {
+        id:12,
+        image:Brand12,
+    }
 
 ]
 
