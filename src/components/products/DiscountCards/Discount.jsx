@@ -43,14 +43,14 @@ const Discount = () => {
         slidesPerView={1}
         loop = {true}
         spaceBetween={10}
-        autoplay={{
-          delay:1000,
-          disableOnInteraction:false,
-        } }
+        // autoplay={{
+        //   delay:1000,
+        //   disableOnInteraction:false,
+        // } }
         navigation
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         breakpoints={{
           '@0.00': {
             slidesPerView: 1,

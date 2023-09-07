@@ -6,11 +6,11 @@ import store from './redux/store';
 import App from './App';
 import "./styles/main.scss";
 
-// ? "Animate On Scroll.
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init();
+// // ? "Animate On Scroll.
+// import AOS from 'aos';
+// import 'aos/dist/aos.css'; // You can also use <link> for styles
+// // ..
+// AOS.init();
 
 
 

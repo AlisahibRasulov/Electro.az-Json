@@ -4,6 +4,7 @@ import Discount from '../components/products/DiscountCards/Discount';
 import New from '../components/products/NewCards/New';
 import CarouselImg from '../components/CarouselImg';
 
+
 const Home = () => {
   return (
     <div>
