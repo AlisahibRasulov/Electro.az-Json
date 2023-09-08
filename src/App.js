@@ -108,12 +108,12 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/basket" element={<Basket />} />
       <Route path="/like" element={<Like />} />
-      <Route  
+      {/* <Route  
       path="/product-detail/:id" 
       element={
         user ? <ProductDetail setUser={setUser}/> : <Navigate to="/"/>
       }
-      />
+      /> */}
 
       <Route path="/all-products" element={<AllProducts />} />
       <Route path="/computers" element={<Computers />} />
