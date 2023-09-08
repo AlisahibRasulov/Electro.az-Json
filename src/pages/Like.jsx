@@ -44,7 +44,7 @@ const Like = ({data}) => {
               return(
               <tr key={data.id}>
                 <td><button className='delete-btn' onClick={()=>handleDeletedToLike(data.id)}><DeletedIcon /></button></td>
-                <td><div className='product'><img className='data-img' src={data.images[0]?.imagePath} alt="" /><p className='data-title'>{data.title}</p></div> </td>
+                <td><div className='product'><img className='data-img' src={data.previewImage} alt="" /><p className='data-title'>{data.title}</p></div> </td>
                 <td>
                   {data.discounts[0]?.currentPrice ? (
                   <>
@@ -84,3 +84,6 @@ const Like = ({data}) => {
 }
 
 export default Like
+
+
+// src={data.images[0]?.imagePath}

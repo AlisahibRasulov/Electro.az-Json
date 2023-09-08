@@ -62,7 +62,7 @@ const Cards = ({data}) => {
 
     
 
-    const { discounts,images, title, price } = data;
+    const { discounts,previewImage, title, price } = data;
   return (
     <div className='product-card'>
     
@@ -72,10 +72,9 @@ const Cards = ({data}) => {
 ) :     <div className='discount-hidden'></div>}
     </div>
     <button className='like-btn' onClick={()=>handleLikeClick(data.id)}>
-      {/* {liked ? <CardLikeFullIcon /> : <CardLikeIcon />} */}
       {isProductLiked ? <CardLikeFullIcon /> : <CardLikeIcon />}
       </button>
-    <img src={images[0]?.imagePath} alt="" />
+    <img  src={previewImage} alt="" />
     <div className='card-title'>{title}</div>
    {data.discounts[0]?.currentPrice ? (
                   <>

@@ -8,7 +8,7 @@ const Cameras = () => {
   // const [refresh, setRefresh] = useState(true);
 
   useEffect(()=>{
-      axios("http://35.184.181.250:9096/api/computer-product/category/all?categories=CAMERAS").then((res)=>{
+      axios("http://34.125.216.115:9095/api/product/category/all?categories=CAMERAS").then((res)=>{
         console.log(res.data) 
         setProductData(res.data)
       })

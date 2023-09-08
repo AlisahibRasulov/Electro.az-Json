@@ -16,10 +16,10 @@ const Basket = ({data}) => {
   const navigate = useNavigate();
     const counter=useSelector((state)=> state.counter);
     const basketItems=useSelector((state)=>state.basket);
-    const totalPrice=useSelector((state)=>state.basket.quantity * state.basket.price);
+    // const totalPrice=useSelector((state)=>state.basket.quantity * state.basket.price);
     // const { items, totalPrice } = useSelector((state) => state.basket);
     const basketCount = useSelector((state)=>state.basket.length);
-    // const totalPrice = useSelector(state => state.basket.totalPrice);
+    const totalPrice = useSelector(state => state.basket.totalPrice);
     const dispatch=useDispatch();
 
     // useEffect(() => {
@@ -76,7 +76,7 @@ const Basket = ({data}) => {
               return(
               <tr key={data.id}>
                  <td><button className='delete-btn' onClick={()=>handleDeletedToBasket(data.id)}><DeletedIcon /></button></td>
-                <td><div className='product'><img className='data-img' src={data.images[0]?.imagePath} alt="" /><p className='data-title'>{data.title}</p></div> </td>
+                <td><div className='product'><img className='data-img' src={data.previewImage} alt="" /><p className='data-title'>{data.title}</p></div> </td>
                 <td> 
                   <div className="counter-quantity">
                   <button className='counter-quantity_btn' onClick={()=>handleDecrement(data.id)}><DecrementMinusIcon/></button>
@@ -84,36 +84,19 @@ const Basket = ({data}) => {
                   <button className='counter-quantity_btn' onClick={()=>handleIncrement(data.id)}> <IncrementPlusIcon/></button>
                   </div>
                 </td>
-                <td>
-                  {data.discounts[0]?.currentPrice ? (
-                  <>
-                  <del>
-                    <div className='card-price'>{(data.price * data.quantity).toFixed(2)} ₼</div>
-                  </del>
-                  <div className='card-discount-price'>{data.discounts[0].currentPrice * data.quantity} ₼</div>
-                  </>
-                ) : (
-                  <div className='card-price'>{(data.price * data.quantity).toFixed(3)} ₼</div>
-                )}
-                </td>
-                {/* <td>
-                {data.discounts[0]?.currentPrice ? (
-                          <del>
-                            <div className='card-price'>{data.price}₼ </div>
-                          </del>
-                        ) : (
-                          <div className='card-price'>{data.price}₼</div>
-                        )}
-                        
-                            <div className='card-discount-price'>
-                              {data.discounts[0]?.currentPrice
-                                ? `${data.discounts[0].currentPrice}  ₼`
-                                : ''}
-                            </div>
-                </td> */}
-                {/* <td> <p>Toplam Fiyat: {data.price * data.quantity} ₼</p></td> */}
-                {/* <td><button onClick={()=>navigate(`/product-detail/${item.id}`)}>Details</button></td>
-                <td><button onClick={()=>deletedItem(item.id)}>Delete</button></td>  */}
+  <td>
+  {data.discounts[0]?.currentPrice ? (
+    <>
+      <del>
+        <div className='card-price'>{(data.price * data.quantity).toLocaleString('az-AZ')} ₼</div>
+      </del>
+      <div className='card-discount-price'>{(data.discounts[0].currentPrice * data.quantity).toLocaleString('az-AZ')}₼</div>
+    </>
+  ) : (
+    <div className='card-price'>{(data.price * data.quantity).toLocaleString('az-AZ')} ₼</div>
+  )}
+</td>    
+
               </tr>
               )
           })}
@@ -121,7 +104,7 @@ const Basket = ({data}) => {
         </tbody> 
       </table>
       <Button className='clear-btn' onClick={handleAllDeletedToBasket}>Seçilənləri sil</Button>
-      {/* <p>Toplam Fiyat: {totalPrice} ₼</p> */}
+      <p>{totalPrice}</p>
 </div>
 ) : (
   <div className='clear-page'>
@@ -132,7 +115,8 @@ const Basket = ({data}) => {
   
 
 )}
-    
+     {/* <td><button onClick={()=>navigate(`/product-detail/${item.id}`)}>Details</button></td>
+                <td><button onClick={()=>deletedItem(item.id)}>Delete</button></td>  */}
     </div>
   )
 }
