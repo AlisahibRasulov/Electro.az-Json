@@ -1,9 +1,9 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
-import DetailCard from '../components/DetailCard';
+// import { useParams } from 'react-router-dom';
+// import DetailCard from '../components/DetailCard';
 
 const ProductDetail = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   return (
     <div>
       Details

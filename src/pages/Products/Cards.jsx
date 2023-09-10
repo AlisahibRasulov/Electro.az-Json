@@ -5,9 +5,9 @@ import { CardBasketIcon,CartCheckout,CardLikeIcon,CardLikeFullIcon} from '../../
 import { useDispatch,useSelector } from 'react-redux';
 import { addToBasket } from '../../redux/slices/addToBasketSlice';
 import { addToLike,removeLike } from '../../redux/slices/addToLikeSlice';
-import { removeCard } from '../../redux/slices/addToCardSlice';
-import { addToCard } from '../../redux/slices/addToCardSlice';
-import { NavLink } from 'react-router-dom';
+// import { removeCard } from '../../redux/slices/addToCardSlice';
+// import { addToCard } from '../../redux/slices/addToCardSlice';
+// import { NavLink } from 'react-router-dom';
 // import { increment } from '../../redux/slices/CounterSlice';
 const Cards = ({data}) => {
     const [buttonText, setButtonText] = useState('Səbətə at');
@@ -65,7 +65,7 @@ const Cards = ({data}) => {
 
     const { discounts,previewImage, title, price } = data;
   return (
-    <NavLink to={"product-detail/"+ data.id} className='product-card'>
+    <div className='product-card'>
     
     <div className='card-discount-percentage'>
         {discounts[0]?.discountPercentage ? (
@@ -90,7 +90,7 @@ const Cards = ({data}) => {
     <div className="card-view">
       <Button className='card-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='card-btn_text'>{buttonText}</div> </Button>
     </div>
-  </NavLink>
+  </div>
   )
 }
 

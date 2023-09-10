@@ -15,16 +15,16 @@ const Cards = ({data}) => {
       dispatch(addToCard());
     }
 
-    const { images, title, price } = data;
+    const { previewImage, title, price } = data;
   return (
     <div className='swiper-slide_card'>
          <div className='small-box'>New</div>
           <div className='like_icon-box'>
             {/* <CardLikeHeartIcon className="like_icon"/> */}
           </div>
-        <img src={images[0]?.imagePath} alt="" />
+        <img src={previewImage} alt="" />
         <div className='card-title'>{title}</div>
-        <div className='card-price'>{price} ₼</div>
+        <div className='card-price'>{(price).toLocaleString('az-AZ')} ₼</div>
     <div className="card-view">
       <Button className='card-btn' onClick={handleAddToBasket}><CardBasketIcon className="card-btn_basket"/> <div className='card-btn_text'>Səbətə at</div> </Button>
     </div>

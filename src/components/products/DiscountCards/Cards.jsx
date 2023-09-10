@@ -14,7 +14,7 @@ const Cards = ({data}) => {
       dispatch(addToCard());
     }
 
-    const { discounts,images, title, price } = data;
+    const { discounts,previewImage, title, price } = data;
   return (
     <div className='swiper-slide_card'>
     <div className='card-discount-percentage'>
@@ -22,20 +22,18 @@ const Cards = ({data}) => {
   <div className='discount-active'>-{discounts[0].discountPercentage}</div>
 ) :     <div className='discount-hidden'></div>}
 </div>
-<img src={images[0]?.imagePath} alt="" />
+<img src={previewImage} alt="" />
 <div className='card-title'>{title}</div>
-{discounts[0]?.currentPrice ? (
-<del>
-<div className='card-price'>{price} ₼</div>
-</del>
-) : (
-<div className='card-price'>{price} ₼</div>
-)}
-<div className='card-discount-price'>
-{discounts[0]?.currentPrice
-  ? `${discounts[0].currentPrice} ₼`
-  : ''}
-</div>
+{data.discounts[0]?.currentPrice ? (
+                  <>
+                  <del>
+                    <div className='card-price'>{(price).toLocaleString('az-AZ')} ₼</div>
+                  </del>
+                  <div className='card-discount-price'>{(discounts[0].currentPrice).toLocaleString('az-AZ')} ₼</div>
+                  </>
+                ) : (
+                  <div className='card-price'>{(price).toLocaleString('az-AZ') } ₼</div>
+                )}
 <div className="card-view">
 <Button className='card-btn' onClick={handleAddToBasket}><CardBasketIcon className="card-btn_basket"/> <div className='card-btn_text'>Səbətə at</div> </Button>
 </div>
