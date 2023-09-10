@@ -1,8 +1,12 @@
 import {createSlice} from '@reduxjs/toolkit';
+import { json } from 'react-router-dom';
+
+const initialState = JSON.parse(localStorage.getItem('addBasket')) || [];
 
 const addToBasketSlice=createSlice({
   name:"basket",
-  initialState:[],
+  // initialState:[],
+  initialState,
   reducers:{
     addToBasket:(state, action)=>{
       // state.push(action.payload);
@@ -28,9 +32,8 @@ const addToBasketSlice=createSlice({
       } else {
         existingItem.quantity += 1; // Ürün sayısını artır
       }
-      
-       // Fiyat güncellemesi burada yapılıyor
-        // state.totalPrice += newItem.price;
+      localStorage.setItem('addBasket', JSON.stringify(state));
+       
     },
     incrementQuantity: (state, action) => {
       const productId = action.payload;
@@ -38,6 +41,7 @@ const addToBasketSlice=createSlice({
 
       if (existingItem) {
         existingItem.quantity += 1;
+        // localStorage.setItem("addBasket", JSON.stringify(newItem));
         // state.totalPrice += existingItem.price; // Fiyat güncellemesi burada yapılıyor
       }
     },
@@ -52,10 +56,20 @@ const addToBasketSlice=createSlice({
     },
     removeBasket: (state, action) => {
       const productId = action.payload;
-      return state.filter((item) => item.id !== productId);
+      // return state.filter((item) => item.id !== productId);
+      const updatedState = state.filter((item) => item.id !== productId);
+      state.length = 0;
+      state.push(...updatedState);
+      localStorage.setItem('addBasket', JSON.stringify(state));
       // state.totalPrice -= removedItem.price * removedItem.quantity; // Fiyat güncellemesi burada yapılıyor
     },
-    removeBasketAll:(state)=>state=[],
+    // removeBasketAll:(state)=>state=[],
+    removeBasketAll: state => {
+      state.length = 0;
+      
+      //       // Beğenilen ürünleri yerel depolamadan kaldırın
+     localStorage.removeItem('addBasket');
+     },
   },
 });
 

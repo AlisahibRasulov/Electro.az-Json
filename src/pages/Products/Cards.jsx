@@ -7,6 +7,7 @@ import { addToBasket } from '../../redux/slices/addToBasketSlice';
 import { addToLike,removeLike } from '../../redux/slices/addToLikeSlice';
 import { removeCard } from '../../redux/slices/addToCardSlice';
 import { addToCard } from '../../redux/slices/addToCardSlice';
+import { NavLink } from 'react-router-dom';
 // import { increment } from '../../redux/slices/CounterSlice';
 const Cards = ({data}) => {
     const [buttonText, setButtonText] = useState('Səbətə at');
@@ -37,7 +38,7 @@ const Cards = ({data}) => {
         dispatch(removeLike(productId));
       } else {
         dispatch(addToLike(data));
-       
+        // localStorage.setItem(`like_product_${data.id}`, JSON.stringify(data));
       }
     };
     
@@ -50,7 +51,7 @@ const Cards = ({data}) => {
         setButtonColor('#eee')
         setButtonTextColor('#666')
         setIconBasket(<CartCheckout className="card-btn_icon" />); 
-        localStorage.setItem(`basket_product_${data.id}`, JSON.stringify(data));
+        // localStorage.setItem(`basket_product_${data.id}`, JSON.stringify(data));
         setTimeout(() => {
         setButtonText('Səbətə at'); // Belirli bir süre sonra metni geri değiştir
         setButtonColor('#D10024')
@@ -64,7 +65,7 @@ const Cards = ({data}) => {
 
     const { discounts,previewImage, title, price } = data;
   return (
-    <div className='product-card'>
+    <NavLink to={"product-detail/"+ data.id} className='product-card'>
     
     <div className='card-discount-percentage'>
         {discounts[0]?.discountPercentage ? (
@@ -79,17 +80,17 @@ const Cards = ({data}) => {
    {data.discounts[0]?.currentPrice ? (
                   <>
                   <del>
-                    <div className='card-price'>{price} ₼</div>
+                    <div className='card-price'>{(price).toLocaleString('az-AZ')} ₼</div>
                   </del>
-                  <div className='card-discount-price'>{discounts[0].currentPrice} ₼</div>
+                  <div className='card-discount-price'>{(discounts[0].currentPrice).toLocaleString('az-AZ')} ₼</div>
                   </>
                 ) : (
-                  <div className='card-price'>{price } ₼</div>
+                  <div className='card-price'>{(price).toLocaleString('az-AZ') } ₼</div>
                 )}
     <div className="card-view">
       <Button className='card-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='card-btn_text'>{buttonText}</div> </Button>
     </div>
-  </div>
+  </NavLink>
   )
 }
 

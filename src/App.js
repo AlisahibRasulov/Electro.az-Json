@@ -23,6 +23,7 @@ import Computers from "./pages/Products/Computers/Computers";
 import Phones from "./pages/Products/Phones/Phones";
 import Cameras from "./pages/Products/Cameras/Cameras";
 import Accessories from "./pages/Products/Accessories/Accessories";
+import ProductDetail from "./pages/ProductDetail";
 
 
 
@@ -32,7 +33,7 @@ import Accessories from "./pages/Products/Accessories/Accessories";
 
 
 function App() {
-
+  const [user, setUser] = useState(null);
   // ? Test
 //   //  const [products, setProducts] = useState([]);
 //   const [selectedCategory, setSelectedCategory] = useState('');
@@ -108,19 +109,21 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/basket" element={<Basket />} />
       <Route path="/like" element={<Like />} />
-      {/* <Route  
+      {/* <Route path="product-detail/:id" element={<ProductDetail />} /> */}
+      <Route  
       path="/product-detail/:id" 
       element={
         user ? <ProductDetail setUser={setUser}/> : <Navigate to="/"/>
       }
-      /> */}
+      />
 
       <Route path="/all-products" element={<AllProducts />} />
       <Route path="/computers" element={<Computers />} />
       <Route path="/phones" element={<Phones />} />
       <Route path="/cameras" element={<Cameras />} />
       <Route path="/accessories" element={<Accessories />} />
-
+      
+   
 
   </Route> 
   <Route path="/login" element={<Login />} />
