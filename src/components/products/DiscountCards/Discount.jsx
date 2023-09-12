@@ -48,9 +48,9 @@ const Discount = () => {
         //   disableOnInteraction:false,
         // } }
         navigation
-        // pagination={{
-        //   clickable: true,
-        // }}
+        pagination={{
+          clickable: true,
+        }}
         breakpoints={{
           '@0.00': {
             slidesPerView: 1,

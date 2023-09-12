@@ -25,7 +25,10 @@ import Cameras from "./pages/Products/Cameras/Cameras";
 import Accessories from "./pages/Products/Accessories/Accessories";
 // import ProductDetail from "./pages/ProductDetail";
 
-
+//? TestUser
+// import Login from "./pages/TestUser/Login";
+// import Register from "./pages/TestUser/Login";
+// import Dashboard from "./pages/Dashboard"
 
 // ? icons
 // import {FooterTwitterIcon,SearchIcon,HeaderLikeHeartIcon,CardLikeHeartIcon,HeaderBasketIcon,CardBasketIcon} from "./svg";
@@ -129,7 +132,29 @@ function App() {
   <Route path="/login" element={<Login />} />
   <Route path="/signup" element={<Signup />} /> 
         
-        
+          {/* <Route  
+      path="/register" 
+      element={
+        user ? <Navigate to="/login"/> : <Register setUser={setUser}/>
+      }
+      />
+        <Route
+      path="/login"
+      element={
+        user ? <Login setUser={setUser} /> : <Navigate to="/register" />}
+      />
+        <Route  
+      path="/login" 
+      element={
+        user ? <Navigate to="/dashboard"/> : <Login setUser={setUser}/>
+      }
+      />
+      <Route
+      path="/dashboard"
+      element={
+        user ? <Dashboard setUser={setUser} /> : <Navigate to="/login" />}
+      /> */}
+
 </Routes>
     {/* ? Test Dropdown peoducts */}
     {/* <ProductList/> */}
