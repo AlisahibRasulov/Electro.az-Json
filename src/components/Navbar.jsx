@@ -53,10 +53,11 @@ const Navbar = () => {
         <li>
             <NavLink  to={"/contact"} >Bizimlə Əlaqə</NavLink>
         </li>
-        <li>
+        {/* <li>
             <NavLink  to={"/login"} >Daxil ol</NavLink>
-        </li>
+        </li> */}
       </ul> 
+      
 
           {/* <nav>
         <ul className='navbar-menu'>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, Navigate } from "react-router-dom"
 // ? COMPONENTS
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -12,8 +12,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Signup from "./pages/Auth/Signup";
-import Login from "./pages/Auth/Login";
+// import Signup from "./pages/Auth/Signup";
+// import Login from "./pages/Auth/Login";
 import Basket from "./pages/Basket";
 import Like from "./pages/Like";
 
@@ -26,8 +26,8 @@ import Accessories from "./pages/Products/Accessories/Accessories";
 // import ProductDetail from "./pages/ProductDetail";
 
 //? TestUser
-// import Login from "./pages/TestUser/Login";
-// import Register from "./pages/TestUser/Login";
+import Register from "./pages/TestUser/Register";
+import Login from "./pages/TestUser/Login";
 // import Dashboard from "./pages/Dashboard"
 
 // ? icons
@@ -36,7 +36,7 @@ import Accessories from "./pages/Products/Accessories/Accessories";
 
 
 function App() {
-  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
   // ? Test
 //   //  const [products, setProducts] = useState([]);
 //   const [selectedCategory, setSelectedCategory] = useState('');
@@ -106,9 +106,40 @@ function App() {
 
          
   <Routes>
+
+  <Route  
+      path="/register" 
+      element={
+        user ? <Navigate to="/login"/> : <Register setUser={setUser}/>
+      }
+      />
+        <Route path="/login" element={<Login setUser={setUser}/>} />
+
+        <Route  
+      path="/login" 
+      element={
+        user ? <Navigate to="/"/> : <Login setUser={setUser}/>
+      }
+      />
+      {/* <Route
+      path="/"
+      element={
+        user ? <Home setUser={setUser}/> : <Navigate to="/login" />}
+      /> */}
+
     <Route exact path="/" element={<Navbar />}>
-      <Route index={true} element={<Home />} />
-      <Route path="/about" element={<About />} />
+      {/* <Route index={true} element={<Home />} /> */}
+      <Route
+      path="/"
+      element={
+        user ? <Home setUser={setUser}/> : <Navigate to="/login" />}
+      />
+       <Route
+      path="/about"
+      element={
+        user ? <About setUser={setUser}/> : <Navigate to="/login" />}
+      />
+      {/* <Route path="/about" element={<About />} /> */}
       <Route path="/contact" element={<Contact />} />
       <Route path="/basket" element={<Basket />} />
       <Route path="/like" element={<Like />} />
@@ -129,32 +160,9 @@ function App() {
    
 
   </Route> 
-  <Route path="/login" element={<Login />} />
-  <Route path="/signup" element={<Signup />} /> 
+  {/* <Route path="/login" element={<Login />} />
+  <Route path="/signup" element={<Signup />} />  */}
         
-          {/* <Route  
-      path="/register" 
-      element={
-        user ? <Navigate to="/login"/> : <Register setUser={setUser}/>
-      }
-      />
-        <Route
-      path="/login"
-      element={
-        user ? <Login setUser={setUser} /> : <Navigate to="/register" />}
-      />
-        <Route  
-      path="/login" 
-      element={
-        user ? <Navigate to="/dashboard"/> : <Login setUser={setUser}/>
-      }
-      />
-      <Route
-      path="/dashboard"
-      element={
-        user ? <Dashboard setUser={setUser} /> : <Navigate to="/login" />}
-      /> */}
-
 </Routes>
     {/* ? Test Dropdown peoducts */}
     {/* <ProductList/> */}

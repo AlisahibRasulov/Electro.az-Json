@@ -1,10 +1,23 @@
 import React from 'react'
-
+import { useNavigate } from "react-router-dom";
 import { PlayLogo } from '../svg'
 import productImage1 from '../img/about-page/cyber-monday-shopping-sales.jpg'; // İlk ürün resminin yolunu düzenleyin
 import productImage2 from '../img/about-page/seller-man-mobile-phone-professional-consultant-tech-store-shop-check-new-smart-watches.jpg';
-const About = () => {
+
+const logoutBtn = {
+    marginLeft: "90%",
+    position: "absolute",
+    top: "25px",
+  }
+const About = ({setUser}) => {
+    const navigate = useNavigate();
+    const logOut = () => {
+      navigate("/login");
+      setUser(false);
+      // sessionStorage.removeItem("token");
+    };
   return (
+    
     // <div>
     //    <div className="about-container">
     //   <h2 className="about-title">Haqqımızda</h2>
@@ -54,6 +67,9 @@ const About = () => {
   //   </p>
   // </div>
 <section id="aboutus">
+<button style={logoutBtn} onClick={logOut}>
+    Logout
+      </button>
         <div className="container-self">
             <div className="row">
                 <div className="col-lg-6 title">
