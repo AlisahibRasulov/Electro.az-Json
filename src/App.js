@@ -12,8 +12,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-// import Signup from "./pages/Auth/Signup";
-// import Login from "./pages/Auth/Login";
+import Signup from "./pages/Auth/Signup";
+import Login from "./pages/Auth/Login";
 import Basket from "./pages/Basket";
 import Like from "./pages/Like";
 
@@ -26,8 +26,8 @@ import Accessories from "./pages/Products/Accessories/Accessories";
 // import ProductDetail from "./pages/ProductDetail";
 
 //? TestUser
-import Register from "./pages/TestUser/Register";
-import Login from "./pages/TestUser/Login";
+// import Register from "./pages/TestUser/Register";
+// import Login from "./pages/TestUser/Login";
 // import Dashboard from "./pages/Dashboard"
 
 // ? icons
@@ -36,7 +36,8 @@ import Login from "./pages/TestUser/Login";
 
 
 function App() {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(true);
   // ? Test
 //   //  const [products, setProducts] = useState([]);
 //   const [selectedCategory, setSelectedCategory] = useState('');
@@ -106,8 +107,27 @@ function App() {
 
          
   <Routes>
-
   <Route  
+      path="/signup" 
+      element={
+        user ? <Navigate to="/login"/> : <Signup setUser={setUser}/>
+      }
+      />
+        <Route  
+      path="/login" 
+      element={
+        user ? <Login setUser={setUser}/> : <Navigate to="/signup"/>  
+      }
+      />
+        {/* <Route path="/login" element={<Login setUser={setUser}/>} /> */}
+
+        <Route  
+      path="/login" 
+      element={
+        user ? <Navigate to="/"/> : <Login setUser={setUser}/>
+      }
+      />
+  {/* <Route  
       path="/register" 
       element={
         user ? <Navigate to="/login"/> : <Register setUser={setUser}/>
@@ -120,7 +140,8 @@ function App() {
       element={
         user ? <Navigate to="/"/> : <Login setUser={setUser}/>
       }
-      />
+      /> */}
+      {/* burada login olmadan bir basha esas sehifeye getmek mehdudlasdirilir(slash "/" vasitesi ile) */}
       {/* <Route
       path="/"
       element={
@@ -129,17 +150,13 @@ function App() {
 
     <Route exact path="/" element={<Navbar />}>
       {/* <Route index={true} element={<Home />} /> */}
+
       <Route
       path="/"
       element={
-        user ? <Home setUser={setUser}/> : <Navigate to="/login" />}
+        user ? <Home/> : <Navigate to="/login" />}
       />
-       <Route
-      path="/about"
-      element={
-        user ? <About setUser={setUser}/> : <Navigate to="/login" />}
-      />
-      {/* <Route path="/about" element={<About />} /> */}
+      <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/basket" element={<Basket />} />
       <Route path="/like" element={<Like />} />
@@ -160,8 +177,8 @@ function App() {
    
 
   </Route> 
-  {/* <Route path="/login" element={<Login />} />
-  <Route path="/signup" element={<Signup />} />  */}
+  {/* <Route path="/login" element={<Login />} /> */}
+  {/* <Route path="/signup" element={<Signup />} />  */}
         
 </Routes>
     {/* ? Test Dropdown peoducts */}

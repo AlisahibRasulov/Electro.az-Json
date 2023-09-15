@@ -9,13 +9,13 @@ const logoutBtn = {
     position: "absolute",
     top: "25px",
   }
-const About = ({setUser}) => {
-    const navigate = useNavigate();
-    const logOut = () => {
-      navigate("/login");
-      setUser(false);
-      // sessionStorage.removeItem("token");
-    };
+const About = () => {
+    // const navigate = useNavigate();
+    // const logOut = () => {
+    //   navigate("/login");
+    //   setUser(false);
+    //   // sessionStorage.removeItem("token");
+    // };
   return (
     
     // <div>
@@ -67,9 +67,9 @@ const About = ({setUser}) => {
   //   </p>
   // </div>
 <section id="aboutus">
-<button style={logoutBtn} onClick={logOut}>
+{/* <button style={logoutBtn} onClick={logOut}>
     Logout
-      </button>
+      </button> */}
         <div className="container-self">
             <div className="row">
                 <div className="col-lg-6 title">
