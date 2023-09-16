@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes, Navigate } from "react-router-dom"
+import { Route, Routes, Navigate, useLocation} from "react-router-dom"
 // ? COMPONENTS
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -36,6 +36,7 @@ import Accessories from "./pages/Products/Accessories/Accessories";
 
 
 function App() {
+  const location = useLocation();
   const [user, setUser] = useState(null);
   // const [user, setUser] = useState(true);
   // ? Test
@@ -46,10 +47,12 @@ function App() {
 // const handleCategoryChange = newCategory => {
 //   setSelectedCategory(newCategory);
 // };
+const isLoginPage = location.pathname === '/login';
+const isSignupPage = location.pathname === '/signup';
   return (
     <div className="app">
-      <Header/>
-      
+      {/* <Header/> */}
+      {!isLoginPage && !isSignupPage && <Header />}
       {/*  Test  */}
       {/* <header className="App-header">
         <CategoryDropdown
@@ -107,26 +110,28 @@ function App() {
 
          
   <Routes>
-  <Route  
+  {/* <Route  
       path="/signup" 
       element={
         user ? <Navigate to="/login"/> : <Signup setUser={setUser}/>
       }
-      />
-        <Route  
+      /> */}
+        {/* <Route  
       path="/login" 
       element={
         user ? <Login setUser={setUser}/> : <Navigate to="/signup"/>  
       }
-      />
+      /> */}
         {/* <Route path="/login" element={<Login setUser={setUser}/>} /> */}
 
-        <Route  
+        {/* <Route  
       path="/login" 
       element={
         user ? <Navigate to="/"/> : <Login setUser={setUser}/>
       }
-      />
+      /> */}
+     
+      
   {/* <Route  
       path="/register" 
       element={
@@ -149,13 +154,13 @@ function App() {
       /> */}
 
     <Route exact path="/" element={<Navbar />}>
-      {/* <Route index={true} element={<Home />} /> */}
+      <Route index={true} element={<Home />} />
 
-      <Route
+      {/* <Route
       path="/"
       element={
         user ? <Home setUser={setUser}/> : <Navigate to="/login" />}
-      />
+      /> */}
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/basket" element={<Basket />} />
@@ -177,8 +182,8 @@ function App() {
    
 
   </Route> 
-  {/* <Route path="/login" element={<Login />} /> */}
-  {/* <Route path="/signup" element={<Signup />} />  */}
+  <Route path="/login" element={<Login />} />
+  <Route path="/signup" element={<Signup />} /> 
         
 </Routes>
     {/* ? Test Dropdown peoducts */}

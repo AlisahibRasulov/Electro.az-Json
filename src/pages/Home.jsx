@@ -5,25 +5,25 @@ import Discount from '../components/products/DiscountCards/Discount';
 import New from '../components/products/NewCards/New';
 import CarouselImg from '../components/CarouselImg';
 
-const logoutBtn = {
-  marginLeft: "90%",
-  position: "absolute",
-  top: "25px",
-}
+// const logoutBtn = {
+//   marginLeft: "90%",
+//   position: "absolute",
+//   top: "25px",
+// }
 
-const Home = ({setUser}) => {
-  const navigate = useNavigate();
-  const logOut = () => {
-    navigate("/login");
-    setUser(false);
-    // sessionStorage.removeItem("token");
-  };
+const Home = () => {
+  // const navigate = useNavigate();
+  // const logOut = () => {
+  //   navigate("/login");
+  //   // setUser(false);
+  //   // sessionStorage.removeItem("token");
+  // };
   return (
     <div>
       <>
-      <button style={logoutBtn} onClick={logOut}>
+      {/* <button style={logoutBtn} onClick={logOut}>
     Logout
-      </button>
+      </button> */}
       <Outlet/>
       </>
        

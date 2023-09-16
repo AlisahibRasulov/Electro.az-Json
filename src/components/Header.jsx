@@ -15,9 +15,19 @@ import {SearchIcon,HeaderLikeHeartIcon,HeaderBasketIcon,PlayLogo} from "../svg"
 import { Outlet } from 'react-router-dom';
 
 import { Link } from "react-router-dom";
+// const logoutBtn = {
+//   marginLeft: "90%",
+//   position: "absolute",
+//   top: "25px",
+// }
 
 const Header = () => {
   const navigate = useNavigate();
+  const logOut = () => {
+    navigate("/login");
+    // setUser(false);
+    // sessionStorage.removeItem("token");
+  };
   // const like=useSelector((state)=> state.addToCard);
   const like=useSelector((state)=> state.like.length);
   const basket = useSelector((state)=> state.basket.length)
@@ -43,6 +53,9 @@ const Header = () => {
            <HeaderBasketIcon className="basket_header-icon"/>
            <div className='basket_header-counter'>{basket}</div>
             </button>
+            <button  to="/login" onClick={logOut}>
+           Logout
+         </button>
           </div>
       </div>
      </div>

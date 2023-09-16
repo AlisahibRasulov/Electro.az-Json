@@ -4,13 +4,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Button from '../../components/library/Button';
-const signupPageBtn = {
-  // marginLeft: "90%",
-  // position: "absolute",
-  // top: "25px",
-  border:"none",
-}
-const Login = ({setUser}) => {
+
+
+const Login = () => {
   const navigate = useNavigate();
 
 
@@ -21,8 +17,13 @@ const Login = ({setUser}) => {
     const login = () => {
       axios.post(`http://35.235.116.163:9095/login`, loginData).then((res)=>{
           console.log(res)
-              navigate("/");
-              setUser(true);
+          if(res.data === true){
+            navigate("/");
+            // setUser(true);
+          }else{
+            alert("email ve yaxud password sehvdir")
+          }
+              
               // sessionStorage.setItem("token", res.data.data.token);
          
       });
@@ -32,15 +33,8 @@ const Login = ({setUser}) => {
        };
 
        const signupPage = () => {
-  
-        // console.log(res)
-       
-          navigate("/signup");
-            setUser(false);
-            // sessionStorage.setItem("token", res.data.data.token);
-       
-
-
+       navigate("/signup");
+            // setUser(false);
    };
   return (
     <div className='login'>
@@ -52,7 +46,7 @@ const Login = ({setUser}) => {
             {/* <span>
             <Link to="/signup">Hesab Yarat</Link>
            </span> */}
-           <button style={signupPageBtn} onClick={signupPage}>Qeydiyyatdan kec</button>
+           <button className='signupPageBtn' onClick={signupPage}>Hesab Yarat</button>
             </div>
             
     </div>

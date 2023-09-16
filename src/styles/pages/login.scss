@@ -4,6 +4,7 @@
     justify-content: center;
     height: 100vh;
     .login-cart{
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center; 
@@ -32,6 +33,12 @@
     .login-btn{
         width: 100%;
         background-color: #D10024;
+    }
+    .signupPageBtn{
+        position: absolute;
+        bottom: 4px;
+        border: none;
+        cursor: pointer;
     }
     }
 
