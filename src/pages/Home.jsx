@@ -11,11 +11,11 @@ const logoutBtn = {
   top: "25px",
 }
 
-const Home = () => {
+const Home = ({setUser}) => {
   const navigate = useNavigate();
   const logOut = () => {
     navigate("/login");
-    // setUser(false);
+    setUser(false);
     // sessionStorage.removeItem("token");
   };
   return (

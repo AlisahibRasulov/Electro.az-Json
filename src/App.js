@@ -36,8 +36,8 @@ import Accessories from "./pages/Products/Accessories/Accessories";
 
 
 function App() {
-  // const [user, setUser] = useState(null);
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(true);
   // ? Test
 //   //  const [products, setProducts] = useState([]);
 //   const [selectedCategory, setSelectedCategory] = useState('');
@@ -154,7 +154,7 @@ function App() {
       <Route
       path="/"
       element={
-        user ? <Home/> : <Navigate to="/login" />}
+        user ? <Home setUser={setUser}/> : <Navigate to="/login" />}
       />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
