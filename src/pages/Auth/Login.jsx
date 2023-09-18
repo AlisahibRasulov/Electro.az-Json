@@ -4,7 +4,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Button from '../../components/library/Button';
-
+import { Eye, EyeSlash } from '../../svg';
+import loginImage from '../../img/login-page/Mobile login-bro.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -19,6 +20,8 @@ const Login = () => {
           console.log(res)
           if(res.data === true){
             navigate("/");
+            localStorage.setItem('isLoggedIn', 'true');
+            setLoginData(true);
             // setUser(true);
           }else{
             alert("email ve yaxud password sehvdir")
@@ -36,20 +39,64 @@ const Login = () => {
        navigate("/signup");
             // setUser(false);
    };
-  return (
+
+   const [visible, setVisible] = useState(false);
+
+   const togglePasswordVisibility = () => {
+     setVisible(!visible);
+   };
+
+  //  ? login == true
+     return (
+    // <div className='login'>
+    //         <div className='login-cart'>
+    //           <div className="login-cart_header">Daxil ol</div>
+    //           <div className="login-cart_content">
+    //             <div className="login-cart_top"></div>
+    //             <div className="login-cart_bottom"></div>
+    //           </div>
+    //         <input type="text" onChange={onHandleChange} className="login-email" name="email" placeholder="Email adresinizi daxil edin...."/>
+    //         <input type="password" onChange={onHandleChange} className="login-password" name="password" placeholder="Şifrənizi daxil edin..."/>
+    //         <Button onClick={login} className='login-btn'>Daxil ol</Button>  
+            
+    //         {/* <span>
+    //         <Link to="/signup">Hesab Yarat</Link>
+    //        </span> */}
+    //        <button className='signupPageBtn' onClick={signupPage}>Hesab Yarat</button>
+    //         </div>
+            
+    // </div>
     <div className='login'>
-            <div className='login-cart'>
-            <input type="text" onChange={onHandleChange} className="login-email" name="email" placeholder="Email adresinizi daxil edin...."/>
-            <input type="password" onChange={onHandleChange} className="login-password" name="password" placeholder="Şifrənizi daxil edin..."/>
-            <Button onClick={login} className='login-btn'>Daxil ol</Button>  
-            
-            {/* <span>
-            <Link to="/signup">Hesab Yarat</Link>
-           </span> */}
-           <button className='signupPageBtn' onClick={signupPage}>Hesab Yarat</button>
-            </div>
-            
+    <div className="container">
+      <div className="login-content">
+        <div className="login-img">
+        <img  src={loginImage} alt="" />
+        </div>
+        
+      <div className='login-cart'>
+      <div className="login-cart_header">Daxil ol</div>
+        <div className="login-cart_content">
+      <div className="login-cart_top">
+          <input type="text" onChange={onHandleChange} className="login-email" name="email" placeholder="Email adresinizi daxil edin...."/>
+          <div className="password-content">
+          <input type={visible ? 'text' : 'password'} onChange={onHandleChange} className="login-password" name="password" placeholder="Şifrənizi daxil edin..."/>
+          <button className='password-btn' onClick={togglePasswordVisibility}>
+          {visible ? <Eye/> : <EyeSlash/>}
+          </button>
+      </div>
+          </div>
+         <div className="login-cart_bottom">
+         <Button onClick={login} className='login-btn'>Daxil ol</Button>  
+         <button className='signupPageBtn' onClick={signupPage}>Hesab Yarat</button>
+         </div>
+        </div>
+          </div>
+      </div>
+   
     </div>
+          
+          
+  </div>
   )
 }
 

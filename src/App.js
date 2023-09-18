@@ -23,7 +23,7 @@ import Computers from "./pages/Products/Computers/Computers";
 import Phones from "./pages/Products/Phones/Phones";
 import Cameras from "./pages/Products/Cameras/Cameras";
 import Accessories from "./pages/Products/Accessories/Accessories";
-// import ProductDetail from "./pages/ProductDetail";
+import ProductDetail from "./pages/ProductDetail";
 
 //? TestUser
 // import Register from "./pages/TestUser/Register";
@@ -36,8 +36,8 @@ import Accessories from "./pages/Products/Accessories/Accessories";
 
 
 function App() {
-  const location = useLocation();
-  const [user, setUser] = useState(null);
+  // const location = useLocation();
+  // const [user, setUser] = useState(null);
   // const [user, setUser] = useState(true);
   // ? Test
 //   //  const [products, setProducts] = useState([]);
@@ -47,12 +47,12 @@ function App() {
 // const handleCategoryChange = newCategory => {
 //   setSelectedCategory(newCategory);
 // };
-const isLoginPage = location.pathname === '/login';
-const isSignupPage = location.pathname === '/signup';
+// const isLoginPage = location.pathname === '/login';
+// const isSignupPage = location.pathname === '/signup';
   return (
     <div className="app">
-      {/* <Header/> */}
-      {!isLoginPage && !isSignupPage && <Header />}
+      <Header/>
+      {/* {!isLoginPage && !isSignupPage && <Header />} */}
       {/*  Test  */}
       {/* <header className="App-header">
         <CategoryDropdown
@@ -163,9 +163,13 @@ const isSignupPage = location.pathname === '/signup';
       /> */}
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+
+      
       <Route path="/basket" element={<Basket />} />
       <Route path="/like" element={<Like />} />
-      {/* <Route path="product-detail/:id" element={<ProductDetail />} /> */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      
       {/* <Route  
       path="/product-detail/:id" 
       element={
@@ -178,12 +182,14 @@ const isSignupPage = location.pathname === '/signup';
       <Route path="/phones" element={<Phones />} />
       <Route path="/cameras" element={<Cameras />} />
       <Route path="/accessories" element={<Accessories />} />
-      
-   
+      <Route path="product-detail/:id" element={<ProductDetail />} />
+    
+    
+
 
   </Route> 
-  <Route path="/login" element={<Login />} />
-  <Route path="/signup" element={<Signup />} /> 
+  {/* <Route path="/login" element={<Login />} />
+  <Route path="/signup" element={<Signup />} />  */}
         
 </Routes>
     {/* ? Test Dropdown peoducts */}

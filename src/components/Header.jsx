@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 // import Image from "../logo.svg";
 // import Logo from "../svg/play-button.svg"
@@ -21,13 +21,39 @@ import { Link } from "react-router-dom";
 //   top: "25px",
 // }
 
+// const isLoggedIn = true;
+
 const Header = () => {
   const navigate = useNavigate();
+  // const loggedIn = localStorage.getItem('loggedIn') === 'true';
+  // const[logoutData, setLogoutData] = useState(false)
   const logOut = () => {
     navigate("/login");
+    // localStorage.setItem(('logoutData', 'false'))
+    // setLogoutData(false);
     // setUser(false);
     // sessionStorage.removeItem("token");
   };
+
+  
+
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // // Oturum açma işlemi
+  // const handleLogin = () => {
+  //   // Oturum açıldığında local storage'da isLoggedIn değerini true olarak ayarlayın.
+  //   localStorage.setItem('isLoggedIn', 'true');
+  //   setIsLoggedIn(true);
+  // };
+
+  // // Oturum kapatma işlemi
+  // const handleLogout = () => {
+  //   // Oturum kapatıldığında local storage'da isLoggedIn değerini false olarak ayarlayın.
+  //   localStorage.setItem('isLoggedIn', 'false');
+  //   setIsLoggedIn(false);
+  // };
+
+
   // const like=useSelector((state)=> state.addToCard);
   const like=useSelector((state)=> state.like.length);
   const basket = useSelector((state)=> state.basket.length)
@@ -56,6 +82,17 @@ const Header = () => {
             <button  to="/login" onClick={logOut}>
            Logout
          </button>
+            {/* {isLoggedIn ? (
+        <div>
+          <p>Kullanıcı oturum açtı.</p>
+          <button onClick={handleLogout}>Çıkış Yap</button>
+        </div>
+      ) : (
+        <div>
+          <p>Kullanıcı oturum kapalı.</p>
+          <button onClick={handleLogin}>Oturum Aç</button>
+        </div>
+      )} */}
           </div>
       </div>
      </div>

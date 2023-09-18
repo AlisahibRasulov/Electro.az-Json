@@ -3,56 +3,134 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    .signup-cart{
-        position: relative;
+    .signup-content{
         display: flex;
+        justify-content: center;
         align-items: center;
-        justify-content: center; 
-        flex-direction: column;
-        border: 1px solid #aaa;
-        border-radius: 5px;
-        box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2);
-        /* min-width: 44px; */
-        width: 350px;
-        height: 330px;
-        padding: 10px;
-        background-color: #fff;
-        .password-content{
-            position: relative;
-           .signup-password{
-          
-           }
-           .password-btn{
-            position: absolute;
-            top: 17px;
-            right: 7px;
-            border: none;
-            cursor: pointer;
-           }
-        }
-        .signup-username,.signup-email,.signup-password{
-        padding: 10px 10px;
-        width: 320px;
-        height: 50px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        border: 1px solid #aaa;
-        // padding: ;
-        &:focus{
-            outline: none;
-            border-color: #D10024;
-        }
-    }
-    .signup-btn{
-        width: 100%;
-        background-color: #D10024;
-    }
+        // border: 1px solid #aaa;
+        // box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2);
+        // flex-wrap: wrap;
+        
+        .signup-img{
+            width: 500px;
+            height: 500px;
+            // padding: 10px;
+            // border: 1px solid #aaa;
+            background-color: #FFC0C0;
+            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2);
 
-    .loginPageBtn{
-        position: absolute;
-        bottom: 4px;
-        border: none;
-        cursor: pointer;
+            img{
+                width: 100%;
+            }
+        }
+        .signup-cart{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            flex-direction: column;
+            // border: 1px solid #aaa;
+            // border-radius: 5px;
+            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2);
+            /* min-width: 44px; */
+            // width: 350px;
+            // height: 350px;
+            width: 500px;
+            height: 500px;
+            // padding: 10px;
+            background-color: #fff;
+            // margin: 0 auto;
+            .signup-cart_header{
+                position: absolute;
+                top: 20px;
+                font-size: 30px;
+                font-weight: bold;
+                color: #D10024;
+                margin: 0 auto;
+            }
+            .signup-cart_content{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .signup-cart_top{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    .password-content{
+                        position: relative;
+                        .password-btn{
+                        position: absolute;
+                        top: 22px;
+                        right: 7px;
+                        border: none;
+                        padding: 10px;
+                        cursor: pointer;
+                        background-color: inherit;
+                        // padding: 2px 10px;
+                    }
+                    }
+                    .signup-username,.signup-email,.signup-password{
+                    padding: 10px 10px;
+                    width: 350px;
+                    height: 70px;
+                    margin-bottom: 20px;
+                    border-radius: 5px;
+                    border: 1px solid #aaa;
+                    font-size: 15px;
+                    &:focus{
+                        outline: none;
+                        border-color: #D10024;
+                        
+                    }
+                }
+                }
+                .signup-cart_bottom{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    gap: 170px;
+                    // justify-content: space-between;
+                    .signup-btn{
+                        // width: 100%;
+                        background-color: #D10024;
+                    }
+                
+                    .loginPageBtn{
+                        border: none;
+                        cursor: pointer;
+                        background-color: inherit;
+                        font-size: 14px;
+                    }
+                }
+            }
+           
+          
+        
+       
+        }
     }
+    
+}
+
+@media (max-width: 992px) {
+    .signup-img{
+     display: none;
+    
+    }
+}
+@media (max-width: 768px) {
+    .signup-img{
+     display: none;
+    
+    }
+}
+@media (max-width: 576px) {
+    .signup-img{
+     display: none;
+    
     }
 }

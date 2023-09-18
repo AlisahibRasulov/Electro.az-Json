@@ -1,5 +1,6 @@
 // import React from 'react'
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import Button from '../../components/library/Button';
 import { CardBasketIcon,CartCheckout,CardLikeIcon,CardLikeFullIcon} from '../../svg';
 import { useDispatch,useSelector } from 'react-redux';
@@ -10,6 +11,7 @@ import { addToLike,removeLike } from '../../redux/slices/addToLikeSlice';
 // import { NavLink } from 'react-router-dom';
 // import { increment } from '../../redux/slices/CounterSlice';
 const Cards = ({data}) => {
+  const navigate = useNavigate();
     const [buttonText, setButtonText] = useState('Səbətə at');
     const [buttonColor, setButtonColor] = useState('#D10024'); // Buton rengi
     const [buttonTextColor, setButtonTextColor] = useState('white');
@@ -75,7 +77,7 @@ const Cards = ({data}) => {
     <button className='like-btn' onClick={()=>handleLikeClick(data.id)}>
       {isProductLiked ? <CardLikeFullIcon /> : <CardLikeIcon />}
       </button>
-    <img  src={previewImage} alt="" />
+    <img  src={previewImage} alt="" onClick={()=>navigate(`/product-detail/${data.id}`)}/>
     <div className='card-title'>{title}</div>
    {data.discounts[0]?.currentPrice ? (
                   <>

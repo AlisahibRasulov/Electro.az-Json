@@ -513,9 +513,9 @@ export const HeaderBasketIcon = (props) => (
   export const Eye = (props) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={18}
-      height={18}
-      fill="currentColor"
+      width={20}
+      height={20}
+      fill="#D10024"
       className="bi bi-eye-fill"
       {...props}
     >
@@ -527,9 +527,9 @@ export const HeaderBasketIcon = (props) => (
   export const EyeSlash = (props) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={18}
-      height={18}
-      fill="currentColor"
+      width={20}
+      height={20}
+      fill="#D10024"
       className="bi bi-eye-slash-fill"
       {...props}
     >
