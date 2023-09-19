@@ -11,6 +11,7 @@
 
   //   ? my proyekt
 @import "./components/card.scss";
+@import "./components/detail-card.scss";
 @import "./components/footer.scss";
 @import "./components/navbar.scss";
 @import "./components/header.scss";
@@ -30,3 +31,7 @@
 
 // ? products pages
 @import "./pages/products/products.scss";
+
+
+@import "react-alice-carousel/lib/scss/alice-carousel.scss"; 
+@import "react-alice-carousel/lib/alice-carousel.css"; 

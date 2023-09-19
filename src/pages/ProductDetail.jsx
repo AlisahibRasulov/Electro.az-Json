@@ -42,6 +42,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import DetailCard from '../components/DetailCard';
 
+
 const ProductDetail = () => {
   const [cardDetails, setCardDetails] = useState([]);
   const { id } = useParams();
