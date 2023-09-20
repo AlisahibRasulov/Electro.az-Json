@@ -1,6 +1,11 @@
-import React, { useState,useEffect } from 'react';
+// import React, { useState,useEffect } from 'react';
+
+// import React, { Component,useState } from 'react';
+// import ReactDOM from 'react-dom';
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from 'react-responsive-carousel';
+
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import Button from '../components/library/Button';
 import { CardBasketIcon,CartCheckout,CardLikeIcon,CardLikeFullIcon} from '../svg';
@@ -8,28 +13,30 @@ import { useDispatch,useSelector } from 'react-redux';
 import { addToBasket } from '../redux/slices/addToBasketSlice';
 import { addToLike,removeLike } from '../redux/slices/addToLikeSlice';
 
-// import PropTypes from 'prop-types'
-import { Swiper, SwiperSlide } from 'swiper/react'
-// import { Navigation, Thumbs } from 'swiper'
-import { Navigation, Thumbs } from 'swiper/modules';
+
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/free-mode';
+// import 'swiper/css/navigation';
+// import 'swiper/css/thumbs';
+
+
+// import required modules
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
 
 const DetailCard = ({data}) => {
-  const navigate = useNavigate();
+  
 
-  const [activeThumb, setActiveThumb] = useState()
-  const [cardSlider, setCardSlider] = useState([]);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+//   const navigate = useNavigate();
+
   const { id } = useParams();
 
-  useEffect(() => {
-    axios(`http://34.125.216.115:9095/api/product/${id}`)
-      .then((res) => {
-        console.log(res.data);
-        setCardSlider([res.data]); // Wrap the response data in an array
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [id]);
 
 
     const [buttonText, setButtonText] = useState('Səbətə at');
@@ -44,23 +51,11 @@ const DetailCard = ({data}) => {
 
 
     const handleLikeClick = (productId) => {
-     
-      // if (liked) {
-      //   // Ürünü beğenmişse ve düğmeye tıklarsa, beğenmeyi kaldırın
-      //   dispatch(removeLike(productId));
-      //   // dispatch(removeCard());
-      //   setLiked(false);
-      // } else {
-      //   // Ürünü beğenmemişse ve düğmeye tıklarsa, beğenme eylemini gerçekleştirin
-      //   dispatch(addToLike(data));
-      //   // dispatch(addToCard());
-      //   setLiked(true);
-      // }
+  
       if (isProductLiked) {
         dispatch(removeLike(productId));
       } else {
         dispatch(addToLike(data));
-        // localStorage.setItem(`like_product_${data.id}`, JSON.stringify(data));
       }
     };
     
@@ -73,7 +68,7 @@ const DetailCard = ({data}) => {
         setButtonColor('#eee')
         setButtonTextColor('#666')
         setIconBasket(<CartCheckout className="card-btn_icon" />); 
-        navigate("/product-detail/:id");
+        // navigate("/product-detail/:id");
         // localStorage.setItem(`basket_product_${data.id}`, JSON.stringify(data));
         setTimeout(() => {
         setButtonText('Səbətə at'); // Belirli bir süre sonra metni geri değiştir
@@ -86,109 +81,85 @@ const DetailCard = ({data}) => {
 
     
 
-    const { discounts,images, title, price } = data;
+    const { discounts,images, title, price,} = data;
   return (
     <div className='detail-card'>
       <div className="container">
       <div className="detail-card_content">
         <div className="card-image">
+          <div className="card-image_carousel">
+          <Swiper
+        style={{
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff',
+        }}
+        spaceBetween={10}
+        navigation={true}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper2"
+      >
+        <SwiperSlide key={id}>
+        <img   src={images[0]?.imagePath} alt="" />
+        </SwiperSlide>
+        <SwiperSlide key={id}>
+        <img   src={images[1]?.imagePath} alt="" />
+        </SwiperSlide>
+        <SwiperSlide key={id}>
+        <img  src={images[2]?.imagePath} alt="" />
+        </SwiperSlide>
+      </Swiper>
+          </div>
+          <div className="card-image_slider">
+            
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper"
+      >
+        <SwiperSlide >
+        <img  src={images[0]?.imagePath} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <img  src={images[1]?.imagePath} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <img  src={images[2]?.imagePath} alt="" />
+        </SwiperSlide>
+      </Swiper>
+          </div>
+       
         {/* <img  src={images[0]?.imagePath} alt="" />
         <img  src={images[1]?.imagePath} alt="" />
         <img  src={images[2]?.imagePath} alt="" /> */}
+         {/* <Carousel>
+                <div>
+                  <img  src={images[0]?.imagePath} alt="" />
+                    <p className="legend">Legend 1</p>
+                </div>
+                <div>
+                 <img  src={images[1]?.imagePath} alt="" />
+                    <p className="legend">Legend 2</p>
+                </div>
+                <div>
+                  <img  src={images[2]?.imagePath} alt="" />
+                    <p className="legend">Legend 3</p>
+                </div>
+            </Carousel> */}
 
-<Swiper
-            loop={true}
-            spaceBetween={10}
-            navigation={true}
-            modules={[Navigation, Thumbs]}
-            grabCursor={true}
-            thumbs={{ swiper: activeThumb }}
-            className='product-images-slider'
-        >
-            
-                    <SwiperSlide>
-                    <img  src={images[0]?.imagePath} alt="" />
-                    </SwiperSlide>
-             
-        </Swiper>
-        <Swiper
-            onSwiper={setActiveThumb}
-            loop={true}
-            spaceBetween={10}
-            slidesPerView={4}
-            modules={[Navigation, Thumbs]}
-            pagination={{
-              clickable: true,
-            }}
-            className='product-images-slider-thumbs'
-        >
-            {/* {
-                cardSlider.map((item,index) => (
-                    <SwiperSlide key={index} data={item}>
-                        <div className="product-images-slider-thumbs-wrapper">
-                        <img  index={0}  src={item.images[0]?.imagePath} alt="" />
-                        <img  index={1} src={item.images[1]?.imagePath} alt="" />
-                        <img  index={2} src={item.images[2]?.imagePath} alt="" />
-                        </div>
-                    </SwiperSlide>
-                ))
-            } */}
-             
-                    <SwiperSlide>
-                        <div className="product-images-slider-thumbs-wrapper">
-                            {/* <img src={item} alt="product images" /> */}
-                            <img  key={id}  src={images[0]?.imagePath} alt="product images" />
-                            {/* <img  index={1}  src={images[1]?.imagePath} alt="product images" />
-                            <img  index={2}  src={images[2]?.imagePath} alt="product images" /> */}
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="product-images-slider-thumbs-wrapper">
-                            {/* <img src={item} alt="product images" /> */}
-                            <img key={id}  src={images[1]?.imagePath} alt="product images" />
-                            {/* <img  index={1}  src={images[1]?.imagePath} alt="product images" />
-                            <img  index={2}  src={images[2]?.imagePath} alt="product images" /> */}
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="product-images-slider-thumbs-wrapper">
-                            {/* <img src={item} alt="product images" /> */}
-                            <img  key={id}  src={images[2]?.imagePath} alt="product images" />
-                            {/* <img  index={1}  src={images[1]?.imagePath} alt="product images" />
-                            <img  index={2}  src={images[2]?.imagePath} alt="product images" /> */}
-                        </div>
-                    </SwiperSlide>
-              
-        </Swiper>
+
+
+
         </div>
         <div className="card-view"></div>
       </div>
       </div>
       
     
-    {/* <div className='card-discount-percentage'>
-        {data.discounts[0]?.discountPercentage ? (
-        <div className='discount-active'>-{data.discounts[0].discountPercentage}</div>
-) :     <div className='discount-hidden'></div>}
-    </div>
-    <button className='like-btn' onClick={()=>handleLikeClick(data.id)}>
-      {isProductLiked ? <CardLikeFullIcon /> : <CardLikeIcon />}
-      </button>
-    <img  src={data.images[0]?.imagePath} alt="" />
-    <div className='card-title'>{data.title}</div>
-   {data.discounts[0]?.currentPrice ? (
-                  <>
-                  <del>
-                    <div className='card-price'>{(data.price).toLocaleString('az-AZ')} ₼</div>
-                  </del>
-                  <div className='card-discount-price'>{(data.discounts[0].currentPrice).toLocaleString('az-AZ')} ₼</div>
-                  </>
-                ) : (
-                  <div className='card-price'>{(data.price).toLocaleString('az-AZ') } ₼</div>
-                )}
-    <div className="card-view">
-      <Button className='card-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='card-btn_text'>{buttonText}</div> </Button>
-    </div> */}
   </div>
   )
 }
