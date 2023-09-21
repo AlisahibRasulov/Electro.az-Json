@@ -84,8 +84,6 @@ const DetailCard = ({data}) => {
     const { discounts,images, title, price,} = data;
   return (
     <div className='detail-card'>
-      <div className="container">
-      <div className="detail-card_content">
         <div className="card-image">
           <div className="card-image_carousel">
           <Swiper
@@ -97,7 +95,7 @@ const DetailCard = ({data}) => {
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
+        className="image-carousel_content"
       >
         <SwiperSlide key={id}>
         <img   src={images[0]?.imagePath} alt="" />
@@ -119,15 +117,15 @@ const DetailCard = ({data}) => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
+        className="image-slider_content"
       >
-        <SwiperSlide >
+        <SwiperSlide className='image-slider_box' >
         <img  src={images[0]?.imagePath} alt="" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='image-slider_box'>
         <img  src={images[1]?.imagePath} alt="" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='image-slider_box'>
         <img  src={images[2]?.imagePath} alt="" />
         </SwiperSlide>
       </Swiper>
@@ -156,8 +154,7 @@ const DetailCard = ({data}) => {
 
         </div>
         <div className="card-view"></div>
-      </div>
-      </div>
+      
       
     
   </div>
