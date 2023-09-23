@@ -84,10 +84,11 @@ const DetailCard = ({data}) => {
     const { discounts,images, title, price,} = data;
   return (
     <div className='detail-card'>
+      <div className="container">
       <div className="detail-card_content">
         <div className='card-title'>{title}</div>
         <div className="card-image">
-          <div className="card-image_carousel">
+          {/* <div className="card-image_carousel"> */}
           <Swiper
         style={{
           '--swiper-navigation-color': '#fff',
@@ -109,8 +110,8 @@ const DetailCard = ({data}) => {
         <img  src={images[2]?.imagePath} alt="" />
         </SwiperSlide>
       </Swiper>
-          </div>
-          <div className="card-image_slider">
+          {/* </div> */}
+          {/* <div className="card-image_slider"> */}
             
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -131,7 +132,7 @@ const DetailCard = ({data}) => {
         <img  src={images[2]?.imagePath} alt="" />
         </SwiperSlide>
       </Swiper>
-          </div>
+          {/* </div> */}
        
         {/* <img  src={images[0]?.imagePath} alt="" />
         <img  src={images[1]?.imagePath} alt="" />
@@ -157,6 +158,8 @@ const DetailCard = ({data}) => {
         </div>
         <div className="card-view"></div>
       </div>
+      </div>
+      
       
       
     
