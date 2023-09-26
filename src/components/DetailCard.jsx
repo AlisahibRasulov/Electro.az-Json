@@ -243,9 +243,58 @@
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-
+import { useDispatch,useSelector } from 'react-redux';
+import { addToBasket } from '../redux/slices/addToBasketSlice';
+import { addToLike,removeLike } from '../redux/slices/addToLikeSlice';
+import { CardBasketIcon,CartCheckout,CardLikeIcon,CardLikeFullIcon } from '../svg';
+import Button from './library/Button';
 const DetailCard = ({ data }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+//   const { id } = useParams();
+
+
+
+    const [buttonText, setButtonText] = useState('Səbətə at');
+    const [buttonColor, setButtonColor] = useState('#D10024'); // Buton rengi
+    const [buttonTextColor, setButtonTextColor] = useState('white');
+    const [iconBasket, setIconBasket] = useState(<CardBasketIcon className="card-btn_icon"/>);
+    // const [liked, setLiked] = useState(false);
+    const dispatch=useDispatch();
+
+    const likedProducts = useSelector((state) => state.like)
+    const isProductLiked = likedProducts.some((product) => product.id === data.id);
+
+
+    const handleLikeClick = (productId) => {
+  
+      if (isProductLiked) {
+        dispatch(removeLike(productId));
+      } else {
+        dispatch(addToLike(data));
+      }
+    };
+    
+    const handleAddToBasket=()=>{
+      if (buttonText === 'Səbətə at'){
+        dispatch(addToBasket(data));
+        // dispatch(addToCard());
+        // const price = parseFloat(data.discounts[0]?.currentPrice || data.price);
+        setButtonText('Səbətdə'); // Metni değiştir
+        setButtonColor('#eee')
+        setButtonTextColor('#666')
+        setIconBasket(<CartCheckout className="card-btn_icon" />); 
+        // navigate("/product-detail/:id");
+        // localStorage.setItem(`basket_product_${data.id}`, JSON.stringify(data));
+        setTimeout(() => {
+        setButtonText('Səbətə at'); // Belirli bir süre sonra metni geri değiştir
+        setButtonColor('#D10024')
+        setButtonTextColor('white')
+        setIconBasket(<CardBasketIcon className="card-btn_icon" />); 
+      }, 1000)
+      }
+    }
+
 
   const { discounts, images, title, price } = data;
 
@@ -254,8 +303,11 @@ const DetailCard = ({ data }) => {
   return (
     <div className='detail-card'>
       <div className="detail-card_content">
+        <div className="detail-card_top">
         <div className='card-title'>{title}</div>
-        <div className="card-image">
+        </div>
+       <div className="detail-card_bottom">
+       <div className="card-image">
           <Swiper
             style={{
               '--swiper-navigation-color': '#fff',
@@ -296,8 +348,13 @@ const DetailCard = ({ data }) => {
           </Swiper>
         </div>
         <div className="card-view">
-
+        <button className='like-btn' onClick={()=>handleLikeClick(data.id)}>
+      {isProductLiked ? <CardLikeFullIcon /> : <CardLikeIcon />}
+      </button>
+      <Button className='card-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='card-btn_text'>{buttonText}</div> </Button>
         </div>
+       </div>
+       
       </div>
     </div>
   );
