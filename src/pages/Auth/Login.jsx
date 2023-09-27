@@ -19,9 +19,10 @@ const Login = () => {
       axios.post(`http://35.235.116.163:9095/login`, loginData).then((res)=>{
           console.log(res)
           if(res.data === true){
-            navigate("/");
             localStorage.setItem('isLoggedIn', 'true');
+            navigate("/");
             setLoginData(true);
+            window.location.reload();
             // setUser(true);
           }else{
             alert("email ve yaxud password sehvdir")

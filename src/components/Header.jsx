@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import { useNavigate } from "react-router-dom";
 // import Image from "../logo.svg";
 // import Logo from "../svg/play-button.svg"
@@ -15,6 +16,7 @@ import {SearchIcon,HeaderLikeHeartIcon,HeaderBasketIcon,PlayLogo} from "../svg"
 import { Outlet } from 'react-router-dom';
 
 import { Link } from "react-router-dom";
+import Login from '../pages/Auth/Login';
 // const logoutBtn = {
 //   marginLeft: "90%",
 //   position: "absolute",
@@ -24,12 +26,34 @@ import { Link } from "react-router-dom";
 // const isLoggedIn = true;
 
 const Header = () => {
+  const [refresh, setRefresh] = useState(true);
+  const [isLogin,setIsLoggedIn] = useState(true);
+  useEffect(() => {
+    console.log(localStorage.getItem('isLoggedIn'))
+    if( localStorage.getItem('isLoggedIn') === 'true'){
+      console.log("here is working")
+      setIsLoggedIn(true)
+    }else{
+      setIsLoggedIn(false)
+    }
+
+  }, [refresh]);
   const navigate = useNavigate();
-  // const loggedIn = localStorage.getItem('loggedIn') === 'true';
-  // const[logoutData, setLogoutData] = useState(false)
+
   const logOut = () => {
+    localStorage.setItem('isLoggedIn', 'false')
     navigate("/login");
-    // localStorage.setItem(('logoutData', 'false'))
+    window.location.reload();
+
+    // setLogoutData(false);
+    // setUser(false);
+    // sessionStorage.removeItem("token");
+  };
+
+
+  const logIn = () => {
+    navigate("/login");
+    window.location.reload();
     // setLogoutData(false);
     // setUser(false);
     // sessionStorage.removeItem("token");
@@ -79,9 +103,10 @@ const Header = () => {
            <HeaderBasketIcon className="basket_header-icon"/>
            <div className='basket_header-counter'>{basket}</div>
             </button>
-            <button  to="/login" onClick={logOut}>
-           Logout
-         </button>
+            {
+                isLogin ? (<button  to="/login" onClick={logOut}> Çıxış et </button>): (<button  to="/login" onClick={logIn}> Daxil ol </button>)
+
+            }
             {/* {isLoggedIn ? (
         <div>
           <p>Kullanıcı oturum açtı.</p>

@@ -258,7 +258,7 @@ const DetailCard = ({ data }) => {
     const [buttonText, setButtonText] = useState('Səbətə at');
     const [buttonColor, setButtonColor] = useState('#D10024'); // Buton rengi
     const [buttonTextColor, setButtonTextColor] = useState('white');
-    const [iconBasket, setIconBasket] = useState(<CardBasketIcon className="card-btn_icon"/>);
+    const [iconBasket, setIconBasket] = useState(<CardBasketIcon className="detail-btn_icon"/>);
     // const [liked, setLiked] = useState(false);
     const dispatch=useDispatch();
 
@@ -283,14 +283,14 @@ const DetailCard = ({ data }) => {
         setButtonText('Səbətdə'); // Metni değiştir
         setButtonColor('#eee')
         setButtonTextColor('#666')
-        setIconBasket(<CartCheckout className="card-btn_icon" />); 
+        setIconBasket(<CartCheckout className="detail-btn_icon" />); 
         // navigate("/product-detail/:id");
         // localStorage.setItem(`basket_product_${data.id}`, JSON.stringify(data));
         setTimeout(() => {
         setButtonText('Səbətə at'); // Belirli bir süre sonra metni geri değiştir
         setButtonColor('#D10024')
         setButtonTextColor('white')
-        setIconBasket(<CardBasketIcon className="card-btn_icon" />); 
+        setIconBasket(<CardBasketIcon className="detail-btn_icon" />); 
       }, 1000)
       }
     }
@@ -304,7 +304,12 @@ const DetailCard = ({ data }) => {
     <div className='detail-card'>
       <div className="detail-card_content">
         <div className="detail-card_top">
-        <div className='card-title'>{title}</div>
+        <div className='card-title'>
+          {title}
+          </div>
+          <button className='like-btn' onClick={()=>handleLikeClick(data.id)}>
+          {isProductLiked ? <CardLikeFullIcon /> : <CardLikeIcon />}
+          </button>
         </div>
        <div className="detail-card_bottom">
        <div className="card-image">
@@ -321,7 +326,7 @@ const DetailCard = ({ data }) => {
           >
             {images.map((image, index) => (
               <SwiperSlide key={index}>
-                <img src={image.imagePath} alt=""  />
+                <img id='top-image' src={image.imagePath} alt=""  />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -339,6 +344,7 @@ const DetailCard = ({ data }) => {
               <SwiperSlide key={index}>
                 {/* <div className="image-box" > */}
                   <img
+                  id='bottom-image'
                     src={image.imagePath}
                     alt=""
                   />
@@ -346,12 +352,34 @@ const DetailCard = ({ data }) => {
               </SwiperSlide>
             ))}
           </Swiper>
+      </div>
+      <div className="card-view">
+        <div className="card-view_top"></div>
+        <div className="card-view_body">
+        <div className='detail-discount-percentage'>
+          {discounts[0]?.discountPercentage && (
+        <div className='detail-discount-active'>
+          -{discounts[0].discountPercentage}
+      </div>
+  )}
+</div>
+
+        {data.discounts[0]?.currentPrice ? (
+                  <>
+                  <del>
+                    <div className='detail-price'>{(price).toLocaleString('az-AZ')} ₼</div>
+                  </del>
+                  <div className='detail-discount-price'>{(discounts[0].currentPrice).toLocaleString('az-AZ')} ₼</div>
+                  </>
+                ) : (
+                  <div className='detail-price'>{(price).toLocaleString('az-AZ') } ₼</div>
+                )}
         </div>
-        <div className="card-view">
-        <button className='like-btn' onClick={()=>handleLikeClick(data.id)}>
-      {isProductLiked ? <CardLikeFullIcon /> : <CardLikeIcon />}
-      </button>
-      <Button className='card-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='card-btn_text'>{buttonText}</div> </Button>
+        <div className="card-view_bottom">
+        <Button className='detail-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='detail-btn_text'>{buttonText}</div> </Button>
+        </div>
+      
+    
         </div>
        </div>
        
