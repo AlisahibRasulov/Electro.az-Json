@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { useLocation } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 // import Image from "../logo.svg";
 // import Logo from "../svg/play-button.svg"
@@ -27,6 +27,7 @@ import Login from '../pages/Auth/Login';
 
 const Header = () => {
   const [refresh, setRefresh] = useState(true);
+  const [showBtn, setShowBtn] = useState(true);
   const [isLogin,setIsLoggedIn] = useState(true);
   useEffect(() => {
     console.log(localStorage.getItem('isLoggedIn'))
@@ -37,26 +38,22 @@ const Header = () => {
       setIsLoggedIn(false)
     }
 
+
   }, [refresh]);
+
+  const location = useLocation();
   const navigate = useNavigate();
 
   const logOut = () => {
     localStorage.setItem('isLoggedIn', 'false')
     navigate("/login");
     window.location.reload();
-
-    // setLogoutData(false);
-    // setUser(false);
-    // sessionStorage.removeItem("token");
   };
 
 
   const logIn = () => {
     navigate("/login");
     window.location.reload();
-    // setLogoutData(false);
-    // setUser(false);
-    // sessionStorage.removeItem("token");
   };
 
   
@@ -103,26 +100,23 @@ const Header = () => {
            <HeaderBasketIcon className="basket_header-icon"/>
            <div className='basket_header-counter'>{basket}</div>
             </button>
-            {
+            {/* {
                 isLogin ? (<button  to="/login" onClick={logOut}> Çıxış et </button>): (<button  to="/login" onClick={logIn}> Daxil ol </button>)
 
-            }
-            {/* {isLoggedIn ? (
-        <div>
-          <p>Kullanıcı oturum açtı.</p>
-          <button onClick={handleLogout}>Çıkış Yap</button>
-        </div>
-      ) : (
-        <div>
-          <p>Kullanıcı oturum kapalı.</p>
-          <button onClick={handleLogin}>Oturum Aç</button>
-        </div>
-      )} */}
+            } */}
+                {isLogin && location.pathname !== '/login' && location.pathname !== '/signup'? (
+          <button to="/login" onClick={logOut}>
+            Çıxış et
+          </button>
+        ) : !isLogin && location.pathname !== '/login' && location.pathname !== '/signup' ? (
+          <button to="/login" onClick={logIn}>
+            Daxil ol
+          </button>
+        ) : null}
           </div>
       </div>
      </div>
     </div>
-    {/* <Outlet/> */}
    </>
   );
 };

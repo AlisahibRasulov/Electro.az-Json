@@ -76,7 +76,11 @@ const Basket = ({data}) => {
               return(
               <tr key={data.id}>
                  <td><button className='delete-btn' onClick={()=>handleDeletedToBasket(data.id)}><DeletedIcon /></button></td>
-                <td><div className='product'><img className='data-img' src={data.previewImage} alt="" /><p className='data-title'>{data.title}</p></div> </td>
+                <td><div className='product'>
+                <img className='data-img' src={data.previewImage ? data.previewImage : (data.images && data.images[0] ? data.images[0].imagePath : '')} alt="" />
+                  <p className='data-title'>{data.title}</p>
+                  </div> 
+                  </td>
                 <td> 
                   <div className="counter-quantity">
                   <button className='counter-quantity_btn' onClick={()=>handleDecrement(data.id)}><DecrementMinusIcon/></button>

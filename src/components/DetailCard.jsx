@@ -246,7 +246,7 @@ import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { useDispatch,useSelector } from 'react-redux';
 import { addToBasket } from '../redux/slices/addToBasketSlice';
 import { addToLike,removeLike } from '../redux/slices/addToLikeSlice';
-import { CardBasketIcon,CartCheckout,CardLikeIcon,CardLikeFullIcon } from '../svg';
+import { CardBasketIcon,CartCheckout,CardLikeIcon,CardLikeFullIcon,StarFull,StarHalf,StarSolid } from '../svg';
 import Button from './library/Button';
 const DetailCard = ({ data }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -294,25 +294,40 @@ const DetailCard = ({ data }) => {
       }, 1000)
       }
     }
+    const detailPrice = {
+      fontSize: "15px",
+    }
+    
 
-
-  const { discounts, images, title, price } = data;
+  const { discounts, images, title, price, rating} = data;
 
   // ... Other code ...
 
   return (
-    <div className='detail-card'>
+    <div className='detail'>
       <div className="detail-card_content">
-        <div className="detail-card_top">
-        <div className='card-title'>
+        <div className="detail_top">
+        <div className='detail_title'>
           {title}
+          </div>
+          <div className="detail_rating">
+            <div className="rating-icon">
+              <StarFull/>
+              <StarFull/>
+              <StarFull/>
+              <StarFull/>
+              <StarSolid/>
+            </div>
+            <div className="rating-number">
+              {rating.rating}
+            </div>
           </div>
           <button className='like-btn' onClick={()=>handleLikeClick(data.id)}>
           {isProductLiked ? <CardLikeFullIcon /> : <CardLikeIcon />}
           </button>
         </div>
-       <div className="detail-card_bottom">
-       <div className="card-image">
+       <div className="detail_bottom">
+       <div className="detail_image">
           <Swiper
             style={{
               '--swiper-navigation-color': '#fff',
@@ -353,9 +368,17 @@ const DetailCard = ({ data }) => {
             ))}
           </Swiper>
       </div>
-      <div className="card-view">
-        <div className="card-view_top"></div>
-        <div className="card-view_body">
+      <div className="detail_view">
+        <div className="detail-view_top">
+          <div className="view-top_text-1">
+          Məhsul mövcuddur
+          </div>
+          <div className="view-top_text-2">
+          SKU: TM-DG-SBP-1105-SM-2167
+          </div>
+          
+        </div>
+        <div className="detail-view_body">
         <div className='detail-discount-percentage'>
           {discounts[0]?.discountPercentage && (
         <div className='detail-discount-active'>
@@ -367,7 +390,7 @@ const DetailCard = ({ data }) => {
         {data.discounts[0]?.currentPrice ? (
                   <>
                   <del>
-                    <div className='detail-price'>{(price).toLocaleString('az-AZ')} ₼</div>
+                    <div className='detail-price' style={detailPrice}>{(price).toLocaleString('az-AZ')} ₼</div>
                   </del>
                   <div className='detail-discount-price'>{(discounts[0].currentPrice).toLocaleString('az-AZ')} ₼</div>
                   </>
@@ -375,7 +398,7 @@ const DetailCard = ({ data }) => {
                   <div className='detail-price'>{(price).toLocaleString('az-AZ') } ₼</div>
                 )}
         </div>
-        <div className="card-view_bottom">
+        <div className="detail-view_bottom">
         <Button className='detail-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='detail-btn_text'>{buttonText}</div> </Button>
         </div>
       
