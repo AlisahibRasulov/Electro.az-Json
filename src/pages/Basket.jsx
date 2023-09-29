@@ -17,7 +17,7 @@ const Basket = ({data}) => {
     const counter=useSelector((state)=> state.counter);
     const basketItems=useSelector((state)=>state.basket);
     const totalPrice=useSelector((state)=>state.basket.quantity * state.basket.price);
-    const  [totalPrices,  setTotalPrices] = useState(0);
+    const  [ totalPrices,  setTotalPrices ] = useState(0);
     const basketCount = useSelector((state)=>state.basket.length);
     // const totalPrice = useSelector(state => state.basket.totalPrice);
     const dispatch=useDispatch();
@@ -29,23 +29,13 @@ const Basket = ({data}) => {
       // dispatch(addToBasket(basketData));
       let sumOfPrice = 0;
       basketItems.map((data)=>{
-        if (data.discounts && data.discounts.length > 0) {
-          // Eğer indirim varsa, indirimli fiyatı toplam fiyata ekleyin
-          sumOfPrice += data.discounts[0]?.currentPrice ? data.discounts[0].currentPrice * data.quantity : 0;
-      } else {
-          // Eğer indirim yoksa, normal fiyatı toplam fiyata ekleyin
-          sumOfPrice += data.price * data.quantity;
-      }
-      
-      //  sumOfPrice = data.discounts[0]?.currentPrice ?  sumOfPrice +  data.discounts[0].currentPrice * data.quantity:  sumOfPrice +  data.price * data.quantity  
-    //   if(data.discounts[0]?.currentPrice) {
-    //     sumOfPrice +  data.discounts[0].currentPrice * data.quantity
-    //   } else{
-    //     sumOfPrice +  data.price * data.quantity
-    //   }
+
+      //  sumOfPrice = sumOfPrice + data.price * data.quantity
+      sumOfPrice = sumOfPrice + data.price * data.quantity
+       
     })
     setTotalPrices(sumOfPrice)
-    }, []);
+    },);
 
     const handleAllDeletedToBasket=()=>{
       dispatch(removeBasketAll());
