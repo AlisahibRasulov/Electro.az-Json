@@ -254,7 +254,7 @@ const DetailCard = ({ data }) => {
 //   const { id } = useParams();
 
 
-
+    
     const [buttonText, setButtonText] = useState('Səbətə at');
     const [buttonColor, setButtonColor] = useState('#D10024'); // Buton rengi
     const [buttonTextColor, setButtonTextColor] = useState('white');
@@ -295,7 +295,7 @@ const DetailCard = ({ data }) => {
       }
     }
     const detailPrice = {
-      fontSize: "15px",
+      fontSize: "19px",
     }
     
 
@@ -399,7 +399,7 @@ const DetailCard = ({ data }) => {
                 )}
         </div>
         <div className="detail-view_bottom">
-        <Button className='detail-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='detail-btn_text'>{buttonText}</div> </Button>
+        <button className='detail-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='detail-btn_text'>{buttonText}</div> </button>
         </div>
       
     

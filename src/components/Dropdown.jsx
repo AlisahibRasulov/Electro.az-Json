@@ -25,6 +25,7 @@ const Dropdown = () => {
           <Link className='li' to="/phones">Smartfonlar</Link>
           <Link className='li' to="/cameras">Fotoaparatlar</Link>
           <Link className='li' to="/accessories">Aksesuarlar</Link>
+          <Link className='li' to="/games">Video oyunlar</Link>
           {/* <Tabs /> */}
       </ul>
     

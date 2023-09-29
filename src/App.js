@@ -23,6 +23,8 @@ import Computers from "./pages/Products/Computers/Computers";
 import Phones from "./pages/Products/Phones/Phones";
 import Cameras from "./pages/Products/Cameras/Cameras";
 import Accessories from "./pages/Products/Accessories/Accessories";
+import Games from "./pages/Products/Games/Games"
+import DiscountPages from "./pages/Products/Discount/DiscountPages";
 import ProductDetail from "./pages/ProductDetail";
 
 //? TestUser
@@ -182,6 +184,8 @@ function App() {
       <Route path="/phones" element={<Phones />} />
       <Route path="/cameras" element={<Cameras />} />
       <Route path="/accessories" element={<Accessories />} />
+      <Route path="/games" element={<Games />} />
+      <Route path="/discount" element={<DiscountPages />} />
       <Route path="product-detail/:id" element={<ProductDetail />} />
     
     

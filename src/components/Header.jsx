@@ -88,8 +88,8 @@ const Header = () => {
             <h1 className='logo-name'><a href="/">Electro.<span>az</span> </a></h1>
           </div>
           <div className='search'>
-          <Input className="search-input" />
           <Button className='search-btn' btn-type='secondary' icon={<SearchIcon/>}></Button>
+          <Input className="search-input" />
           </div>
           <div className="header-icons">
             <button to="/like" className="like_header" onClick={()=>navigate(`/like`)}>

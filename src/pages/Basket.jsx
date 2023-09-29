@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import { useNavigate } from "react-router-dom";
 // import "../styles/pages/products/products.scss";
 import { useDispatch,  useSelector } from 'react-redux';  
@@ -16,18 +16,36 @@ const Basket = ({data}) => {
   const navigate = useNavigate();
     const counter=useSelector((state)=> state.counter);
     const basketItems=useSelector((state)=>state.basket);
-    // const totalPrice=useSelector((state)=>state.basket.quantity * state.basket.price);
-    // const { items, totalPrice } = useSelector((state) => state.basket);
+    const totalPrice=useSelector((state)=>state.basket.quantity * state.basket.price);
+    const  [totalPrices,  setTotalPrices] = useState(0);
     const basketCount = useSelector((state)=>state.basket.length);
-    const totalPrice = useSelector(state => state.basket.totalPrice);
+    // const totalPrice = useSelector(state => state.basket.totalPrice);
     const dispatch=useDispatch();
 
-    // useEffect(() => {
-    //   const basketData = JSON.parse(localStorage.getItem('basket')) || [];
-    //   // Dispatch an action to populate the Redux store with the basket data
-    //   // You may need to create such an action in your Redux slice
-    //   dispatch(addToBasket(basketData));
-    // }, []);
+    useEffect(() => {
+      // const basketData = JSON.parse(localStorage.getItem('basket')) || [];
+      // // Dispatch an action to populate the Redux store with the basket data
+      // // You may need to create such an action in your Redux slice
+      // dispatch(addToBasket(basketData));
+      let sumOfPrice = 0;
+      basketItems.map((data)=>{
+        if (data.discounts && data.discounts.length > 0) {
+          // Eğer indirim varsa, indirimli fiyatı toplam fiyata ekleyin
+          sumOfPrice += data.discounts[0]?.currentPrice ? data.discounts[0].currentPrice * data.quantity : 0;
+      } else {
+          // Eğer indirim yoksa, normal fiyatı toplam fiyata ekleyin
+          sumOfPrice += data.price * data.quantity;
+      }
+      
+      //  sumOfPrice = data.discounts[0]?.currentPrice ?  sumOfPrice +  data.discounts[0].currentPrice * data.quantity:  sumOfPrice +  data.price * data.quantity  
+    //   if(data.discounts[0]?.currentPrice) {
+    //     sumOfPrice +  data.discounts[0].currentPrice * data.quantity
+    //   } else{
+    //     sumOfPrice +  data.price * data.quantity
+    //   }
+    })
+    setTotalPrices(sumOfPrice)
+    }, []);
 
     const handleAllDeletedToBasket=()=>{
       dispatch(removeBasketAll());
@@ -108,7 +126,7 @@ const Basket = ({data}) => {
         </tbody> 
       </table>
       <Button className='clear-btn' onClick={handleAllDeletedToBasket}>Seçilənləri sil</Button>
-      <p>{totalPrice}</p>
+      <p>{totalPrices}</p>
 </div>
 ) : (
   <div className='clear-page'>

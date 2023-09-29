@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from "axios";
 import { useState,useEffect } from 'react';
+import { Link } from "react-router-dom";
 // import Button from "../../library/Button";
 
 // import {CardLikeHeartIcon} from "../../../svg"
@@ -17,7 +18,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 // import required modules
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import Cards from './Cards';
 
 
@@ -48,9 +49,6 @@ const Discount = () => {
         //   disableOnInteraction:false,
         // } }
         navigation
-        pagination={{
-          clickable: true,
-        }}
         breakpoints={{
           '@0.00': {
             slidesPerView: 1,
@@ -69,7 +67,7 @@ const Discount = () => {
             // spaceBetween: 50,
           },
         }}
-        modules={[Pagination,Navigation, Autoplay]}
+        modules={[Navigation, Autoplay]}
         className="swiper"
       >
       
@@ -79,6 +77,7 @@ const Discount = () => {
         </SwiperSlide>   
       ))}  
       </Swiper>
+      <Link className='all-card' to="/discount">daha çox bax</Link>
     </div>
   </div>
 </div>

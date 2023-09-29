@@ -60,7 +60,7 @@ const ProductDetail = () => {
 
   return (
     <div className="card-detail">
-      <div className="container-fluid">
+      <div className="container">
         <div className="card-content">
           {cardDetails.map((item) => (
             <DetailCard key={item.id} data={item} />
