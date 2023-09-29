@@ -17,25 +17,41 @@ const Basket = ({data}) => {
     const counter=useSelector((state)=> state.counter);
     const basketItems=useSelector((state)=>state.basket);
     const totalPrice=useSelector((state)=>state.basket.quantity * state.basket.price);
-    const  [ totalPrices,  setTotalPrices ] = useState(0);
     const basketCount = useSelector((state)=>state.basket.length);
     // const totalPrice = useSelector(state => state.basket.totalPrice);
+    const  [ totalPrices,  setTotalPrices ] = useState(0);
     const dispatch=useDispatch();
-
-    useEffect(() => {
-      // const basketData = JSON.parse(localStorage.getItem('basket')) || [];
-      // // Dispatch an action to populate the Redux store with the basket data
-      // // You may need to create such an action in your Redux slice
-      // dispatch(addToBasket(basketData));
+    
+    // useEffect(() => {
+    //   let sumOfPrice = 0;
+    
+    //   basketItems.forEach((data) => {
+    //     // Eğer indirimli fiyat varsa, indirimli fiyatı kullan; yoksa normal fiyatı kullan
+    //     const priceToUse = data.discounts && data.discounts.length > 0
+    //       ? data.discounts[0].currentPrice
+    //       : data.price;
+    
+    //     sumOfPrice += priceToUse * data.quantity;
+    //   });
+    
+    //   // setTotalPrices fonksiyonunu çağırarak toplam fiyatı güncelleyin
+    //   setTotalPrices(sumOfPrice.toLocaleString('az-AZ'));
+    // }, [basketItems]);  // useEffect'in dependency array'ine basketItems'i ekleyerek, bu değerin değiştiğinde useEffect'in çalışmasını sağlayın
+    
+    useEffect(()=>{
       let sumOfPrice = 0;
       basketItems.map((data)=>{
-
-      //  sumOfPrice = sumOfPrice + data.price * data.quantity
-      sumOfPrice = sumOfPrice + data.price * data.quantity
-       
+        if (data.discounts && data.discounts.length > 0) {
+          sumOfPrice = ( sumOfPrice + data.discounts[0]?.currentPrice ? data.discounts[0].currentPrice * data.quantity : 0);
+      } else {
+          sumOfPrice = (sumOfPrice + data.price * data.quantity);
+      }
+      }) 
+      let sumOfPrices = sumOfPrice.toLocaleString('az-AZ')
+      setTotalPrices(sumOfPrices)
     })
-    setTotalPrices(sumOfPrice)
-    },);
+
+
 
     const handleAllDeletedToBasket=()=>{
       dispatch(removeBasketAll());
