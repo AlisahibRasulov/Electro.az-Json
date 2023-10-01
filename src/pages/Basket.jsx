@@ -8,7 +8,7 @@ import { increment, decrement } from '../redux/slices/CounterSlice';
 import Button from '../components/library/Button';
 import { DecrementMinusIcon, DeletedIcon, IncrementPlusIcon } from '../svg';
 import { addToBasket } from '../redux/slices/addToBasketSlice';
-// import { useEffect } from "react";
+
 
 
 
@@ -20,6 +20,10 @@ const Basket = ({data}) => {
     const basketCount = useSelector((state)=>state.basket.length);
     // const totalPrice = useSelector(state => state.basket.totalPrice);
     const  [ totalPrices,  setTotalPrices ] = useState(0);
+    // const [selectedItems, setSelectedItems] = useState([]);
+    const [selectedItems, setSelectedItems] = useState(basketItems.map(data => data.id));
+
+    // const [isSelected, setIsSelected ] = useState(0);
     const dispatch=useDispatch();
     
     // useEffect(() => {
@@ -30,28 +34,43 @@ const Basket = ({data}) => {
     //     const priceToUse = data.discounts && data.discounts.length > 0
     //       ? data.discounts[0].currentPrice
     //       : data.price;
-    
+         
     //     sumOfPrice += priceToUse * data.quantity;
+
+        
     //   });
     
     //   // setTotalPrices fonksiyonunu çağırarak toplam fiyatı güncelleyin
     //   setTotalPrices(sumOfPrice.toLocaleString('az-AZ'));
     // }, [basketItems]);  // useEffect'in dependency array'ine basketItems'i ekleyerek, bu değerin değiştiğinde useEffect'in çalışmasını sağlayın
     
-    useEffect(()=>{
-      let sumOfPrice = 0;
-      basketItems.map((data)=>{
-        if (data.discounts && data.discounts.length > 0) {
-          sumOfPrice = ( sumOfPrice + data.discounts[0]?.currentPrice ? data.discounts[0].currentPrice * data.quantity : 0);
+
+
+    const handleCheckboxChange = (productId) => {
+      // Check if the item is already selected
+      const isSelected = selectedItems.includes(productId);
+    
+      if (isSelected) {
+        // If selected, remove it from the list
+        setSelectedItems(selectedItems.filter((id) => id !== productId));
       } else {
-          sumOfPrice = (sumOfPrice + data.price * data.quantity);
+        // If not selected, add it to the list
+        setSelectedItems([...selectedItems, productId]);
       }
-      }) 
-      let sumOfPrices = sumOfPrice.toLocaleString('az-AZ')
-      setTotalPrices(sumOfPrices)
-    })
-
-
+    };
+    
+    const handleSelectAll = () => {
+      // Tüm ürün kimliklerini içeren bir dizi
+      const allProductIds = basketItems.map(data => data.id);
+      
+      // Eğer tüm ürünler zaten seçiliyse, hepsini seçmek yerine hepsini kaldır
+      if (selectedItems.length === allProductIds.length) {
+        setSelectedItems([]);
+      } else {
+        // Değilse, tüm ürünleri seç
+        setSelectedItems(allProductIds);
+      }
+    };
 
     const handleAllDeletedToBasket=()=>{
       dispatch(removeBasketAll());
@@ -69,70 +88,98 @@ const Basket = ({data}) => {
     const handleDecrement=(productId) => {
       dispatch(decrementQuantity(productId));
     };
-    // const handleCounterIncrementToBasket=()=>{
-    //   // dispatch(increment());
-    //   dispatch(addToBasket(data));
-    //   // dispatch(removeCard());
-    // }
-    // const handleCounterDecrementToBasket=()=>{
-    //   dispatch(decrement());
-    //   // dispatch(removeCard());
-    // }
-  
+    useEffect(() => {
+      let sumOfPrice = 0;
+    
+      // Calculate the total price only for selected items
+      basketItems.map((data) => {
+        let checkBoxId = data.id;
+        if (selectedItems.includes(checkBoxId)) {
+          if (data.discounts && data.discounts.length > 0) {
+            sumOfPrice += data.discounts[0].currentPrice * data.quantity;
+          } else {
+            sumOfPrice += data.price * data.quantity;
+          }
+        }
+      });
+    
+      let sumOfPrices = sumOfPrice.toLocaleString('az-AZ');
+      setTotalPrices(sumOfPrices);
+    }, [basketItems, selectedItems]);
+    
     
   return (
     
     <div className='basket'>
-        <div className='basket-header'>Səbət({basketCount}məhsul)</div>
+        {/* <div className='basket-header'>Səbət({basketCount}məhsul)</div> */}
         {basketItems.length > 0 ? (
-<div className="products">
-<table id="customers">
+<div className="basket-content">
+<table  className='basket-top'>
         <thead>
           <tr>
             <th></th>
             <th>Məhsul</th>
             <th>Say</th>
             <th>Qiymət</th>
+            <th></th>
           </tr>
         </thead>
         <tbody> 
           {basketItems.map((data)=>{
               return(
               <tr key={data.id}>
-                 <td><button className='delete-btn' onClick={()=>handleDeletedToBasket(data.id)}><DeletedIcon /></button></td>
-                <td><div className='product'>
-                <img className='data-img' src={data.previewImage ? data.previewImage : (data.images && data.images[0] ? data.images[0].imagePath : '')} alt="" />
-                  <p className='data-title'>{data.title}</p>
+                {/* Update this part of your code */}
+                {/* <td><input type="checkbox" onChange={() => handleCheckboxChange(data.id)} /></td> */}
+                <td><input className='selected-checkbox' type="checkbox" checked={selectedItems.includes(data.id)} onChange={() => handleCheckboxChange(data.id)} /></td>
+
+                <td>
+                  <div className='product'>
+                    <img className='data-img' src={data.previewImage ? data.previewImage : (data.images && data.images[0] ? data.images[0].imagePath : '')} alt="" />
+                    <p className='data-title'>{data.title}</p>
                   </div> 
-                  </td>
+                </td>
                 <td> 
                   <div className="counter-quantity">
-                  <button className='counter-quantity_btn' onClick={()=>handleDecrement(data.id)}><DecrementMinusIcon/></button>
-                  <div className='data-quantity'>{data.quantity}</div>
-                  <button className='counter-quantity_btn' onClick={()=>handleIncrement(data.id)}> <IncrementPlusIcon/></button>
+                    <button className='counter-quantity_btn' onClick={()=>handleDecrement(data.id)}><DecrementMinusIcon/></button>
+                    <div className='data-quantity'>{data.quantity}</div>
+                    <button className='counter-quantity_btn' onClick={()=>handleIncrement(data.id)}> <IncrementPlusIcon/></button>
                   </div>
                 </td>
-  <td>
-  {data.discounts[0]?.currentPrice ? (
-    <>
-      <del>
-        <div className='card-price'>{(data.price * data.quantity).toLocaleString('az-AZ')} ₼</div>
-      </del>
-      <div className='card-discount-price'>{(data.discounts[0].currentPrice * data.quantity).toLocaleString('az-AZ')}₼</div>
-    </>
-  ) : (
-    <div className='card-price'>{(data.price * data.quantity).toLocaleString('az-AZ')} ₼</div>
-  )}
-</td>    
-
+                <td>
+                  {data.discounts[0]?.currentPrice ? (
+                  <>
+                    <del>
+                     <div className='data-price'>{(data.price * data.quantity).toLocaleString('az-AZ')} ₼</div>
+                    </del>
+                     <div className='data-discount-price'>{(data.discounts[0].currentPrice * data.quantity).toLocaleString('az-AZ')}₼</div>
+                  </>
+                  ) : (
+                   <div className='data-price'>{(data.price * data.quantity).toLocaleString('az-AZ')} ₼</div>
+                  )}
+                </td>    
+                <td>
+                  <button className='delete-btn' onClick={()=>handleDeletedToBasket(data.id)}><DeletedIcon /></button>
+                </td>
               </tr>
               )
           })}
-          
         </tbody> 
       </table>
-      <Button className='clear-btn' onClick={handleAllDeletedToBasket}>Seçilənləri sil</Button>
-      <p>{totalPrices}</p>
+      {/* <Button className='selectAll-btn' onClick={handleSelectAll}>Hepsini Seç</Button>
+      <Button className='clear-btn' onClick={handleAllDeletedToBasket}>Seçilənləri sil</Button> */}
+        <div className="basket-bottom">
+          <div className="basket-bottom_1">
+            <Button className='selectall-btn' onClick={handleSelectAll}>Hepsini Seç</Button>
+            <Button className='clear-btn' onClick={handleAllDeletedToBasket}>Seçilənləri sil</Button>
+          </div> 
+          <div className="basket-bottom_2">
+            <div className='total-quantity'>Səbət({basketCount}məhsul)</div>
+            <div className='total-price'>{totalPrices}</div>
+          </div>
+        
+        </div>
+       
+      
 </div>
 ) : (
   <div className='clear-page'>
