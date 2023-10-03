@@ -26,20 +26,21 @@ import Login from '../pages/Auth/Login';
 // const isLoggedIn = true;
 
 const Header = () => {
-  const [refresh, setRefresh] = useState(true);
-  const [showBtn, setShowBtn] = useState(true);
+  // const [refresh, setRefresh] = useState(true);
+  // const [showBtn, setShowBtn] = useState(true);
   const [isLogin,setIsLoggedIn] = useState(true);
+  // const [user, setUser] = useState(true);
   useEffect(() => {
     console.log(localStorage.getItem('isLoggedIn'))
     if( localStorage.getItem('isLoggedIn') === 'true'){
       console.log("here is working")
       setIsLoggedIn(true)
+      // setUser(false)
     }else{
-      setIsLoggedIn(false)
+      setIsLoggedIn(false) 
+      // setUser(true) 
     }
-
-
-  }, [refresh]);
+  }, []);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -105,7 +106,7 @@ const Header = () => {
 
             } */}
                 {isLogin && location.pathname !== '/login' && location.pathname !== '/signup'? (
-          <button to="/login" onClick={logOut}>
+          <button  onClick={logOut}>
             Çıxış et
           </button>
         ) : !isLogin && location.pathname !== '/login' && location.pathname !== '/signup' ? (

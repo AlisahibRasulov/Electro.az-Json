@@ -106,7 +106,38 @@ const Basket = ({data}) => {
       let sumOfPrices = sumOfPrice.toLocaleString('az-AZ');
       setTotalPrices(sumOfPrices);
     }, [basketItems, selectedItems]);
+
+
+    // const [order,setOrder] = useState(true);
+    // useEffect(() => {
+    //   console.log(localStorage.getItem('isLoggedIn'))
+    //   if( localStorage.getItem('isLoggedIn') === 'true'){
+    //     console.log("here is working")
+    //     // setOrder(true)
+    //     alert("Ugurlu emeliyyat")
+    //     // setUser(false)
+    //   }else{
+    //     // setOrder(false) 
+    //     navigate("/login")
+    //     // setUser(true) 
+    //   }
+    // }, []);
     
+    const orderBtn = () =>{
+      if( localStorage.getItem('isLoggedIn') === 'true'){
+        console.log("here is working")
+        // setOrder(true)
+        alert("Ugurlu emeliyyat")
+        // setUser(false)
+      }else{
+        // setOrder(false) 
+        navigate("/login")
+        // setUser(true) 
+      }
+    }
+    const dataPrice = {
+      fontSize: "14px",
+    }
     
   return (
     
@@ -149,7 +180,7 @@ const Basket = ({data}) => {
                   {data.discounts[0]?.currentPrice ? (
                   <>
                     <del>
-                     <div className='data-price'>{(data.price * data.quantity).toLocaleString('az-AZ')} ₼</div>
+                     <div className='data-price' style={dataPrice}>{(data.price * data.quantity).toLocaleString('az-AZ')} ₼₼</div>
                     </del>
                      <div className='data-discount-price'>{(data.discounts[0].currentPrice * data.quantity).toLocaleString('az-AZ')}₼</div>
                   </>
@@ -169,12 +200,17 @@ const Basket = ({data}) => {
       <Button className='clear-btn' onClick={handleAllDeletedToBasket}>Seçilənləri sil</Button> */}
         <div className="basket-bottom">
           <div className="basket-bottom_1">
-            <Button className='selectall-btn' onClick={handleSelectAll}>Hepsini Seç</Button>
-            <Button className='clear-btn' onClick={handleAllDeletedToBasket}>Seçilənləri sil</Button>
+            <button className='selectall-btn' onClick={handleSelectAll}>Hamısını Seç</button>
+            <button className='clear-btn' onClick={handleAllDeletedToBasket}>Seçilənləri sil</button>
           </div> 
           <div className="basket-bottom_2">
-            <div className='total-quantity'>Səbət({basketCount}məhsul)</div>
-            <div className='total-price'>{totalPrices}</div>
+            <div className='total-quantity'>Səbət <span>({basketCount} məhsul)</span></div>
+            <div className='total-price'>Yekun məbləğ: <span>{totalPrices} ₼</span></div>
+          </div>
+          <div className="basket-bottom_3">
+            <div className="complete-order">
+              <button onClick={orderBtn} className='complete-btn'>Sifarişi yekunlaşdır</button>
+            </div>
           </div>
         
         </div>
