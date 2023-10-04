@@ -14,11 +14,13 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide} from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import 'swiper/css/navigation';
+import 'swiper/css/scrollbar';
+import { Scrollbar } from 'swiper/modules';
+// import 'swiper/css/pagination';
+// import 'swiper/css/autoplay';
+// import 'swiper/css/navigation';
 // import required modules
-import { Navigation, Autoplay } from 'swiper/modules';
+// import { Navigation, Autoplay } from 'swiper/modules';
 import Cards from './Cards';
 
 
@@ -37,37 +39,41 @@ const Discount = () => {
   return (
 
 <div className="discount-card">
-  <div className="container">
+  <div className="container-fluid">
     <div className="discount-card_content">
       <h1>Endirimli Məhsullar</h1>
       <Swiper
-        slidesPerView={1}
-        loop = {true}
-        spaceBetween={10}
+        slidesPerView={5.9}
+        // loop = {true}
+        spaceBetween={13}
         // autoplay={{
         //   delay:1000,
         //   disableOnInteraction:false,
         // } }
-        navigation
-        breakpoints={{
-          '@0.00': {
-            slidesPerView: 1,
-            // spaceBetween: 10,
-          },
-          '@0.75': {
-            slidesPerView: 2,
-            // spaceBetween: 20,
-          },
-          '@1.00': {
-            slidesPerView: 3,
-            // spaceBetween: 40,
-          },
-          '@1.50': {
-            slidesPerView: 4,
-            // spaceBetween: 50,
-          },
+        // navigation
+        // breakpoints={{
+        //   '@0.00': {
+        //     slidesPerView: 1,
+        //     // spaceBetween: 10,
+        //   },
+        //   '@0.75': {
+        //     slidesPerView: 2,
+        //     // spaceBetween: 20,
+        //   },
+        //   '@1.00': {
+        //     slidesPerView: 3,
+        //     // spaceBetween: 40,
+        //   },
+        //   '@1.50': {
+        //     slidesPerView: 4,
+        //     // spaceBetween: 50,
+        //   },
+        // }}
+        // modules={[Navigation, Autoplay]}
+        scrollbar={{
+          hide: true,
         }}
-        modules={[Navigation, Autoplay]}
+        modules={[Scrollbar]}
         className="swiper"
       >
       

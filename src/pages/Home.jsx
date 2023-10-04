@@ -31,7 +31,7 @@ const Home = () => {
        <CarouselImg/>
       <Discount/>
       <New/>
-      <Brands/>
+      {/* <Brands/> */}
     </div>
      
   )

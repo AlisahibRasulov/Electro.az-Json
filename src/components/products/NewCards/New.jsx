@@ -9,13 +9,16 @@ import Cards from "./Cards";
 // ? Swipper slide cart
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import 'swiper/css/navigation';
+import 'swiper/css/scrollbar';
+import { Scrollbar } from 'swiper/modules';
+// import 'swiper/css/pagination';
+// import 'swiper/css/autoplay';
+// import 'swiper/css/navigation';
 // import required modules
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+// import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 const New = () => {
   const [productData, setProductData] = useState([]);
@@ -29,40 +32,44 @@ const New = () => {
   return (
     
     <div className='new-card'>
-         <div className="container">
+         <div className="container-fluid">
       <div className="new-card_content">
         <h1>Yeni Məhsullar</h1>
       <Swiper
-        slidesPerView={1}
-        loop = {true}
-        spaceBetween={10}
-        autoplay={{
-          delay:1000,
-          disableOnInteraction:false,
-        } }
-        navigation
-        pagination={{
-          clickable: true,
+        slidesPerView={5.9}
+        // loop = {true}
+        spaceBetween={13}
+        // // autoplay={{
+        // //   delay:1000,
+        // //   disableOnInteraction:false,
+        // // } }
+        // navigation
+        // pagination={{
+        //   clickable: true,
+        scrollbar={{
+          hide: true,
         }}
-        breakpoints={{
-          '@0.00': {
-            slidesPerView: 1,
-            // spaceBetween: 10,
-          },
-          '@0.75': {
-            slidesPerView: 2,
-            // spaceBetween: 20,
-          },
-          '@1.00': {
-            slidesPerView: 3,
-            // spaceBetween: 40,
-          },
-          '@1.50': {
-            slidesPerView: 4,
-            // spaceBetween: 50,
-          },
-        }}
-        modules={[Navigation, Autoplay]}
+        modules={[Scrollbar]}
+        // }}
+        // breakpoints={{
+        //   '@0.00': {
+        //     slidesPerView: 1,
+        //     // spaceBetween: 10,
+        //   },
+        //   '@0.75': {
+        //     slidesPerView: 2,
+        //     // spaceBetween: 20,
+        //   },
+        //   '@1.00': {
+        //     slidesPerView: 3,
+        //     // spaceBetween: 40,
+        //   },
+        //   '@1.50': {
+        //     slidesPerView: 4,
+        //     // spaceBetween: 50,
+        //   },
+        // }}
+        // modules={[Navigation, Autoplay]}
         className="swiper"
       >
       

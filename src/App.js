@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Route, Routes, Navigate, useLocation} from "react-router-dom"
+import ScrollToTop from "react-scroll-to-top";
 // ? COMPONENTS
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -199,6 +200,8 @@ function App() {
     {/* ? Test Dropdown peoducts */}
     {/* <ProductList/> */}
     {/* <ProductList selectedCategory={selectedCategory} /> */}
+     <ScrollToTop smooth color="#D10024" />
+      <p style={{ marginTop: "50vh" }}>bottom</p>
     <Footer/>
     </div>
   );

@@ -6,7 +6,7 @@
     .product-card {
       position: relative;
       overflow: hidden;
-      width: 250px;
+      width: 300px;
       height: 420px;
       border: 1px solid #aaa;
       display: flex;
@@ -55,7 +55,8 @@
 
    img {
       width: 160px;
-      height: 160px;
+      height: auto;
+      // height: 160px;
       border-radius: 10px;
       // object-fit: cover;
     }
@@ -134,7 +135,7 @@
     font-weight: bold;
     display: flex;
     justify-self: start;
-    font-size: 15px;
+    font-size: 17px;
 
   }
   .card-discount-price{
