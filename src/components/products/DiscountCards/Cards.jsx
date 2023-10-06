@@ -6,12 +6,18 @@ import { CardBasketIcon } from '../../../svg';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../../../redux/slices/addToBasketSlice';
 import { addToCard } from '../../../redux/slices/addToCardSlice';
+
+
 const Cards = ({data}) => {
     const dispatch=useDispatch();
 
     const handleAddToBasket=()=>{
       dispatch(addToBasket(data));
       dispatch(addToCard());
+    }
+
+    const cardPrice = {
+      fontSize: "15px",
     }
 
     const { discounts,previewImage, title, price } = data;
@@ -27,7 +33,7 @@ const Cards = ({data}) => {
 {data.discounts[0]?.currentPrice ? (
                   <>
                   <del>
-                    <div className='card-price'>{(price).toLocaleString('az-AZ')} ₼</div>
+                    <div className='card-price' style={cardPrice}>{(price).toLocaleString('az-AZ')} ₼</div>
                   </del>
                   <div className='card-discount-price'>{(discounts[0].currentPrice).toLocaleString('az-AZ')} ₼</div>
                   </>

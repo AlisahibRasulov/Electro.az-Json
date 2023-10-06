@@ -74,8 +74,8 @@ const New = () => {
       >
       
         {productData.map((item)=>(
-        <SwiperSlide>
-           <Cards key={item.id} data={item}/>
+        <SwiperSlide key={item.id}>
+           <Cards data={item}/>
           {/* <div className='small-box'>New</div>
           <div className='like_icon-box'>
             <CardLikeHeartIcon className="like_icon"/>

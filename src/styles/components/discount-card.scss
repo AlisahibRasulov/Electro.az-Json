@@ -246,7 +246,23 @@
             font-weight: bold;
             display: flex;
             justify-self: start;
-        
+          }
+          .card-discount-price{
+            color: #D10024;
+            font-weight: bold;
+          }
+          
+          .card-discount-percentage{
+            color: #666;
+            font-weight: bold;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            // border: 1px solid #D10024;
+            .discount-active{
+              border: 2px solid #D10024;
+               padding: 0 10px;
+            }
           }
         }
       }

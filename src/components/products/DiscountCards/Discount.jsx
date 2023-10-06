@@ -23,7 +23,12 @@ import { Scrollbar } from 'swiper/modules';
 // import { Navigation, Autoplay } from 'swiper/modules';
 import Cards from './Cards';
 
-
+// const swiper = new Swiper('.swiper', {
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//     draggable: true,
+//   },
+// });
 
 
 const Discount = () => {
@@ -36,6 +41,9 @@ const Discount = () => {
       setProductData(res.data)
     })
   },[])
+
+
+  
   return (
 
 <div className="discount-card">
@@ -44,7 +52,7 @@ const Discount = () => {
       <h1>Endirimli Məhsullar</h1>
       <Swiper
         slidesPerView={5.9}
-        // loop = {true}
+       // loop = {true} 
         spaceBetween={13}
         // autoplay={{
         //   delay:1000,
@@ -71,15 +79,16 @@ const Discount = () => {
         // }}
         // modules={[Navigation, Autoplay]}
         scrollbar={{
-          hide: true,
+          // hide: true,
+          draggable: true,
         }}
         modules={[Scrollbar]}
         className="swiper"
       >
       
         {productData.map((item)=>(
-        <SwiperSlide>
-          <Cards key={item.id} data={item}/>
+        <SwiperSlide key={item.id}>
+          <Cards data={item}/>
         </SwiperSlide>   
       ))}  
       </Swiper>
