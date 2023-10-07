@@ -102,25 +102,48 @@
 // export default Contact;
 
 
-import React from "react";
-import ImageCarousel from "./Test";
-// import "./App.css";
+// import React from "react";
+// import ImageCarousel from "./Test";
+// // import "./App.css";
 
-const Contact = () => {
-  // Resimleri burada tanımlayın veya bir API'den alın
-  const images = [
-    "/images/image1.jpg",
-    "/images/image2.jpg",
-    "/images/image3.jpg",
-    // Diğer resimler
-  ];
+// const Contact = () => {
+//   // Resimleri burada tanımlayın veya bir API'den alın
+//   const images = [
+//     "/images/image1.jpg",
+//     "/images/image2.jpg",
+//     "/images/image3.jpg",
+//     // Diğer resimler
+//   ];
 
+//   return (
+//     <div className="app">
+//       <h1>Image Carousel</h1>
+//       <ImageCarousel images={images} />
+//     </div>
+//   );
+// };
+
+// export default Contact;
+
+
+import React from 'react';
+import ContactForm from './ContactForm';
+// import './styles.css'; // Import the CSS file
+
+const ContactPage = () => {
   return (
-    <div className="app">
-      <h1>Image Carousel</h1>
-      <ImageCarousel images={images} />
+    <div className="container">
+      <h1>Contact Us</h1>
+      <ContactForm />
+
+      {/* Other contact information */}
+      <div>
+        <p>Email: example@example.com</p>
+        <p>Phone: +1 123-456-7890</p>
+        <p>Address: 123 Main Street, Cityville</p>
+      </div>
     </div>
   );
 };
 
-export default Contact;
+export default ContactPage;

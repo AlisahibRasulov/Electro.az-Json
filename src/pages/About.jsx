@@ -84,7 +84,7 @@ const About = () => {
             </div>
             <div className="row">
                 <div class="col-lg-6" style={{padding: "0"}}>
-                    <div className="card-self">
+                    <div className="card-self reverse">
                         <div className="image">
                             <img src={productImage1} alt=""/>
                         </div>
@@ -95,7 +95,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="col-lg-6" style={{padding: "0"}}>
-                    <div className="card-self">
+                    <div className="card-self ">
                         <div className="image">
                             <img src={productImage1} alt=""/>
                         </div>
@@ -106,7 +106,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="col-lg-6" style={{padding: "0"}}>
-                    <div className="card-self">
+                    <div className="card-self reverse">
                         <div className="image">
                             <img src={productImage1} alt=""/>
                         </div>

@@ -1,37 +1,69 @@
-/* src/App.css */
-.carousel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+// /* src/App.css */
+// .carousel-container {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
   
-  .carousel {
-    width: 300px; /* Görüntü karuseli genişliği */
-    overflow: hidden;
-    position: relative;
-  }
+//   .carousel {
+//     width: 300px; /* Görüntü karuseli genişliği */
+//     overflow: hidden;
+//     position: relative;
+//   }
   
-  .carousel img {
-    width: 100%;
-    height: auto;
-    display: none;
-  }
+//   .carousel img {
+//     width: 100%;
+//     height: auto;
+//     display: none;
+//   }
   
-  .thumbnail-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-  }
+//   .thumbnail-container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 10px;
+//   }
   
-  .thumbnail {
-    width: 50px; /* Küçük resim genişliği */
-    height: auto;
-    margin: 0 5px;
-    cursor: pointer;
-  }
+//   .thumbnail {
+//     width: 50px; /* Küçük resim genişliği */
+//     height: auto;
+//     margin: 0 5px;
+//     cursor: pointer;
+//   }
   
-  .thumbnail.active {
-    border: 2px solid #007bff; /* Aktif küçük resim sınır rengi */
-  }
+//   .thumbnail.active {
+//     border: 2px solid #007bff; /* Aktif küçük resim sınır rengi */
+//   }
   
+
+
+h1 {
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}

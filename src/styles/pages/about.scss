@@ -226,7 +226,7 @@
                 width: 50%;
                 display: flex;
                 flex-wrap: wrap;
-                align-content: flex-end;
+                align-content: flex-start;
                 h2 {
                     font-weight: bold;
                     width: 100%;
@@ -237,6 +237,10 @@
                     font-size: 14px;
                 }
             }
+        }
+        .reverse{
+            display: flex;
+            flex-direction: row-reverse;
         }
     }
 	

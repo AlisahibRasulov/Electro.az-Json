@@ -42,7 +42,31 @@ const Discount = () => {
     })
   },[])
 
-
+  const breakpoints = {
+    '@media (min-width: 576px) and (max-width: 767px)': {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    '@media (min-width: 768px) and (max-width: 991px)': {
+      slidesPerView: 1.5,
+      spaceBetween: 15,
+    },
+    '@media (min-width: 992px) and (max-width: 1199px)': {
+      slidesPerView: 1.9,
+      spaceBetween: 20,
+    },
+    '@media (min-width: 1200px) and (max-width: 1399px)': {
+      slidesPerView: 2.7,
+      spaceBetween: 40,
+    },
+    '@media (min-width: 1400px)': {
+      slidesPerView: 5.5,
+      spaceBetween: 50,
+    },
+  };
+  
+  // export default breakpoints;
+  
   
   return (
 
@@ -51,9 +75,55 @@ const Discount = () => {
     <div className="discount-card_content">
       <h1>Endirimli Məhsullar</h1>
       <Swiper
-        slidesPerView={5.9}
-       // loop = {true} 
-        spaceBetween={13}
+      //  slidesPerView={5}
+      //  spaceBetween={10}
+      //  slidesPerView={7.5}
+      //  spaceBetween={13}
+       initialSlide={1}
+      //  centeredSlides={true}
+
+      //  breakpoints={{
+      //   640: {
+      //     slidesPerView: 1.9,
+      //     spaceBetween: 20,
+      //   },
+      //   768: {
+      //     slidesPerView: 2.7,
+      //     spaceBetween: 40,
+      //   },
+      //   1024: {
+      //     slidesPerView: 5.5,
+      //     spaceBetween: 50,
+      //   },
+      // }}
+
+      // breakpoints={{
+      //   320: {
+      //     slidesPerView: 1,
+      //     spaceBetween: 10,
+      //   },
+      //   480: {
+      //     slidesPerView: 1.5,
+      //     spaceBetween: 15,
+      //   },
+      //   640: {
+      //     slidesPerView: 1.9,
+      //     spaceBetween: 20,
+      //   },
+      //   768: {
+      //     slidesPerView: 2.7,
+      //     spaceBetween: 40,
+      //   },
+      //   1024: {
+      //     slidesPerView: 5.5,
+      //     spaceBetween: 50,
+      //   },
+      // }}
+      breakpoints
+      
+      //   slidesPerView={5.9}
+      //  // loop = {true} 
+      //   spaceBetween={13}
         // autoplay={{
         //   delay:1000,
         //   disableOnInteraction:false,
@@ -78,8 +148,10 @@ const Discount = () => {
         //   },
         // }}
         // modules={[Navigation, Autoplay]}
+        
         scrollbar={{
           // hide: true,
+          dragSize: 700,
           draggable: true,
         }}
         modules={[Scrollbar]}
