@@ -1,4 +1,282 @@
-// .discount-card_content{
+.discount-card_content{
+  padding: 35px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // flex-wrap: wrap;
+  // .swiper {
+  //     // overflow-x: scroll;
+  //     width: 100% !important;
+  //     height: 100%;
+  //     .swiper-slide{
+  //       width: 300px !important;
+  //       .swiper-slide_card {
+        
+  //         // text-align: center;
+  //         // font-size: 18px;
+          
+        
+  //         /* Center slide text vertically */
+  //         position: relative;
+  //         overflow: hidden;
+  //         width:  300px !important;
+  //         height: 450px !important;
+  //         display: flex ;
+  //         justify-content: center ;
+  //         align-items: center ;
+  //         flex-direction: column;
+  //         margin: 20px;
+  //         // border: 1px solid #bbb;
+  //         background-color: #fff;
+  //         // margin-bottom: 40px;
+  //         border-radius: 5px 5px 5px 5px;
+  //         line-height: 20px;
+  //         cursor: pointer;
+
+  //         &:hover {
+  //           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  //             .card-view {
+  //               opacity: 1;
+  //               bottom: 0;
+  //               pointer-events: all;
+  //             }
+  //           } 
+  //           img {
+  //             width: 180px;
+  //             height: 180px;
+  //             border-radius: 10px;
+  //             // display: block;
+  //             // width: 100%;
+  //             // height: 100%;
+  //             // object-fit: cover;
+  //           }
+  //           .card-view{
+  //             position: absolute;
+  //             // top: 0;
+  //             // left: -100%;
+  //             // height: 100%;
+  //             // width: 100%;
+  //             // background-color: rgba(255, 255, 255, .5);
+  //             bottom: -100%;
+  //             width: 250px;
+  //             height: 20%;
+  //             // z-index: 1;
+  //             border-top: none;
+  //             border-radius: 0px 0px 5px 5px;
+  //             display: flex;
+  //             justify-content: center;
+  //             align-items: center;
+  //             flex-direction: column;
+  //             opacity: 0;
+  //             // transition: .15s ease-in-out;
+  //             pointer-events: none;
+  //             -webkit-transition: 0.1s all;
+  //             transition: 0.1s all;
+  //             z-index: 2;
+
+  //             .card-btn {
+  //               width: 210px;
+  //               background-color: #D10024;
+  //         // display: flex;
+  //         // justify-content: space-evenly;
+  //             font-size: 18px;
+  //             -webkit-transition: 0.2s all;
+  //             transition: 0.2s all;
+  
+  //             .card-btn_basket{
+  //               display: flex;
+  //               align-self: center;
+                
+  //             }
+  //             .card-btn_text{
+  //               display: flex;
+  //               align-self: center;
+  //               margin-left: 10px;
+  //               margin-bottom: 2px;
+  //             }
+  //           }
+  //         }
+  //         .card-title {
+  //           margin: 8px 0;
+  //           font-size: 15px;
+  //           padding: 5px;
+  //           text-align: center;
+  //         }
+          
+  //         .card-price {
+  //           color: #666;
+  //           font-weight: bold;
+  //           display: flex;
+  //           justify-self: start;
+  //         }
+  //         .card-discount-price{
+  //           color: #D10024;
+  //           font-weight: bold;
+  //         }
+          
+  //         .card-discount-percentage{
+  //           color: #666;
+  //           font-weight: bold;
+  //           position: absolute;
+  //           top: 7px;
+  //           left: 7px;
+  //           // border: 1px solid #D10024;
+  //           .discount-active{
+  //             border: 2px solid #D10024;
+  //              padding: 0 10px;
+  //           }
+  //         }
+  //       }
+  //     }     
+  //   }
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+          .swiper-slide_card {
+        
+          // text-align: center;
+          // font-size: 18px;
+          
+        
+          /* Center slide text vertically */
+          position: relative;
+          overflow: hidden;
+          width:  300px !important;
+          height: 400px !important;
+          display: flex ;
+          justify-content: center ;
+          align-items: center ;
+          flex-direction: column;
+          // margin: 20px;
+          // border: 1px solid #bbb;
+          background-color: #fff;
+          // margin-bottom: 40px;
+          border-radius: 5px 5px 5px 5px;
+          line-height: 20px;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+              .card-view {
+                opacity: 1;
+                bottom: 0;
+                pointer-events: all;
+              }
+            } 
+          img {
+            display: block;
+            // width: 100%;
+            // height: 100%;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+          }
+          .card-view{
+            position: absolute;
+            // top: 0;
+            // left: -100%;
+            // height: 100%;
+            // width: 100%;
+            // background-color: rgba(255, 255, 255, .5);
+            bottom: -100%;
+            width: 250px;
+            height: 20%;
+            // z-index: 1;
+            border-top: none;
+            border-radius: 0px 0px 5px 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            // transition: .15s ease-in-out;
+            pointer-events: none;
+            -webkit-transition: 0.1s all;
+            transition: 0.1s all;
+            z-index: 2;
+      
+            .card-btn {
+              width: 210px;
+              background-color: #D10024;
+        // display: flex;
+        // justify-content: space-evenly;
+            font-size: 18px;
+            -webkit-transition: 0.2s all;
+            transition: 0.2s all;
+      
+            .card-btn_basket{
+              display: flex;
+              align-self: center;
+              
+            }
+            .card-btn_text{
+              display: flex;
+              align-self: center;
+              margin-left: 10px;
+              margin-bottom: 2px;
+            }
+          }
+        }
+        .card-title {
+          margin: 8px 0;
+          font-size: 15px;
+          padding: 5px;
+          text-align: center;
+        }
+        
+        .card-price {
+          color: #666;
+          font-weight: bold;
+          display: flex;
+          justify-self: start;
+        }
+        .card-discount-price{
+          color: #D10024;
+          font-weight: bold;
+        }
+        
+        .card-discount-percentage{
+          color: #666;
+          font-weight: bold;
+          position: absolute;
+          top: 7px;
+          left: 7px;
+          // border: 1px solid #D10024;
+          .discount-active{
+            border: 2px solid #D10024;
+             padding: 0 10px;
+          }
+        }
+        }
+
+   
+  }
+  
+  
+    
+    .all-card{
+      color: #D10024;
+      display: flex;
+      justify-self: self-end;
+    }
+    
+}
+
+// @media (max-width: 575px) {
+//   .discount-card_content{
 //     padding: 35px 10px;
 //     display: flex;
 //     flex-direction: column;
@@ -9,7 +287,7 @@
 //         width: 100% !important;
 //         height: 100%;
 //         .swiper-slide{
-//           width: 265px !important;
+//           width: 300px !important;
 //           .swiper-slide_card {
           
 //             // text-align: center;
@@ -19,8 +297,8 @@
 //             /* Center slide text vertically */
 //             position: relative;
 //             overflow: hidden;
-//             width:  265px !important;
-//             height: 400px !important;
+//             width:  300px !important;
+//             height: 450px !important;
 //             display: flex ;
 //             justify-content: center ;
 //             align-items: center ;
@@ -31,9 +309,10 @@
 //             // margin-bottom: 40px;
 //             border-radius: 5px 5px 5px 5px;
 //             line-height: 20px;
-
+//             cursor: pointer;
+  
 //             &:hover {
-
+//               box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 //                 .card-view {
 //                   opacity: 1;
 //                   bottom: 0;
@@ -72,7 +351,7 @@
 //                 -webkit-transition: 0.1s all;
 //                 transition: 0.1s all;
 //                 z-index: 2;
-
+  
 //                 .card-btn {
 //                   width: 210px;
 //                   background-color: #D10024;
@@ -107,7 +386,6 @@
 //               font-weight: bold;
 //               display: flex;
 //               justify-self: start;
-          
 //             }
 //             .card-discount-price{
 //               color: #D10024;
@@ -127,303 +405,584 @@
 //               }
 //             }
 //           }
-//         }
-        
+//         }     
 //       }
+      
 //       .all-card{
 //         color: #D10024;
 //         display: flex;
 //         justify-self: self-end;
 //       }
+      
 //   }
-.discount-card_content{
-  padding: 35px 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  // flex-wrap: wrap;
-  .swiper {
-      // overflow-x: scroll;
-      width: 100% !important;
-      height: 100%;
-      .swiper-slide{
-        width: 300px !important;
-        .swiper-slide_card {
-        
-          // text-align: center;
-          // font-size: 18px;
+ 
+// }
+
+// @media only screen and (min-width: 576px) and (max-width: 767px) {
+//   .discount-card_content{
+//     padding: 35px 10px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     // flex-wrap: wrap;
+//     .swiper {
+//         // overflow-x: scroll;
+//         width: 100% !important;
+//         height: 100%;
+//         .swiper-slide{
+//           width: 300px !important;
+//           .swiper-slide_card {
           
-        
-          /* Center slide text vertically */
-          position: relative;
-          overflow: hidden;
-          width:  300px !important;
-          height: 450px !important;
-          display: flex ;
-          justify-content: center ;
-          align-items: center ;
-          flex-direction: column;
-          margin: 20px;
-          // border: 1px solid #bbb;
-          background-color: #fff;
-          // margin-bottom: 40px;
-          border-radius: 5px 5px 5px 5px;
-          line-height: 20px;
-          cursor: pointer;
-
-          &:hover {
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-              .card-view {
-                opacity: 1;
-                bottom: 0;
-                pointer-events: all;
-              }
-            } 
-            img {
-              width: 180px;
-              height: 180px;
-              border-radius: 10px;
-              // display: block;
-              // width: 100%;
-              // height: 100%;
-              // object-fit: cover;
-            }
-            .card-view{
-              position: absolute;
-              // top: 0;
-              // left: -100%;
-              // height: 100%;
-              // width: 100%;
-              // background-color: rgba(255, 255, 255, .5);
-              bottom: -100%;
-              width: 250px;
-              height: 20%;
-              // z-index: 1;
-              border-top: none;
-              border-radius: 0px 0px 5px 5px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column;
-              opacity: 0;
-              // transition: .15s ease-in-out;
-              pointer-events: none;
-              -webkit-transition: 0.1s all;
-              transition: 0.1s all;
-              z-index: 2;
-
-              .card-btn {
-                width: 210px;
-                background-color: #D10024;
-          // display: flex;
-          // justify-content: space-evenly;
-              font-size: 18px;
-              -webkit-transition: 0.2s all;
-              transition: 0.2s all;
+//             // text-align: center;
+//             // font-size: 18px;
+            
+          
+//             /* Center slide text vertically */
+//             position: relative;
+//             overflow: hidden;
+//             width:  300px !important;
+//             height: 450px !important;
+//             display: flex ;
+//             justify-content: center ;
+//             align-items: center ;
+//             flex-direction: column;
+//             margin: 20px;
+//             // border: 1px solid #bbb;
+//             background-color: #fff;
+//             // margin-bottom: 40px;
+//             border-radius: 5px 5px 5px 5px;
+//             line-height: 20px;
+//             cursor: pointer;
   
-              .card-btn_basket{
-                display: flex;
-                align-self: center;
-                
-              }
-              .card-btn_text{
-                display: flex;
-                align-self: center;
-                margin-left: 10px;
-                margin-bottom: 2px;
-              }
-            }
-          }
-          .card-title {
-            margin: 8px 0;
-            font-size: 15px;
-            padding: 5px;
-            text-align: center;
-          }
-          
-          .card-price {
-            color: #666;
-            font-weight: bold;
-            display: flex;
-            justify-self: start;
-          }
-          .card-discount-price{
-            color: #D10024;
-            font-weight: bold;
-          }
-          
-          .card-discount-percentage{
-            color: #666;
-            font-weight: bold;
-            position: absolute;
-            top: 7px;
-            left: 7px;
-            // border: 1px solid #D10024;
-            .discount-active{
-              border: 2px solid #D10024;
-               padding: 0 10px;
-            }
-          }
-        }
-      }
-    //   .swiper-scrollbar-drag {
-    //     height: 100%;
-    //     width: 100px !important;
-    //     position: relative;
-    //     background: var(--swiper-scrollbar-drag-bg-color, rgba(0, 0, 0, 0.5));
-    //     border-radius: var(--swiper-scrollbar-border-radius, 10px);
-    //     left: 0;
-    //     top: 0;
-    //     cursor: pointer;
-    // }
+//             &:hover {
+//               box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+//                 .card-view {
+//                   opacity: 1;
+//                   bottom: 0;
+//                   pointer-events: all;
+//                 }
+//               } 
+//               img {
+//                 width: 180px;
+//                 height: 180px;
+//                 border-radius: 10px;
+//                 // display: block;
+//                 // width: 100%;
+//                 // height: 100%;
+//                 // object-fit: cover;
+//               }
+//               .card-view{
+//                 position: absolute;
+//                 // top: 0;
+//                 // left: -100%;
+//                 // height: 100%;
+//                 // width: 100%;
+//                 // background-color: rgba(255, 255, 255, .5);
+//                 bottom: -100%;
+//                 width: 250px;
+//                 height: 20%;
+//                 // z-index: 1;
+//                 border-top: none;
+//                 border-radius: 0px 0px 5px 5px;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 flex-direction: column;
+//                 opacity: 0;
+//                 // transition: .15s ease-in-out;
+//                 pointer-events: none;
+//                 -webkit-transition: 0.1s all;
+//                 transition: 0.1s all;
+//                 z-index: 2;
+  
+//                 .card-btn {
+//                   width: 210px;
+//                   background-color: #D10024;
+//             // display: flex;
+//             // justify-content: space-evenly;
+//                 font-size: 18px;
+//                 -webkit-transition: 0.2s all;
+//                 transition: 0.2s all;
+    
+//                 .card-btn_basket{
+//                   display: flex;
+//                   align-self: center;
+                  
+//                 }
+//                 .card-btn_text{
+//                   display: flex;
+//                   align-self: center;
+//                   margin-left: 10px;
+//                   margin-bottom: 2px;
+//                 }
+//               }
+//             }
+//             .card-title {
+//               margin: 8px 0;
+//               font-size: 15px;
+//               padding: 5px;
+//               text-align: center;
+//             }
+            
+//             .card-price {
+//               color: #666;
+//               font-weight: bold;
+//               display: flex;
+//               justify-self: start;
+//             }
+//             .card-discount-price{
+//               color: #D10024;
+//               font-weight: bold;
+//             }
+            
+//             .card-discount-percentage{
+//               color: #666;
+//               font-weight: bold;
+//               position: absolute;
+//               top: 7px;
+//               left: 7px;
+//               // border: 1px solid #D10024;
+//               .discount-active{
+//                 border: 2px solid #D10024;
+//                  padding: 0 10px;
+//               }
+//             }
+//           }
+//         }     
+//       }
       
-    }
-    
-    .all-card{
-      color: #D10024;
-      display: flex;
-      justify-self: self-end;
-    }
-    
-}
-
-@media (min-width: 1200px){
-  // .swiper{
-  //   width: 70% !important;
-  //   .swiper-slide_card{
-  //     width: 50% !important;
-  //   }
-  // }
-}
-
-  @media (min-width: 1400px) {
-    .discount-card_content{
-      padding: 35px 10px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      .swiper {
-          width: 100%;
-          height: 55%;
-          .swiper-slide_card {
-            
-              // text-align: center;
-              // font-size: 18px;
-              
-            
-              /* Center slide text vertically */
-              position: relative;
-              overflow: hidden;
-              width:  310px !important;
-              height: 420px !important;
-              display: flex ;
-              justify-content: center ;
-              align-items: center ;
-              flex-direction: column;
-              margin: 15px;
-              // border: 1px solid #bbb;
-              background-color: #fff;
-              // margin-bottom: 40px;
-              border-radius: 5px 5px 5px 5px;
-              line-height: 20px;
-  
-              &:hover {
-                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-                  .card-view {
-                    opacity: 1;
-                    bottom: 0;
-                    pointer-events: all;
-                  }
-                } 
-                img {
-                  width: 200px;
-                  height: 160px;
-                  border-radius: 10px;
-                  // display: block;
-                  // width: 100%;
-                  // height: 100%;
-                  // object-fit: cover;
-                }
-                .card-view{
-                  position: absolute;
-                  // top: 0;
-                  // left: -100%;
-                  // height: 100%;
-                  // width: 100%;
-                  // background-color: rgba(255, 255, 255, .5);
-                  bottom: -100%;
-                  width: 250px;
-                  height: 20%;
-                  // z-index: 1;
-                  border-top: none;
-                  border-radius: 0px 0px 5px 5px;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  flex-direction: column;
-                  opacity: 0;
-                  // transition: .15s ease-in-out;
-                  pointer-events: none;
-                  -webkit-transition: 0.1s all;
-                  transition: 0.1s all;
-                  z-index: 2;
-  
-                  .card-btn {
-                    width: 210px;
-                    background-color: #D10024;
-              // display: flex;
-              // justify-content: space-evenly;
-                  font-size: 18px;
-                  -webkit-transition: 0.2s all;
-                  transition: 0.2s all;
+//       .all-card{
+//         color: #D10024;
+//         display: flex;
+//         justify-self: self-end;
+//       }
       
-                  .card-btn_basket{
-                    display: flex;
-                    align-self: center;
-                    
-                  }
-                  .card-btn_text{
-                    display: flex;
-                    align-self: center;
-                    margin-left: 10px;
-                    margin-bottom: 2px;
-                  }
-                }
-              }
-              .card-title {
-                margin: 8px 0;
-                font-size: 15px;
-                padding: 5px;
-                text-align: center;
-              }
-              
-              .card-price {
-                color: #666;
-                font-weight: bold;
-                display: flex;
-                justify-self: start;
+//   }
+// }
+
+// @media only screen and (min-width: 768px) and (max-width: 991px) {
+//   .discount-card_content{
+//     padding: 35px 10px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     // flex-wrap: wrap;
+//     .swiper {
+//         // overflow-x: scroll;
+//         width: 100% !important;
+//         height: 100%;
+//         .swiper-slide{
+//           width: 300px !important;
+//           .swiper-slide_card {
+          
+//             // text-align: center;
+//             // font-size: 18px;
             
-              }
-              .card-discount-price{
-                color: #D10024;
-                font-weight: bold;
-              }
-              
-              .card-discount-percentage{
-                color: #666;
-                font-weight: bold;
-                position: absolute;
-                top: 7px;
-                left: 7px;
-                // border: 1px solid #D10024;
-                .discount-active{
-                  border: 2px solid #D10024;
-                   padding: 0 10px;
-                }
-              }
-            }
-        }
-     
-    }
+          
+//             /* Center slide text vertically */
+//             position: relative;
+//             overflow: hidden;
+//             width:  400px !important;
+//             height: 50px !important;
+//             display: flex ;
+//             justify-content: center ;
+//             align-items: center ;
+//             flex-direction: column;
+//             margin: 20px;
+//             // border: 1px solid #bbb;
+//             background-color: #fff;
+//             // margin-bottom: 40px;
+//             border-radius: 5px 5px 5px 5px;
+//             line-height: 20px;
+//             cursor: pointer;
+  
+//             &:hover {
+//               box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+//                 .card-view {
+//                   opacity: 1;
+//                   bottom: 0;
+//                   pointer-events: all;
+//                 }
+//               } 
+//               img {
+//                 width: 180px;
+//                 height: 180px;
+//                 border-radius: 10px;
+//                 // display: block;
+//                 // width: 100%;
+//                 // height: 100%;
+//                 // object-fit: cover;
+//               }
+//               .card-view{
+//                 position: absolute;
+//                 // top: 0;
+//                 // left: -100%;
+//                 // height: 100%;
+//                 // width: 100%;
+//                 // background-color: rgba(255, 255, 255, .5);
+//                 bottom: -100%;
+//                 width: 250px;
+//                 height: 20%;
+//                 // z-index: 1;
+//                 border-top: none;
+//                 border-radius: 0px 0px 5px 5px;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 flex-direction: column;
+//                 opacity: 0;
+//                 // transition: .15s ease-in-out;
+//                 pointer-events: none;
+//                 -webkit-transition: 0.1s all;
+//                 transition: 0.1s all;
+//                 z-index: 2;
+  
+//                 .card-btn {
+//                   width: 210px;
+//                   background-color: #D10024;
+//             // display: flex;
+//             // justify-content: space-evenly;
+//                 font-size: 18px;
+//                 -webkit-transition: 0.2s all;
+//                 transition: 0.2s all;
     
-  }
+//                 .card-btn_basket{
+//                   display: flex;
+//                   align-self: center;
+                  
+//                 }
+//                 .card-btn_text{
+//                   display: flex;
+//                   align-self: center;
+//                   margin-left: 10px;
+//                   margin-bottom: 2px;
+//                 }
+//               }
+//             }
+//             .card-title {
+//               margin: 8px 0;
+//               font-size: 15px;
+//               padding: 5px;
+//               text-align: center;
+//             }
+            
+//             .card-price {
+//               color: #666;
+//               font-weight: bold;
+//               display: flex;
+//               justify-self: start;
+//             }
+//             .card-discount-price{
+//               color: #D10024;
+//               font-weight: bold;
+//             }
+            
+//             .card-discount-percentage{
+//               color: #666;
+//               font-weight: bold;
+//               position: absolute;
+//               top: 7px;
+//               left: 7px;
+//               // border: 1px solid #D10024;
+//               .discount-active{
+//                 border: 2px solid #D10024;
+//                  padding: 0 10px;
+//               }
+//             }
+//           }
+//         }     
+//       }
+      
+//       .all-card{
+//         color: #D10024;
+//         display: flex;
+//         justify-self: self-end;
+//       }
+      
+//   }
+// }
+
+// @media only screen and (min-width: 992px) and (max-width: 1199px) {
+//   .discount-card_content{
+//     padding: 35px 10px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     // flex-wrap: wrap;
+//     .swiper {
+//         // overflow-x: scroll;
+//         width: 100% !important;
+//         height: 100%;
+//         .swiper-slide{
+//           width: 400px !important;
+//           // margin: 0 40px;
+//           .swiper-slide_card {
+          
+//             // text-align: center;
+//             // font-size: 18px;
+            
+          
+//             /* Center slide text vertically */
+//             position: relative;
+//             overflow: hidden;
+//             width:  500px !important;
+//             height: 450px !important;
+//             display: flex ;
+//             justify-content: center ;
+//             align-items: center ;
+//             flex-direction: column;
+//             margin: 20px;
+//             // border: 1px solid #bbb;
+//             background-color: #fff;
+//             // margin-bottom: 40px;
+//             border-radius: 5px 5px 5px 5px;
+//             line-height: 20px;
+//             cursor: pointer;
+  
+//             &:hover {
+//               box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+//                 .card-view {
+//                   opacity: 1;
+//                   bottom: 0;
+//                   pointer-events: all;
+//                 }
+//               } 
+//               img {
+//                 width: 180px;
+//                 height: 180px;
+//                 border-radius: 10px;
+//                 // display: block;
+//                 // width: 100%;
+//                 // height: 100%;
+//                 // object-fit: cover;
+//               }
+//               .card-view{
+//                 position: absolute;
+//                 // top: 0;
+//                 // left: -100%;
+//                 // height: 100%;
+//                 // width: 100%;
+//                 // background-color: rgba(255, 255, 255, .5);
+//                 bottom: -100%;
+//                 width: 250px;
+//                 height: 20%;
+//                 // z-index: 1;
+//                 border-top: none;
+//                 border-radius: 0px 0px 5px 5px;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 flex-direction: column;
+//                 opacity: 0;
+//                 // transition: .15s ease-in-out;
+//                 pointer-events: none;
+//                 -webkit-transition: 0.1s all;
+//                 transition: 0.1s all;
+//                 z-index: 2;
+  
+//                 .card-btn {
+//                   width: 210px;
+//                   background-color: #D10024;
+//             // display: flex;
+//             // justify-content: space-evenly;
+//                 font-size: 18px;
+//                 -webkit-transition: 0.2s all;
+//                 transition: 0.2s all;
+    
+//                 .card-btn_basket{
+//                   display: flex;
+//                   align-self: center;
+                  
+//                 }
+//                 .card-btn_text{
+//                   display: flex;
+//                   align-self: center;
+//                   margin-left: 10px;
+//                   margin-bottom: 2px;
+//                 }
+//               }
+//             }
+//             .card-title {
+//               margin: 8px 0;
+//               font-size: 15px;
+//               padding: 5px;
+//               text-align: center;
+//             }
+            
+//             .card-price {
+//               color: #666;
+//               font-weight: bold;
+//               display: flex;
+//               justify-self: start;
+//             }
+//             .card-discount-price{
+//               color: #D10024;
+//               font-weight: bold;
+//             }
+            
+//             .card-discount-percentage{
+//               color: #666;
+//               font-weight: bold;
+//               position: absolute;
+//               top: 7px;
+//               left: 7px;
+//               // border: 1px solid #D10024;
+//               .discount-active{
+//                 border: 2px solid #D10024;
+//                  padding: 0 10px;
+//               }
+//             }
+//           }
+//         }     
+//       }
+      
+//       .all-card{
+//         color: #D10024;
+//         display: flex;
+//         justify-self: self-end;
+//       }
+      
+//   }
+// }
+
+// @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+//   .discount-card_content{
+//     padding: 35px 10px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     // flex-wrap: wrap;
+//     .swiper {
+//         // overflow-x: scroll;
+//         width: 100% !important;
+//         height: 100%;
+//         .swiper-slide{
+//           width: 300px !important;
+//           .swiper-slide_card {
+          
+//             // text-align: center;
+//             // font-size: 18px;
+            
+          
+//             /* Center slide text vertically */
+//             position: relative;
+//             overflow: hidden;
+//             width:  300px !important;
+//             height: 450px !important;
+//             display: flex ;
+//             justify-content: center ;
+//             align-items: center ;
+//             flex-direction: column;
+//             margin: 20px;
+//             // border: 1px solid #bbb;
+//             background-color: #fff;
+//             // margin-bottom: 40px;
+//             border-radius: 5px 5px 5px 5px;
+//             line-height: 20px;
+//             cursor: pointer;
+  
+//             &:hover {
+//               box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+//                 .card-view {
+//                   opacity: 1;
+//                   bottom: 0;
+//                   pointer-events: all;
+//                 }
+//               } 
+//               img {
+//                 width: 180px;
+//                 height: 180px;
+//                 border-radius: 10px;
+//                 // display: block;
+//                 // width: 100%;
+//                 // height: 100%;
+//                 // object-fit: cover;
+//               }
+//               .card-view{
+//                 position: absolute;
+//                 // top: 0;
+//                 // left: -100%;
+//                 // height: 100%;
+//                 // width: 100%;
+//                 // background-color: rgba(255, 255, 255, .5);
+//                 bottom: -100%;
+//                 width: 250px;
+//                 height: 20%;
+//                 // z-index: 1;
+//                 border-top: none;
+//                 border-radius: 0px 0px 5px 5px;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 flex-direction: column;
+//                 opacity: 0;
+//                 // transition: .15s ease-in-out;
+//                 pointer-events: none;
+//                 -webkit-transition: 0.1s all;
+//                 transition: 0.1s all;
+//                 z-index: 2;
+  
+//                 .card-btn {
+//                   width: 210px;
+//                   background-color: #D10024;
+//             // display: flex;
+//             // justify-content: space-evenly;
+//                 font-size: 18px;
+//                 -webkit-transition: 0.2s all;
+//                 transition: 0.2s all;
+    
+//                 .card-btn_basket{
+//                   display: flex;
+//                   align-self: center;
+                  
+//                 }
+//                 .card-btn_text{
+//                   display: flex;
+//                   align-self: center;
+//                   margin-left: 10px;
+//                   margin-bottom: 2px;
+//                 }
+//               }
+//             }
+//             .card-title {
+//               margin: 8px 0;
+//               font-size: 15px;
+//               padding: 5px;
+//               text-align: center;
+//             }
+            
+//             .card-price {
+//               color: #666;
+//               font-weight: bold;
+//               display: flex;
+//               justify-self: start;
+//             }
+//             .card-discount-price{
+//               color: #D10024;
+//               font-weight: bold;
+//             }
+            
+//             .card-discount-percentage{
+//               color: #666;
+//               font-weight: bold;
+//               position: absolute;
+//               top: 7px;
+//               left: 7px;
+//               // border: 1px solid #D10024;
+//               .discount-active{
+//                 border: 2px solid #D10024;
+//                  padding: 0 10px;
+//               }
+//             }
+//           }
+//         }     
+//       }
+      
+//       .all-card{
+//         color: #D10024;
+//         display: flex;
+//         justify-self: self-end;
+//       }
+      
+//   }
+// }

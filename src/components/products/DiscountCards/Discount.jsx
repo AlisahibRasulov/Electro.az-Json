@@ -42,28 +42,7 @@ const Discount = () => {
     })
   },[])
 
-  const breakpoints = {
-    '@media (min-width: 576px) and (max-width: 767px)': {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    '@media (min-width: 768px) and (max-width: 991px)': {
-      slidesPerView: 1.5,
-      spaceBetween: 15,
-    },
-    '@media (min-width: 992px) and (max-width: 1199px)': {
-      slidesPerView: 1.9,
-      spaceBetween: 20,
-    },
-    '@media (min-width: 1200px) and (max-width: 1399px)': {
-      slidesPerView: 2.7,
-      spaceBetween: 40,
-    },
-    '@media (min-width: 1400px)': {
-      slidesPerView: 5.5,
-      spaceBetween: 50,
-    },
-  };
+
   
   // export default breakpoints;
   
@@ -74,52 +53,38 @@ const Discount = () => {
   <div className="container-fluid">
     <div className="discount-card_content">
       <h1>Endirimli Məhsullar</h1>
-      <Swiper
+      {/* <Swiper
       //  slidesPerView={5}
       //  spaceBetween={10}
       //  slidesPerView={7.5}
       //  spaceBetween={13}
        initialSlide={1}
-      //  centeredSlides={true}
-
-      //  breakpoints={{
-      //   640: {
-      //     slidesPerView: 1.9,
-      //     spaceBetween: 20,
-      //   },
-      //   768: {
-      //     slidesPerView: 2.7,
-      //     spaceBetween: 40,
-      //   },
-      //   1024: {
-      //     slidesPerView: 5.5,
-      //     spaceBetween: 50,
-      //   },
-      // }}
-
-      // breakpoints={{
-      //   320: {
-      //     slidesPerView: 1,
-      //     spaceBetween: 10,
-      //   },
-      //   480: {
-      //     slidesPerView: 1.5,
-      //     spaceBetween: 15,
-      //   },
-      //   640: {
-      //     slidesPerView: 1.9,
-      //     spaceBetween: 20,
-      //   },
-      //   768: {
-      //     slidesPerView: 2.7,
-      //     spaceBetween: 40,
-      //   },
-      //   1024: {
-      //     slidesPerView: 5.5,
-      //     spaceBetween: 50,
-      //   },
-      // }}
-      breakpoints
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          // spaceBetween: 10,
+        },
+        576: {
+          slidesPerView: 1.5,
+          // spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 1.95,
+          spaceBetween: 120,
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 120,
+        },
+        1200: {
+          slidesPerView: 3.7,
+          // spaceBetween: 10,
+        },
+        1400: {
+          slidesPerView: 4.6,
+          // spaceBetween: 10,
+        }
+      }}
       
       //   slidesPerView={5.9}
       //  // loop = {true} 
@@ -163,6 +128,42 @@ const Discount = () => {
           <Cards data={item}/>
         </SwiperSlide>   
       ))}  
+      </Swiper> */}
+
+<Swiper
+        slidesPerView={1}
+        spaceBetween={10}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        scrollbar={{
+          // hide: true,
+          dragSize: 700,
+          draggable: true,
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
+        }}
+        modules={[Scrollbar]}
+        className="mySwiper"
+      >
+   {productData.map((item)=>(
+        <SwiperSlide key={item.id}>
+          <Cards data={item}/>
+        </SwiperSlide>   
+      ))} 
+    
       </Swiper>
       <Link className='all-card' to="/discount">daha çox bax</Link>
     </div>
