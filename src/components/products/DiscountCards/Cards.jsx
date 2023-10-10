@@ -16,9 +16,11 @@ const Cards = ({data}) => {
       dispatch(addToCard());
     }
 
-    const cardPrice = {
-      fontSize: "15px",
-    }
+    // const cardPrice = {
+    //   fontSize: "15px",
+    // }
+
+    
 
     const { discounts,previewImage, title, price } = data;
   return (
@@ -33,7 +35,7 @@ const Cards = ({data}) => {
 {data.discounts[0]?.currentPrice ? (
                   <>
                   <del>
-                    <div className='card-price' style={cardPrice}>{(price).toLocaleString('az-AZ')} ₼</div>
+                    <div className='card-price-deleted'>{(price).toLocaleString('az-AZ')} ₼</div>
                   </del>
                   <div className='card-discount-price'>{(discounts[0].currentPrice).toLocaleString('az-AZ')} ₼</div>
                   </>
@@ -41,7 +43,7 @@ const Cards = ({data}) => {
                   <div className='card-price'>{(price).toLocaleString('az-AZ') } ₼</div>
                 )}
 <div className="card-view">
-<Button className='card-btn' onClick={handleAddToBasket}><CardBasketIcon className="card-btn_basket"/> <div className='card-btn_text'>Səbətə at</div> </Button>
+<button className='card-btn' onClick={handleAddToBasket}><CardBasketIcon className="card-btn_basket"/> <div className='card-btn_text'>Səbətə at</div> </button>
 </div>
   </div>
   )

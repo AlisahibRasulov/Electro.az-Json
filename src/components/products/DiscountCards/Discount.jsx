@@ -42,94 +42,13 @@ const Discount = () => {
     })
   },[])
 
-
-  
-  // export default breakpoints;
-  
-  
   return (
 
 <div className="discount-card">
   <div className="container-fluid">
     <div className="discount-card_content">
       <h1>Endirimli Məhsullar</h1>
-      {/* <Swiper
-      //  slidesPerView={5}
-      //  spaceBetween={10}
-      //  slidesPerView={7.5}
-      //  spaceBetween={13}
-       initialSlide={1}
-      breakpoints={{
-        320: {
-          slidesPerView: 1,
-          // spaceBetween: 10,
-        },
-        576: {
-          slidesPerView: 1.5,
-          // spaceBetween: 15,
-        },
-        768: {
-          slidesPerView: 1.95,
-          spaceBetween: 120,
-        },
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 120,
-        },
-        1200: {
-          slidesPerView: 3.7,
-          // spaceBetween: 10,
-        },
-        1400: {
-          slidesPerView: 4.6,
-          // spaceBetween: 10,
-        }
-      }}
-      
-      //   slidesPerView={5.9}
-      //  // loop = {true} 
-      //   spaceBetween={13}
-        // autoplay={{
-        //   delay:1000,
-        //   disableOnInteraction:false,
-        // } }
-        // navigation
-        // breakpoints={{
-        //   '@0.00': {
-        //     slidesPerView: 1,
-        //     // spaceBetween: 10,
-        //   },
-        //   '@0.75': {
-        //     slidesPerView: 2,
-        //     // spaceBetween: 20,
-        //   },
-        //   '@1.00': {
-        //     slidesPerView: 3,
-        //     // spaceBetween: 40,
-        //   },
-        //   '@1.50': {
-        //     slidesPerView: 4,
-        //     // spaceBetween: 50,
-        //   },
-        // }}
-        // modules={[Navigation, Autoplay]}
-        
-        scrollbar={{
-          // hide: true,
-          dragSize: 700,
-          draggable: true,
-        }}
-        modules={[Scrollbar]}
-        className="swiper"
-      >
-      
-        {productData.map((item)=>(
-        <SwiperSlide key={item.id}>
-          <Cards data={item}/>
-        </SwiperSlide>   
-      ))}  
-      </Swiper> */}
-
+ 
 <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -142,18 +61,31 @@ const Discount = () => {
           draggable: true,
         }}
         breakpoints={{
+
+
+          560: {
+            slidesPerView: 1.8,
+            spaceBetween: 20,
+          },
+
           640: {
+            slidesPerView: 1.3,
+            spaceBetween: 10,
+          },
+          768: {
             slidesPerView: 2,
             spaceBetween: 20,
           },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
           1024: {
-            slidesPerView: 5,
-            spaceBetween: 50,
+            slidesPerView: 2.2,
+            spaceBetween: 10,
           },
+
+          1200: {
+            slidesPerView: 5.8,
+            spaceBetween: 10,
+          },
+
         }}
         modules={[Scrollbar]}
         className="mySwiper"
