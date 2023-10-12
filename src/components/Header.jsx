@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 // ? components
 import Input from "./library/Input";
 import Button from "./library/Button";
+// import Sidebar from './Sidebar';
 // import Dropdown from './Dropdown';
 
 import { useSelector} from 'react-redux';
@@ -84,6 +85,7 @@ const Header = () => {
     <div className='header'>
      <div className="container">
       <div className="header-content">
+          {/* <Sidebar/> */}
           <div className='logo'>
             <PlayLogo className="play-logo"/>
             <h1 className='logo-name'><a href="/">Electro.<span>az</span> </a></h1>

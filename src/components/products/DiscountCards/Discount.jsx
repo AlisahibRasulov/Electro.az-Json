@@ -61,20 +61,23 @@ const Discount = () => {
           draggable: true,
         }}
         breakpoints={{
-
-
+          320: {
+            slidesPerView: 2.2,
+            spaceBetween: 10,
+          },
+         
           560: {
-            slidesPerView: 1.8,
-            spaceBetween: 20,
+            slidesPerView: 1.5,
+            spaceBetween: 10,
           },
 
           640: {
-            slidesPerView: 1.3,
+            slidesPerView: 1.5,
             spaceBetween: 10,
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 10,
           },
           1024: {
             slidesPerView: 2.2,
@@ -82,7 +85,7 @@ const Discount = () => {
           },
 
           1200: {
-            slidesPerView: 5.8,
+            slidesPerView: 5,
             spaceBetween: 10,
           },
 

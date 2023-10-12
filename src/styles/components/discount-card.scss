@@ -251,6 +251,7 @@
               align-self: center;
               margin-left: 10px;
               margin-bottom: 2px;
+              color: #fff;
             }
           }
         }
@@ -425,6 +426,154 @@
     
   }
 }
+
+
+@media only screen and (min-width: 320px) and (max-width: 559px){
+  .swiper-slide{
+    // width: 300px !important;
+    height: 300px !important;
+    line-height: 5px !important;
+    .card-btn {
+      // width: 210px;
+      display: flex;
+      padding: 5px 21px !important;
+      background-color: #D10024;
+      font-size: 70% !important;
+      font-weight: bold;
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+      border-radius: 8px !important;
+
+    .card-btn_basket{
+      display: flex;
+      align-self: center;
+      
+    }
+    .card-btn_text{
+      display: flex;
+      align-self: center;
+      margin-left: 10px;
+      margin-bottom: 2px;
+    }
+
+  }
+  .card-title {
+    margin: 8px 0;
+    font-size: 12px !important;
+    padding: 5px;
+    text-align: center;
+    line-height: 13px !important;
+  }
+  
+  .card-price-deleted{
+    font-size: 11px !important;
+    font-weight: bold;
+    
+  }
+
+  .card-price {
+    color: #666;
+    font-weight: bold;
+    display: flex;
+    justify-self: start;
+    font-size: 13px !important;
+  }
+  .card-discount-price{
+    color: #D10024;
+    font-weight: bold;
+    font-size: 13px !important;
+    line-height: 15px !important;
+  }
+  
+  .card-discount-percentage{
+    color: #666;
+    font-weight: bold;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    // border: 1px solid #D10024;
+    .discount-active{
+      border: 2px solid #D10024;
+       padding: 0 10px;
+    }
+  }
+    
+  }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 639px){
+  .swiper-slide{
+    // width: 300px !important;
+    height: 430px !important;
+    line-height: 5px !important;
+    .card-btn {
+      // width: 210px;
+      display: flex;
+      padding: 5px 21px !important;
+      background-color: #D10024;
+      font-size: 70% !important;
+      font-weight: bold;
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+      border-radius: 8px !important;
+
+    .card-btn_basket{
+      display: flex;
+      align-self: center;
+      
+    }
+    .card-btn_text{
+      display: flex;
+      align-self: center;
+      margin-left: 10px;
+      margin-bottom: 2px;
+    }
+
+  }
+  .card-title {
+    margin: 8px 0;
+    font-size: 12px !important;
+    padding: 5px;
+    text-align: center;
+    line-height: 13px !important;
+  }
+  
+  .card-price-deleted{
+    font-size: 11px !important;
+    font-weight: bold;
+    
+  }
+
+  .card-price {
+    color: #666;
+    font-weight: bold;
+    display: flex;
+    justify-self: start;
+    font-size: 13px !important;
+  }
+  .card-discount-price{
+    color: #D10024;
+    font-weight: bold;
+    font-size: 13px !important;
+    line-height: 15px !important;
+  }
+  
+  .card-discount-percentage{
+    color: #666;
+    font-weight: bold;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    // border: 1px solid #D10024;
+    .discount-active{
+      border: 2px solid #D10024;
+       padding: 0 10px;
+    }
+  }
+    
+  }
+}
+
 
 @media only screen and (min-width: 640px) and (max-width: 767px){
 

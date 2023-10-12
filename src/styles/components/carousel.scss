@@ -1,6 +1,7 @@
 .carousel-item{
   border-radius: 10px;
-  width: 700px;
+  width: 850px;
+  height: 470px;
   margin: 10px auto;
   // min-height: 350px;
   // width: 800px;
@@ -16,7 +17,7 @@
     
     .swiper {
       width: 100%;
-      height: auto;
+      height: 100%;
       // border-radius: 14px;
       // margin: 10px auto;
       background-color: transparent;
@@ -36,6 +37,7 @@
         width: 100%;
         height: auto;
         overflow: hidden;
+        object-fit: cover;
       }
     }
    
