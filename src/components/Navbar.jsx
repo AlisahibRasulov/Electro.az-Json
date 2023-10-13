@@ -21,7 +21,8 @@
 
 // export default ColorSchemesExample;
 
-import React from 'react'
+// import React from 'react'
+import React, { useState } from 'react';
 import { NavLink, Outlet } from "react-router-dom";
 import Dropdown from './Dropdown';
 // import ProductList from './Test';
@@ -29,14 +30,19 @@ import Dropdown from './Dropdown';
 
 
 const Navbar = () => {
-  
+  const[open,setOpen] = useState(false);
     // const handleReload = () => {
     //   window.location.reload();
     // };
+    const toggleSidebar = () => {
+      setOpen(!open);
+    };
   return (
-    <>
-    <div className='navbar'>
-     <div className="container-fluid">
+    <div className='navbar-outside' >
+  <button className='open-btn' onClick={toggleSidebar}>Show Sidebar</button>
+    <div className={`navbar ${!open ? 'sidebar-open' : 'sidebar-close'}`}>
+     {/* <div className="container-fluid"> */}
+     <button className='close-btn' onClick={toggleSidebar}>Hide Sidebar</button>
         <div className="navbar-content">
         <Dropdown/>
         {/* <ProductList/> */}
@@ -45,13 +51,13 @@ const Navbar = () => {
 <ul className='navbar-menu'>
   {/* <Link to="/product">Məhsullar/> */}
         <li>
-            <NavLink to={"/"}>Əsas Səhifə</NavLink>
+            <NavLink to={"/"}  onClick={toggleSidebar}>Əsas Səhifə</NavLink>
         </li>
         <li>
-            <NavLink  to={"/about"} >Haqqımızda</NavLink>
+            <NavLink  to={"/about"}  onClick={toggleSidebar}>Haqqımızda</NavLink>
         </li>
         <li>
-            <NavLink  to={"/contact"} >Bizimlə Əlaqə</NavLink>
+            <NavLink  to={"/contact"}  onClick={toggleSidebar}>Bizimlə Əlaqə</NavLink>
         </li>
         {/* <li>
             <NavLink  to={"/login"} >Daxil ol</NavLink>
@@ -76,10 +82,11 @@ const Navbar = () => {
         </ul>
       </nav> */}
 </div>
+{/* </div> */}
 </div>
-</div>
+        
 <Outlet/>
-</>
+</div>
       
   )
 }

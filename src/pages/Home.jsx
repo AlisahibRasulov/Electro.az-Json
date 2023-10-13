@@ -27,9 +27,9 @@ const Home = () => {
       <Outlet/>
       </>
        
-      <div className="container">
+      {/* <div className="container">
         <CarouselImg/>
-      </div>
+      </div> */}
        
       <Discount/>
       <New/>

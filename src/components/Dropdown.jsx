@@ -13,7 +13,7 @@ const Dropdown = () => {
 
   return (
     // <div className="dropdown-content">
-       <div className={`dropdown ${isOpen ? 'open' : ''}`}>
+       <div className={`dropdown ${isOpen ? 'open' : ''} open-dropdown`}>
       <button className="dropdown-toggle-btn" onClick={toggleDropdown}>
         <div className='btn-name'>
         Kateqoriyalar 

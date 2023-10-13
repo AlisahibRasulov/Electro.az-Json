@@ -5,7 +5,7 @@ import ScrollToTop from "react-scroll-to-top";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+// import Sidebar from "./components/Sidebar"
 // import Button from "./components/Button";
 
 
@@ -198,6 +198,7 @@ function App() {
   <Route path="/signup" element={<Signup />} />  */}
         
 </Routes>
+{/* <Sidebar/> */}
     {/* ? Test Dropdown peoducts */}
     {/* <ProductList/> */}
     {/* <ProductList selectedCategory={selectedCategory} /> */}
