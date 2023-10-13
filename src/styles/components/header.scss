@@ -173,9 +173,12 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 575px) {
   .search-input{
-    min-width: 300px !important;
+    width: 20px !important;
+    height: auto !important;
+    min-width: 10px !important;
+    min-height: auto !important;
   }
 }
 

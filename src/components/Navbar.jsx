@@ -25,6 +25,8 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet } from "react-router-dom";
 import Dropdown from './Dropdown';
+
+import { Burger,DeletedIconSidebar } from '../svg';
 // import ProductList from './Test';
 // import CategoryDropdown from './Test';
 
@@ -39,10 +41,10 @@ const Navbar = () => {
     };
   return (
     <div className='navbar-outside' >
-  <button className='open-btn' onClick={toggleSidebar}>Show Sidebar</button>
+  <button className='open-btn'  onClick={toggleSidebar}><Burger className="burger-icon"/></button>
     <div className={`navbar ${!open ? 'sidebar-open' : 'sidebar-close'}`}>
      {/* <div className="container-fluid"> */}
-     <button className='close-btn' onClick={toggleSidebar}>Hide Sidebar</button>
+     <button className='close-btn' onClick={toggleSidebar}><DeletedIconSidebar/></button>
         <div className="navbar-content">
         <Dropdown/>
         {/* <ProductList/> */}

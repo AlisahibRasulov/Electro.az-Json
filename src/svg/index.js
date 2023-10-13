@@ -477,6 +477,20 @@ export const HeaderBasketIcon = (props) => (
     </svg>
   )
   
+  export const DeletedIconSidebar = (props) => (
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={40}
+    height={40}
+    fill="#fff"
+    stroke="#fff"
+    viewBox="0 0 50 50"
+    {...props}
+  >
+    <path d="M7.719 6.281 6.28 7.72 23.563 25 6.28 42.281 7.72 43.72 25 26.437 42.281 43.72l1.438-1.438L26.437 25 43.72 7.719 42.28 6.28 25 23.563Z" />
+  </svg>
+  )
+
   export const IncrementPlusIcon = (props) => (
     <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -576,3 +590,18 @@ export const HeaderBasketIcon = (props) => (
       <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z" />
     </svg>
   )
+
+  export const Burger = (props) => (
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={30}
+    height={30}
+    viewBox="0 0 50 50"
+    stroke="#fff"
+    fill="#fff"
+    {...props}
+  >
+    <path d="M5 8a2 2 0 1 0 0 4h40a2 2 0 1 0 0-4H5zm0 15a2 2 0 1 0 0 4h40a2 2 0 1 0 0-4H5zm0 15a2 2 0 1 0 0 4h40a2 2 0 1 0 0-4H5z" />
+  </svg>
+  )
+
