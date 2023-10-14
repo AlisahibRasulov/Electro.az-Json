@@ -1,5 +1,9 @@
 .header{
   background: #15161D;
+  // position: sticky;
+  // top: 0;
+  width: 100%;
+  z-index: 10000;
   .header-content{
     // background: #15161D;
     color: #fff;
@@ -181,6 +185,10 @@
     min-height: auto !important;
   }
 }
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  
+  }
 
 
 
