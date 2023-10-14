@@ -23,7 +23,7 @@
 
 // import React from 'react'
 import React, { useState } from 'react';
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, Link } from "react-router-dom";
 import Dropdown from './Dropdown';
 
 import { Burger,DeletedIconSidebar } from '../svg';
@@ -33,6 +33,11 @@ import { Burger,DeletedIconSidebar } from '../svg';
 
 const Navbar = () => {
   const[open,setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
     // const handleReload = () => {
     //   window.location.reload();
     // };
@@ -46,7 +51,7 @@ const Navbar = () => {
      {/* <div className="container-fluid"> */}
      <button className='close-btn' onClick={toggleSidebar}><DeletedIconSidebar/></button>
         <div className="navbar-content">
-        <Dropdown/>
+        {/* <Dropdown/> */}
         {/* <ProductList/> */}
         {/* <CategoryDropdown/> */}
       
@@ -61,10 +66,21 @@ const Navbar = () => {
         <li>
             <NavLink  to={"/contact"}  onClick={toggleSidebar}>Bizimlə Əlaqə</NavLink>
         </li>
-        {/* <li>
-            <NavLink  to={"/login"} >Daxil ol</NavLink>
-        </li> */}
+        <li className={`dropdown ${isOpen ? 'open' : ''} open-dropdown`}  onClick={toggleDropdown}>
+        Kateqoriyalar 
+      <ul className="dropdown-menu">
+          <Link className='li' to="/all-products">Bütün məhsullar</Link>
+          <Link className='li' to="/computers">Notbuklar</Link>
+          <Link className='li' to="/phones">Smartfonlar</Link>
+          <Link className='li' to="/cameras">Fotoaparatlar</Link>
+          <Link className='li' to="/accessories">Aksesuarlar</Link>
+          <Link className='li' to="/games">Video oyunlar</Link>
+          {/* <Tabs /> */}
+      </ul>
+    
+    </li>
       </ul> 
+      
       
 
           {/* <nav>

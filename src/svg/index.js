@@ -15,19 +15,17 @@ export const Crown = ({...props}) => (
 )
 
 export const SearchIcon = (props) => (
-    <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={22}
-    height={22}
-    fill="none"
-    {...props}
-  >
-    <path
-    // stroke="#fff"
-      fill="#aaa"
-      d="M20.293 21.707a1 1 0 0 0 1.414-1.414l-1.414 1.414ZM16.47 9.235a7.235 7.235 0 0 1-7.236 7.236v2c5.1 0 9.236-4.135 9.236-9.236h-2Zm-7.236 7.236A7.235 7.235 0 0 1 2 9.235H0c0 5.1 4.135 9.236 9.235 9.236v-2ZM2 9.235A7.235 7.235 0 0 1 9.235 2V0A9.235 9.235 0 0 0 0 9.235h2ZM9.235 2a7.235 7.235 0 0 1 7.236 7.235h2C18.47 4.135 14.336 0 9.235 0v2Zm5.176 13.825 5.882 5.882 1.414-1.414-5.882-5.882-1.414 1.414Z"
-    />
-  </svg>
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={20}
+  height={20}
+  viewBox="0 0 50 50"
+
+  {...props}
+>
+  <path d="M21 3C11.621 3 4 10.621 4 20s7.621 17 17 17c3.71 0 7.14-1.195 9.938-3.219l13.156 13.125 2.812-2.812-13-13.032A16.923 16.923 0 0 0 38 20c0-9.379-7.621-17-17-17Zm0 2c8.297 0 15 6.703 15 15s-6.703 15-15 15S6 28.297 6 20 12.703 5 21 5Z" />
+</svg>
+
 )
 
 
@@ -480,8 +478,8 @@ export const HeaderBasketIcon = (props) => (
   export const DeletedIconSidebar = (props) => (
     <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={40}
-    height={40}
+    width={20}
+    height={20}
     fill="#fff"
     stroke="#fff"
     viewBox="0 0 50 50"
