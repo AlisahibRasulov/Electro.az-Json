@@ -94,7 +94,7 @@ const Header = () => {
           <button className='search-btn'><SearchIcon/></button>
           <input className="search-input" />
           </div>
-          <div className="header-icons">
+          {/* <div className="header-icons">
             <button to="/like" className="like_header" onClick={()=>navigate(`/like`)}>
             <HeaderLikeHeartIcon className="like_header-icon"/><div className='like_header-counter'>{like}</div>
 
@@ -103,10 +103,6 @@ const Header = () => {
            <HeaderBasketIcon className="basket_header-icon"/>
            <div className='basket_header-counter'>{basket}</div>
             </button>
-            {/* {
-                isLogin ? (<button  to="/login" onClick={logOut}> Çıxış et </button>): (<button  to="/login" onClick={logIn}> Daxil ol </button>)
-
-            } */}
                 {isLogin && location.pathname !== '/login' && location.pathname !== '/signup'? (
           <button  onClick={logOut}>
             Çıxış et
@@ -116,7 +112,7 @@ const Header = () => {
             Daxil ol
           </button>
         ) : null}
-          </div>
+          </div> */}
       </div>
      </div>
     </div>

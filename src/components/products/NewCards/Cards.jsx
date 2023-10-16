@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from "../../library/Button";
+// import Button from "../../library/Button";
 // import {CardLikeHeartIcon} from "../../../svg"
 import { CardBasketIcon } from '../../../svg';
 
@@ -26,7 +26,7 @@ const Cards = ({data}) => {
         <div className='card-title'>{title}</div>
         <div className='card-price'>{(price).toLocaleString('az-AZ')} ₼</div>
     <div className="card-view">
-      <Button className='card-btn' onClick={handleAddToBasket}><CardBasketIcon className="card-btn_basket"/> <div className='card-btn_text'>Səbətə at</div> </Button>
+      <button className='card-btn' onClick={handleAddToBasket}><CardBasketIcon className="card-btn_basket"/> <div className='card-btn_text'>Səbətə at</div> </button>
     </div>
     </div>
   )

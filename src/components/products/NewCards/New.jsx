@@ -36,41 +36,48 @@ const New = () => {
       <div className="new-card_content">
         <h1>Yeni Məhsullar</h1>
       <Swiper
-        slidesPerView={5.9}
-        // loop = {true}
-        spaceBetween={13}
-        // // autoplay={{
-        // //   delay:1000,
-        // //   disableOnInteraction:false,
-        // // } }
-        // navigation
-        // pagination={{
-        //   clickable: true,
-        scrollbar={{
-          hide: true,
-        }}
-        modules={[Scrollbar]}
-        // }}
-        // breakpoints={{
-        //   '@0.00': {
-        //     slidesPerView: 1,
-        //     // spaceBetween: 10,
-        //   },
-        //   '@0.75': {
-        //     slidesPerView: 2,
-        //     // spaceBetween: 20,
-        //   },
-        //   '@1.00': {
-        //     slidesPerView: 3,
-        //     // spaceBetween: 40,
-        //   },
-        //   '@1.50': {
-        //     slidesPerView: 4,
-        //     // spaceBetween: 50,
-        //   },
-        // }}
-        // modules={[Navigation, Autoplay]}
-        className="swiper"
+         slidesPerView={1}
+         spaceBetween={10}
+         // pagination={{
+         //   clickable: true,
+         // }}
+         scrollbar={{
+           // hide: true,
+           dragSize: 700,
+           draggable: true,
+         }}
+         breakpoints={{
+           320: {
+             slidesPerView: 2.2,
+             spaceBetween: 10,
+           },
+          
+           560: {
+             slidesPerView: 1.5,
+             spaceBetween: 10,
+           },
+ 
+           640: {
+             slidesPerView: 1.5,
+             spaceBetween: 10,
+           },
+           768: {
+             slidesPerView: 2,
+             spaceBetween: 10,
+           },
+           1024: {
+             slidesPerView: 2.2,
+             spaceBetween: 10,
+           },
+ 
+           1200: {
+             slidesPerView: 5,
+             spaceBetween: 10,
+           },
+ 
+         }}
+         modules={[Scrollbar]}
+         className="mySwiper"
       >
       
         {productData.map((item)=>(

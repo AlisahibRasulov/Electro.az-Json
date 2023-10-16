@@ -25,13 +25,21 @@
 // ? PAGES
 @import "./pages/signup.scss";
 @import "./pages/login.scss";
+@import "./pages/home.scss";
 @import "./pages/about.scss";
 @import "./pages/contact.scss";
 @import "./pages/basket.scss";
 @import "./pages/like.scss";
 
 // ? products pages
+@import "./pages/products/allproducts.scss";
+@import "./pages/products//accessories.scss";
+@import "./pages/products//cameras.scss";
+@import "./pages/products//computers.scss";
+@import "./pages/products//games.scss";
+@import "./pages/products//phones.scss";
 @import "./pages/products/products.scss";
+@import "./pages/brands/brand-products.scss"
 
 
 // @import "react-alice-carousel/lib/scss/alice-carousel.scss"; 

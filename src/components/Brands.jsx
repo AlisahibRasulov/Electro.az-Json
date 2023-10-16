@@ -1,32 +1,121 @@
 // import React from 'react'
-// import { imageData } from '../datas/BrandsData'
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from "react-router-dom";
 
-// // ? "Animate On Scroll.
-// import AOS from 'aos';
-// import 'aos/dist/aos.css'; // You can also use <link> for styles
-// // ..
-// AOS.init();
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-// const Brands = () => {
-//   return (
-   
-     
-//     <div className='brands'>
-//          <div data-aos="fade-up"> 
-//     <div className="container">
-//       <h1>Top Brendlər</h1>
-//      <div className="brands-item">
-//        {imageData.map((brand)=>(
-//            <div className='brands-border' key={brand.id}>
-//                <img src={brand.image} alt="" />
-//            </div>
-//        ))}
-//      </div> 
-//    </div>
-//    </div>
-//    </div>
-   
-//   )
-// }
+// import required modules
+import { Pagination } from 'swiper/modules';
 
-// export default Brands
+import { imageData } from '../pages/Brands/Brand'
+
+
+
+const Brands = () => {
+  return (
+    <div className='brands'>
+       <>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={10}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          '@0.00': {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          '@0.75': {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          '@1.00': {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          '@1.50': {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+            <div className="brand-box">    
+                {imageData.map((brand)=>(
+                    <Link className='brand-link' key={brand.id}>
+                   <img className='brand-image' src={brand.image} alt="" />
+                   </Link>
+                ))} 
+            </div>
+        </SwiperSlide>
+        {/* <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="brand-box">
+                <Link></Link>
+            </div>
+        </SwiperSlide> */}
+      
+      </Swiper>
+    </>
+    </div>
+  )
+}
+
+export default Brands
+

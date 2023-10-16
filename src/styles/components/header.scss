@@ -105,83 +105,83 @@
         // border-radius: 50%;
     }
     }
-    .header-icons{
-        width: 80px;
-        display: flex;
-        margin: 0 auto;
-        // justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        .like_header{
-          position: relative;
-          padding: 10px 10px;
-          background-color: #fff;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          .like_header-icon{
-              // cursor: pointer;
-              // path{
-              //     stroke: #fff;
-              // }
+    // .header-icons{
+    //     width: 80px;
+    //     display: flex;
+    //     margin: 0 auto;
+    //     // justify-content: space-between;
+    //     align-items: center;
+    //     gap: 10px;
+    //     .like_header{
+    //       position: relative;
+    //       padding: 10px 10px;
+    //       background-color: #fff;
+    //       border-radius: 50%;
+    //       display: flex;
+    //       justify-content: center;
+    //       align-items: center;
+    //       cursor: pointer;
+    //       .like_header-icon{
+    //           // cursor: pointer;
+    //           // path{
+    //           //     stroke: #fff;
+    //           // }
   
-              &:hover path {
-                  stroke: #D10024;
-                }
-          }   
-        .like_header-counter{
-          position: absolute;
-            top: -2px;
-            right: -2px;
-            width:15px;
-            color: #fff;
-            background-color: #D10024;
-            border-radius: 50%;
-            padding: 0px 3px 0px 3px;
-            font-size: 12px;
-            text-align: center;
-        }
-        }
-        .basket_header{
-          position: relative;
-          padding: 10px 10px;
-          background-color: #fff;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          .basket_header-icon{
-            cursor: pointer;
+    //           &:hover path {
+    //               stroke: #D10024;
+    //             }
+    //       }   
+    //     .like_header-counter{
+    //       position: absolute;
+    //         top: -2px;
+    //         right: -2px;
+    //         width:15px;
+    //         color: #fff;
+    //         background-color: #D10024;
+    //         border-radius: 50%;
+    //         padding: 0px 3px 0px 3px;
+    //         font-size: 12px;
+    //         text-align: center;
+    //     }
+    //     }
+    //     .basket_header{
+    //       position: relative;
+    //       padding: 10px 10px;
+    //       background-color: #fff;
+    //       border-radius: 50%;
+    //       display: flex;
+    //       justify-content: center;
+    //       align-items: center;
+    //       cursor: pointer;
+    //       .basket_header-icon{
+    //         cursor: pointer;
             
-            .basket_header-icon{
-              // path{
-              //     fill: #fff;
-              // }
-              &:hover path {
-                  stroke: #D10024;
-                  fill: #D10024;
-                }
-          }
-          }
-          .basket_header-counter{
-            position: absolute;
-            top: -2px;
-            right: -2px;
-            width:15px;
-            color: #fff;
-            background-color: #D10024;
-            border-radius: 50%;
-            padding: 0px 3px 0px 3px;
-            font-size: 12px;
-            text-align: center;
-          }
-        }
+    //         .basket_header-icon{
+    //           // path{
+    //           //     fill: #fff;
+    //           // }
+    //           &:hover path {
+    //               stroke: #D10024;
+    //               fill: #D10024;
+    //             }
+    //       }
+    //       }
+    //       .basket_header-counter{
+    //         position: absolute;
+    //         top: -2px;
+    //         right: -2px;
+    //         width:15px;
+    //         color: #fff;
+    //         background-color: #D10024;
+    //         border-radius: 50%;
+    //         padding: 0px 3px 0px 3px;
+    //         font-size: 12px;
+    //         text-align: center;
+    //       }
+    //     }
         
        
-    }
+    // }
 }
 
 

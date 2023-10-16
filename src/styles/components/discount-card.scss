@@ -1,134 +1,5 @@
 .discount-card_content{
   padding: 35px 10px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-  // flex-wrap: wrap;
-  // .swiper {
-  //     // overflow-x: scroll;
-  //     width: 100% !important;
-  //     height: 100%;
-  //     .swiper-slide{
-  //       width: 300px !important;
-  //       .swiper-slide_card {
-        
-  //         // text-align: center;
-  //         // font-size: 18px;
-          
-        
-  //         /* Center slide text vertically */
-  //         position: relative;
-  //         overflow: hidden;
-  //         width:  300px !important;
-  //         height: 450px !important;
-  //         display: flex ;
-  //         justify-content: center ;
-  //         align-items: center ;
-  //         flex-direction: column;
-  //         margin: 20px;
-  //         // border: 1px solid #bbb;
-  //         background-color: #fff;
-  //         // margin-bottom: 40px;
-  //         border-radius: 5px 5px 5px 5px;
-  //         line-height: 20px;
-  //         cursor: pointer;
-
-  //         &:hover {
-  //           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  //             .card-view {
-  //               opacity: 1;
-  //               bottom: 0;
-  //               pointer-events: all;
-  //             }
-  //           } 
-  //           img {
-  //             width: 180px;
-  //             height: 180px;
-  //             border-radius: 10px;
-  //             // display: block;
-  //             // width: 100%;
-  //             // height: 100%;
-  //             // object-fit: cover;
-  //           }
-  //           .card-view{
-  //             position: absolute;
-  //             // top: 0;
-  //             // left: -100%;
-  //             // height: 100%;
-  //             // width: 100%;
-  //             // background-color: rgba(255, 255, 255, .5);
-  //             bottom: -100%;
-  //             width: 250px;
-  //             height: 20%;
-  //             // z-index: 1;
-  //             border-top: none;
-  //             border-radius: 0px 0px 5px 5px;
-  //             display: flex;
-  //             justify-content: center;
-  //             align-items: center;
-  //             flex-direction: column;
-  //             opacity: 0;
-  //             // transition: .15s ease-in-out;
-  //             pointer-events: none;
-  //             -webkit-transition: 0.1s all;
-  //             transition: 0.1s all;
-  //             z-index: 2;
-
-  //             .card-btn {
-  //               width: 210px;
-  //               background-color: #D10024;
-  //         // display: flex;
-  //         // justify-content: space-evenly;
-  //             font-size: 18px;
-  //             -webkit-transition: 0.2s all;
-  //             transition: 0.2s all;
-  
-  //             .card-btn_basket{
-  //               display: flex;
-  //               align-self: center;
-                
-  //             }
-  //             .card-btn_text{
-  //               display: flex;
-  //               align-self: center;
-  //               margin-left: 10px;
-  //               margin-bottom: 2px;
-  //             }
-  //           }
-  //         }
-  //         .card-title {
-  //           margin: 8px 0;
-  //           font-size: 15px;
-  //           padding: 5px;
-  //           text-align: center;
-  //         }
-          
-  //         .card-price {
-  //           color: #666;
-  //           font-weight: bold;
-  //           display: flex;
-  //           justify-self: start;
-  //         }
-  //         .card-discount-price{
-  //           color: #D10024;
-  //           font-weight: bold;
-  //         }
-          
-  //         .card-discount-percentage{
-  //           color: #666;
-  //           font-weight: bold;
-  //           position: absolute;
-  //           top: 7px;
-  //           left: 7px;
-  //           // border: 1px solid #D10024;
-  //           .discount-active{
-  //             border: 2px solid #D10024;
-  //              padding: 0 10px;
-  //           }
-  //         }
-  //       }
-  //     }     
-  //   }
   .swiper {
     width: 100%;
     height: 100%;
@@ -141,7 +12,6 @@
    
 }
   .swiper-slide {
-    // margin: 0 10px 0 30px !important;
     position: relative;
     height: 420px;
     text-align: center;
@@ -159,62 +29,26 @@
 
     
           .swiper-slide_card {
-        
-          // text-align: center;
-          // font-size: 18px;
-          
-        
-          /* Center slide text vertically */
-          // position: relative;
           overflow: hidden;
-          // width: 100%;
-          // height: auto;
-          // width:  300px !important;
-          // height: 400px !important;
           display: flex ;
           justify-content: center ;
           align-items: center ;
           flex-direction: column;
-          // margin: 20px;
-          // border: 1px solid #bbb;
           background-color: #fff;
-          // margin-bottom: 40px;
-          // border-radius: 5px 5px 5px 5px;
-          // line-height: 20px;
           cursor: pointer;
-
-          // &:hover {
-          //   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          //     .card-view {
-          //       opacity: 1;
-          //       bottom: 0;
-          //       pointer-events: all;
-          //     }
-          //   } 
           img {
             display: block;
             width: 50%;
             height: auto;
-            // width: 150px;
-            // height: 150px;
             border-radius: 15px;
             object-fit: cover;
           }
           .card-view{
             position: absolute;
-            // top: 0;
-            // left: -100%;
-            // height: 100%;
-            // width: 100%;
-            // background-color: rgba(255, 255, 255, .5);
-            // bottom: -100%;
             bottom: 100px;
             transform: translateY(70%);
             width: 100%;
             padding: 0 0 20px 0;
-            // height: 10%;
-            // z-index: 1;
-            // padding: 20px 0;
             border-top: none;
             border-radius: 0px 0px 5px 5px;
             display: flex;
@@ -222,15 +56,12 @@
             align-items: center;
             flex-direction: column;
             opacity: 0;
-            // transition: .15s ease-in-out;
             pointer-events: none;
             -webkit-transition: 0.1s all;
             transition: 0.1s all;
-            // padding: 20px 0 ;
             background-color: #fff;
       
             .card-btn {
-              // width: 210px;
               display: flex;
               padding: 10px 35px;
               background-color: #D10024;
@@ -285,7 +116,6 @@
           position: absolute;
           top: 7px;
           left: 7px;
-          // border: 1px solid #D10024;
           .discount-active{
             border: 2px solid #D10024;
              padding: 0 10px;
@@ -303,17 +133,7 @@
             }
           } 
    
-  }
-//   .swiper-slide:not(:last-child) {
-//     margin-right: 10px !important;
-// }
-
-// /* Son slayt kartının sağ marginini sıfırla */
-// .swiper-slide:last-child {
-//     margin-right: 50px !important;
-// }
-  
-    
+  }  
     .all-card{
       color: #D10024;
       display: flex;
@@ -324,25 +144,15 @@
 
 @media only screen and (min-width: 560px) and (max-width: 639px){
   .swiper-slide{
-    // width: 300px !important;
     height: 430px !important;
     line-height: 5px !important;
     
     .card-view{
       position: absolute;
-      // top: 0;
-      // left: -100%;
-      // height: 100%;
-      // width: 100%;
-      // background-color: rgba(255, 255, 255, .5);
-      // bottom: -100%;
       bottom: 100px;
       transform: none !important;
       width: 100%;
       padding: 0 0 20px 0;
-      // height: 10%;
-      // z-index: 1;
-      // padding: 20px 0;
       border-top: none;
       border-radius: 0px 0px 5px 5px;
       display: flex;
@@ -350,14 +160,11 @@
       align-items: center;
       flex-direction: column;
       opacity: 0;
-      // transition: .15s ease-in-out;
       pointer-events: none !important;
       -webkit-transition: none !important;
       transition: none !important;
-      // padding: 20px 0 ;
       background-color: #fff;
        .card-btn {
-      // width: 210px;
       display: flex;
       padding: 5px 21px !important;
       background-color: #D10024;

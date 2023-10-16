@@ -19,7 +19,7 @@ const Home = () => {
   //   // sessionStorage.removeItem("token");
   // };
   return (
-    <div>
+    <div className='home'>
       <>
       {/* <button style={logoutBtn} onClick={logOut}>
     Logout
@@ -30,7 +30,7 @@ const Home = () => {
       {/* <div className="container">
         <CarouselImg/>
       </div> */}
-       
+       <Brands/>
       <Discount/>
       <New/>
       {/* <Brands/> */}
