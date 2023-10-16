@@ -10,12 +10,7 @@ const logoutBtn = {
     top: "25px",
   }
 const About = () => {
-    // const navigate = useNavigate();
-    // const logOut = () => {
-    //   navigate("/login");
-    //   setUser(false);
-    //   // sessionStorage.removeItem("token");
-    // };
+    
   return (
     
     // <div>
@@ -100,8 +95,8 @@ const About = () => {
                             <img src={productImage1} alt=""/>
                         </div>
                         <div className="text">
-                            <h2>Zəmanətli Təhsil Sistemi</h2>
-                            <p>Seçdiyiniz tədrisə tamamilə fərqli sahədən gələ və ya sıfırdan başlaya bilərsiniz. Bunun üçün isə zəmanət lazımdır.</p>
+                            <h2>Yüksək Keyfiyyətli Məhsullar</h2>
+                            <p>Texnologiya dünyasının qapılarını "Electro.az" ilə açın. Sizə mükəmməl elektronika təcrübəsi təmin etmək üçün buradayıq.</p>
                         </div>
                     </div>
                 </div>
@@ -111,8 +106,8 @@ const About = () => {
                             <img src={productImage1} alt=""/>
                         </div>
                         <div class="text">
-                            <h2>Talant Mərkəzi</h2>
-                            <p>Talant Mərkəzi məzunların potensialına uyğun işlə təmin olunması üçün Code Academy-nin nəzdində yaradılan bir bölmədir.</p>
+                            <h2>Rahatlıq</h2>
+                            <p>Bir çox illik təcrübə və texnologiya sahəsindəki biliklərimizlə, müştərilərimizə ən yaxşı xidməti təqdim edirik.</p>
                         </div>
                     </div>
                 </div>
@@ -122,8 +117,19 @@ const About = () => {
                             <img src={productImage1} alt=""/>
                         </div>
                         <div className="text">
-                            <h2>Mentor Sistemi</h2>
-                            <p>Mentor Sistemi Code Academy-də tələbələrin təhsildə öyrəndiklərini təkrar etmələrini və gücləndirmələrini təmin edən xüsusi bir sistemdir.</p>
+                            <h2>Keyfiyyət</h2>
+                            <p>Yalnızca yüksək keyfiyyətli məhsulları təqdim edirik və müştərilərimizin rahatlığı və razi olduğu məhsullar bizim üçün ən mühüm faktordur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-lg-6" style={{padding: "0"}}>
+                    <div className="card-self reverse">
+                        <div className="image">
+                            <img src={productImage1} alt=""/>
+                        </div>
+                        <div className="text">
+                            <h2>Təcrübə</h2>
+                            <p>Bir çox illik təcrübə və texnologiya sahəsindəki biliklərimizlə, müştərilərimizə ən yaxşı xidməti təqdim edirik.</p>
                         </div>
                     </div>
                 </div>

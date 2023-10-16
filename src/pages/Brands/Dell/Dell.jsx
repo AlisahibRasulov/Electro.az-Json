@@ -8,7 +8,7 @@ const Dell = () => {
   // const [refresh, setRefresh] = useState(true);
 
   useEffect(()=>{
-      axios("http://34.125.216.115:9095/api/product/category/all?categories=DELL").then((res)=>{
+      axios("http://34.125.216.115:9095/api/product/brand/all?brand=DELL").then((res)=>{
         console.log(res.data) 
         setProductData(res.data)
       })

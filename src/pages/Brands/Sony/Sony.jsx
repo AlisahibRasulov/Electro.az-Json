@@ -8,7 +8,7 @@ const Sony = () => {
   // const [refresh, setRefresh] = useState(true);
 
   useEffect(()=>{
-      axios("http://34.125.216.115:9095/api/product/category/all?categories=SONY").then((res)=>{
+      axios("http://34.125.216.115:9095/api/product/brand/all?brand=SONY").then((res)=>{
         console.log(res.data) 
         setProductData(res.data)
       })

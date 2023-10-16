@@ -29,6 +29,20 @@ import Games from "./pages/Products/Games/Games"
 import DiscountPages from "./pages/Products/Discount/DiscountPages";
 import ProductDetail from "./pages/ProductDetail";
 
+//? Brand-Products page
+import Acer from "./pages/Brands/Acer/Acer"
+import Asus from "./pages/Brands/Asus/Asus"
+import Apple from "./pages/Brands/Apple/Apple"
+import Canon from "./pages/Brands/Canon/Canon"
+import Dell from "./pages/Brands/Dell/Dell"
+import HP from "./pages/Brands/HP/HP"
+import Huawei from "./pages/Brands/Huawei/Huawei"
+import Lenovo from "./pages/Brands/Lenovo/Lenovo"
+import Nikon from "./pages/Brands/Nikon/Nikon"
+import Samsung from "./pages/Brands/Samsung/Samsung"
+import Sony from "./pages/Brands/Sony/Sony"
+import Xiaomi from "./pages/Brands/Xaiomi/Xiaomi"
+
 //? TestUser
 // import Register from "./pages/TestUser/Register";
 // import Login from "./pages/TestUser/Login";
@@ -40,131 +54,12 @@ import ProductDetail from "./pages/ProductDetail";
 
 
 function App() {
-  // const location = useLocation();
-  // const [user, setUser] = useState(null);
-  // const [user, setUser] = useState(true);
-  // ? Test
-//   //  const [products, setProducts] = useState([]);
-//   const [selectedCategory, setSelectedCategory] = useState('');
-// const categories = ['COMPUTER', 'PHONE', 'CAMERAS', 'ACCESSORIES'];
-
-// const handleCategoryChange = newCategory => {
-//   setSelectedCategory(newCategory);
-// };
-// const isLoginPage = location.pathname === '/login';
-// const isSignupPage = location.pathname === '/signup';
   return (
     <div className="app">
-      <Header/>
-      {/* {!isLoginPage && !isSignupPage && <Header />} */}
-      {/*  Test  */}
-      {/* <header className="App-header">
-        <CategoryDropdown
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onSelectCategory={handleCategoryChange}
-        />
-      </header> */}
-    
-     
-      {/* <Navbar /> */}
-    
-      {/* <div className="container">
-      <Button btn-type='success'>Yess</Button>
-      <Button btn-type='primary'icon={<FooterTwitterIcon/>}>No</Button>
-      <div style={{width:"400px", marginBottom: "45px"}}>
-        <Label
-      label="Adinizi daxil edin" required/>
-        <Input icon={<SearchIcon/>}/>
-      </div>
-      <div style={{width:"400px", marginBottom: "45px"}}>
-        <Label
-      label="Nomrenizi daxil edin"/>
-        <Input/>
-      </div>
-      <div style={{width:"400px", marginBottom: "45px"}}>
-        <Label
-      label="Sifrenizi daxil edin" required/>
-        <Input type="password"/>
-      </div>
-      <Alert type='warning' text="Istifadeci sehvdir"/>
-      <Textarea disabled/>
-      <CardLikeHeartIcon className="card-like"/>
-
-
-      </div> */}
-         {/* <Button btn-type='primary'icon={<FooterTwitterIcon/>}>No</Button> */}
-{/* <Navbar/>
+      <Header/>         
   <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/about" element={<About />} />
-  <Route path="/contact" element={<Contact />} />
-  <Route path="/login" element={<Login />} />
-
-  <Route path="/basket" element={<Basket />} />
-
-  <Route path="/all-products" element={<AllProducts />} />
-  <Route path="/computers" element={<Computers />} />
-  <Route path="/phones" element={<Phones />} />
-  <Route path="/cameras" element={<Cameras />} />
-  <Route path="/accessories" element={<Accessories />} />
-  <Route path="/signup" element={<Signup />} /> 
-</Routes> */}
-
-
-         
-  <Routes>
-  {/* <Route  
-      path="/signup" 
-      element={
-        user ? <Navigate to="/login"/> : <Signup setUser={setUser}/>
-      }
-      /> */}
-        {/* <Route  
-      path="/login" 
-      element={
-        user ? <Login setUser={setUser}/> : <Navigate to="/signup"/>  
-      }
-      /> */}
-        {/* <Route path="/login" element={<Login setUser={setUser}/>} /> */}
-
-        {/* <Route  
-      path="/login" 
-      element={
-        user ? <Navigate to="/"/> : <Login setUser={setUser}/>
-      }
-      /> */}
-     
-      
-  {/* <Route  
-      path="/register" 
-      element={
-        user ? <Navigate to="/login"/> : <Register setUser={setUser}/>
-      }
-      />
-        <Route path="/login" element={<Login setUser={setUser}/>} />
-
-        <Route  
-      path="/login" 
-      element={
-        user ? <Navigate to="/"/> : <Login setUser={setUser}/>
-      }
-      /> */}
-      {/* burada login olmadan bir basha esas sehifeye getmek mehdudlasdirilir(slash "/" vasitesi ile) */}
-      {/* <Route
-      path="/"
-      element={
-        user ? <Home setUser={setUser}/> : <Navigate to="/login" />}
-      /> */}
-
     <Route exact path="/" element={<Navbar />}>
       <Route index={true} element={<Home />} />
-
-      {/* <Route
-      path="/"
-      element={
-        user ? <Home setUser={setUser}/> : <Navigate to="/login" />}
-      /> */}
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
 
@@ -173,13 +68,6 @@ function App() {
       <Route path="/like" element={<Like />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      
-      {/* <Route  
-      path="/product-detail/:id" 
-      element={
-        user ? <ProductDetail setUser={setUser}/> : <Navigate to="/"/>
-      }
-      /> */}
 
       <Route path="/all-products" element={<AllProducts />} />
       <Route path="/computers" element={<Computers />} />
@@ -188,7 +76,24 @@ function App() {
       <Route path="/accessories" element={<Accessories />} />
       <Route path="/games" element={<Games />} />
       <Route path="/discount" element={<DiscountPages />} />
+      
+      <Route path="/acer" element={<Acer />} />
+      <Route path="/asus" element={<Asus />} />
+      <Route path="/apple" element={<Apple />} />
+      <Route path="/Canon" element={<Canon />} />
+      <Route path="/dell" element={<Dell />} />
+      <Route path="/hp" element={<HP />} />
+      <Route path="/huawei" element={<Huawei />} />
+      <Route path="/lenovo" element={<Lenovo />} />
+      <Route path="/nikon" element={<Nikon />} />
+      <Route path="/samsung" element={<Samsung />} />
+      <Route path="/sony" element={<Sony />} />
+      <Route path="/xiaomi" element={<Xiaomi />} />
+
+
       <Route path="product-detail/:id" element={<ProductDetail />} />
+
+
     
     
 

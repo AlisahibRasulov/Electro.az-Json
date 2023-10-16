@@ -183,3 +183,5 @@ useEffect(() => {
 }
 
 export default CarouselImg
+
+

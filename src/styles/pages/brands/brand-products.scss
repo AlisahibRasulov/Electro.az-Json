@@ -1,4 +1,6 @@
-.card-content{
+.acer,.asus,.apple,.canon,.dell,.hp,.huawei,.lenovo,.nikon,.samsung,.sony,.xiaomi{
+  margin-top: 60px;
+  .card-content{
     padding: 35px 60px;
     display: flex;
     justify-content: space-between;
@@ -158,3 +160,4 @@
   }
     }
   }
+}

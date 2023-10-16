@@ -6,17 +6,12 @@ import { CardBasketIcon,CartCheckout,CardLikeIcon,CardLikeFullIcon} from '../../
 import { useDispatch,useSelector } from 'react-redux';
 import { addToBasket } from '../../redux/slices/addToBasketSlice';
 import { addToLike,removeLike } from '../../redux/slices/addToLikeSlice';
-// import { removeCard } from '../../redux/slices/addToCardSlice';
-// import { addToCard } from '../../redux/slices/addToCardSlice';
-// import { NavLink } from 'react-router-dom';
-// import { increment } from '../../redux/slices/CounterSlice';
 const Cards = ({data}) => {
   const navigate = useNavigate();
     const [buttonText, setButtonText] = useState('Səbətə at');
-    const [buttonColor, setButtonColor] = useState('#D10024'); // Buton rengi
+    const [buttonColor, setButtonColor] = useState('#D10024');
     const [buttonTextColor, setButtonTextColor] = useState('white');
     const [iconBasket, setIconBasket] = useState(<CardBasketIcon className="card-btn_icon"/>);
-    // const [liked, setLiked] = useState(false);
     const dispatch=useDispatch();
 
     const likedProducts = useSelector((state) => state.like)
