@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { Scrollbar } from 'swiper/modules';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+// import { Pagination } from 'swiper/modules';
 
 import { imageData } from '../pages/Brands/Brand'
 
@@ -22,9 +23,15 @@ const Brands = () => {
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
+        loop={true}
+        // pagination={{
+        //     clickable: true,
+        //   }}
+        scrollbar={{
+            hide: true,
+            dragSize: 0,
+            draggable: false,
+          }}
         breakpoints={{
             320: {
                 slidesPerView: 2.2,
@@ -50,11 +57,11 @@ const Brands = () => {
               },
     
               1200: {
-                slidesPerView: 10,
-                spaceBetween: 20,
+                slidesPerView: 8,
+                spaceBetween: 5,
               },
         }}
-        modules={[Pagination]}
+        modules={[Scrollbar]}
         className="mySwiper"
       >
                 {imageData.map((brand)=>(
