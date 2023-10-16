@@ -1,36 +1,39 @@
 
 
 .brands{
-    padding: 35px 10px;
+    padding: 10px 10px;
     .swiper {
         width: 100%;
         height: 100%;
     }
+    
     .swiper-slide {
         text-align: center;
-        font-size: 18px;
+        // font-size: 12px;
         background: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
         .brand-box{
-            width: 100%;
-            // margin-top: 5rem;
-            // margin: 25rem auto;
-            a.brand-link{
-            
-            img.brand-image{
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        width: 50% !important;
+                // margin-top: 5rem;
+                // margin: 25rem auto;
+        .brand-link{
+                        
+                    .brand-image{
+                        display: block;
+                        width: 50%;
+                        height: 50%;
+                        object-fit: cover;
+                    }
+                }
             }
         }
-        }
+           
         // img {
             
         // }
         
-    }
+    
 }
 

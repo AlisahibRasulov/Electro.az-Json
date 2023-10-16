@@ -26,35 +26,46 @@ const Brands = () => {
           clickable: true,
         }}
         breakpoints={{
-          '@0.00': {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          '@0.75': {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          '@1.00': {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-          '@1.50': {
-            slidesPerView: 4,
-            spaceBetween: 50,
-          },
+            320: {
+                slidesPerView: 2.2,
+                spaceBetween: 10,
+              },
+             
+              560: {
+                slidesPerView: 1.5,
+                spaceBetween: 10,
+              },
+    
+              640: {
+                slidesPerView: 1.5,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 2.2,
+                spaceBetween: 20,
+              },
+    
+              1200: {
+                slidesPerView: 10,
+                spaceBetween: 20,
+              },
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-            <div className="brand-box">    
                 {imageData.map((brand)=>(
-                    <Link className='brand-link' key={brand.id}>
+                    <SwiperSlide >
+            <div className="brand-box" >   
+                    <Link className='brand-link'>
                    <img className='brand-image' src={brand.image} alt="" />
                    </Link>
-                ))} 
             </div>
         </SwiperSlide>
+                ))} 
         {/* <SwiperSlide>
             <div className="brand-box">
                 <Link></Link>
