@@ -126,9 +126,9 @@ const Navbar = () => {
         <li>
             <NavLink  to={"/about"}  onClick={toggleSidebar}>Haqqımızda</NavLink>
         </li>
-        <li>
+        {/* <li>
             <NavLink  to={"/contact"}  onClick={toggleSidebar}>Bizimlə Əlaqə</NavLink>
-        </li>
+        </li> */}
         <li className={`dropdown ${isOpen ? 'open' : ''} open-dropdown`}  onClick={toggleDropdown}>
         Kateqoriyalar 
       <ul className="dropdown-menu">

@@ -1,7 +1,9 @@
 .like{
+    margin-top: 60px !important;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 60px;
     .products{
         display: flex;
@@ -91,14 +93,40 @@
         text-align: center;
     
     }
-  .clear-page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .home-btn{
-        padding: 15px 20px;
-        background-color: #D10024;
-    }
-  }
+    .clear-page{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // justify-self: center;
+        background-color: #ddd;
+        border-radius: 10px;
+        margin-top: 15rem;
+        width: 500px;
+        height: 300px;
+        gap: 20px;
+    
+        .clear-emoji{
+            width: 70px;
+            height: auto;
+        }
+    
+    
+        .clear-text{
+            font-weight: 500;
+            font-size: 20px;
+        }
+    
+    
+        .home-btn{
+            padding: 15px 20px;
+            background-color: #f3f3f3;
+            // color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+      }
 }

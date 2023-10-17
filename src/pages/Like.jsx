@@ -4,17 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch,  useSelector } from 'react-redux';  
 import { removeLike,removeLikeAll } from '../redux/slices/addToLikeSlice';
 import { removeCard,removeAllCard } from '../redux/slices/addToCardSlice';
-// import { increment, decrement } from '../redux/slices/CounterSlice';
 import Button from '../components/library/Button';
 import { DeletedIcon } from '../svg';
+import SadEmoji from "../img/products/free-sad-face-icon-2691-thumb.png";
+
+
+
 const Like = ({data}) => {
   const navigate = useNavigate();
     const counter=useSelector((state)=> state.counter);
     const likeItems=useSelector((state)=>state.like);
-    // const totalPrice=useSelector((state)=>state.basket.quantity * state.basket.price);
-    // const { items, totalPrice } = useSelector((state) => state.basket);
-    // const basketCount = useSelector((state)=>state.basket.length);
-    // const totalPrice = useSelector(state => state.basket.totalPrice);
     const dispatch=useDispatch();
 
    
@@ -83,8 +82,9 @@ const Like = ({data}) => {
 </div>
 ) : (
   <div className='clear-page'>
-    <p>Səbətinizdə məhsul yoxdur</p>
-    <Button className='home-btn' onClick={()=>navigate(`/`)}>Əsas Səhifəyə qayıt</Button>
+    <img className='clear-emoji' src={SadEmoji} alt="" />
+    <p className='clear-text'>Heç bir məhsulu bəyənməmisiniz</p>
+    <button className='home-btn' onClick={()=>navigate(`/`)}>Əsas səhifəyə qayıt</button>
   </div>
   
   

@@ -8,7 +8,7 @@ import { increment, decrement } from '../redux/slices/CounterSlice';
 import Button from '../components/library/Button';
 import { DecrementMinusIcon, DeletedIcon, IncrementPlusIcon } from '../svg';
 import { addToBasket } from '../redux/slices/addToBasketSlice';
-
+import SadEmoji from "../img/products/free-sad-face-icon-2691-thumb.png";
 
 
 
@@ -219,8 +219,9 @@ const Basket = ({data}) => {
 </div>
 ) : (
   <div className='clear-page'>
-    <p>Səbətinizdə məhsul yoxdur</p>
-    <Button className='home-btn' onClick={()=>navigate(`/`)}>Əsas Səhifəyə qayıt</Button>
+    <img className='clear-emoji' src={SadEmoji} alt="" />
+    <p className='clear-text'>Səbətinizdə məhsul yoxdur</p>
+    <button className='home-btn' onClick={()=>navigate(`/`)}>Alış-verişə Başla</button>
   </div>
   
   

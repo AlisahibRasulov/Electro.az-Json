@@ -9,9 +9,10 @@ import { addToLike,removeLike } from '../../redux/slices/addToLikeSlice';
 const Cards = ({data}) => {
   const navigate = useNavigate();
     const [buttonText, setButtonText] = useState('Səbətə at');
-    const [buttonColor, setButtonColor] = useState('#D10024');
+    const [buttonColor, setButtonColor] = useState('#D10024'); // Buton rengi
     const [buttonTextColor, setButtonTextColor] = useState('white');
     const [iconBasket, setIconBasket] = useState(<CardBasketIcon className="card-btn_icon"/>);
+    // const [liked, setLiked] = useState(false);
     const dispatch=useDispatch();
 
     const likedProducts = useSelector((state) => state.like)

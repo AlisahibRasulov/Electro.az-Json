@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import Button from '../../components/library/Button';
 import { CardBasketIcon,CartCheckout,CardLikeIcon,CardLikeFullIcon} from '../../../svg';
 import { useDispatch,useSelector } from 'react-redux';
@@ -10,7 +10,7 @@ import { addToLike,removeLike } from '../../../redux/slices/addToLikeSlice';
 // import { NavLink } from 'react-router-dom';
 // import { increment } from '../../redux/slices/CounterSlice';
 const Cards = ({data}) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
     const [buttonText, setButtonText] = useState('Səbətə at');
     const [buttonColor, setButtonColor] = useState('#D10024'); // Buton rengi
     const [buttonTextColor, setButtonTextColor] = useState('white');
@@ -23,18 +23,6 @@ const Cards = ({data}) => {
 
 
     const handleLikeClick = (productId) => {
-     
-      // if (liked) {
-      //   // Ürünü beğenmişse ve düğmeye tıklarsa, beğenmeyi kaldırın
-      //   dispatch(removeLike(productId));
-      //   // dispatch(removeCard());
-      //   setLiked(false);
-      // } else {
-      //   // Ürünü beğenmemişse ve düğmeye tıklarsa, beğenme eylemini gerçekleştirin
-      //   dispatch(addToLike(data));
-      //   // dispatch(addToCard());
-      //   setLiked(true);
-      // }
       if (isProductLiked) {
         dispatch(removeLike(productId));
       } else {
@@ -88,7 +76,7 @@ const Cards = ({data}) => {
                   <div className='card-price'>{(price).toLocaleString('az-AZ') } ₼</div>
                 )}
 <div className="card-view">
-<button className='card-btn' onClick={handleAddToBasket}><CardBasketIcon className="card-btn_basket"/> <div className='card-btn_text'>Səbətə at</div> </button>
+<button className='card-btn' onClick={handleAddToBasket} style={{ backgroundColor: buttonColor,color:buttonTextColor }}>{iconBasket} <div className='card-btn_text'>{buttonText}</div> </button>
 </div>
   </div>
   )
