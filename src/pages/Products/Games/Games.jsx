@@ -1,17 +1,13 @@
 import React from 'react'
-import axios from "axios";
 import { useState, useEffect } from 'react';
 import Cards from '../Cards';
-
+import gamesData from '../../../Json/category/GAMES';
 const Games = () => {
   const [productData, setProductData] = useState([]);
   // const [refresh, setRefresh] = useState(true);
 
   useEffect(()=>{
-      axios("http://34.125.216.115:9095/api/product/category/all?categories=GAMES").then((res)=>{
-        console.log(res.data) 
-        setProductData(res.data)
-      })
+    setProductData(gamesData)
     },[])
   return (
   <div className='games'>

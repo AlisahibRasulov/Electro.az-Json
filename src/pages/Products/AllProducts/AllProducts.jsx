@@ -1,19 +1,15 @@
 import React from 'react'
-import axios from "axios";
 import { useState, useEffect } from 'react';
 import Cards from '../Cards';
-
+import allProductData from '../../../Json/product-all';
 
 const AllProducts = () => {
   const [productData, setProductData] = useState([]);
   // const [refresh, setRefresh] = useState(true);
 
   useEffect(()=>{
-      axios("http://34.125.216.115:9095/api/product/all").then((res)=>{
-        console.log(res.data) 
-        setProductData(res.data)
-      })
-    },[])
+    setProductData(allProductData)
+  },[])
 
   return (
 <div className='all-products'>

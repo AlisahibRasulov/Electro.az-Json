@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from "axios";
+// import axios from "axios";
 import { useState,useEffect } from 'react';
 import { Link } from "react-router-dom";
 // import Button from "../../library/Button";
@@ -22,6 +22,7 @@ import { Scrollbar } from 'swiper/modules';
 // import required modules
 // import { Navigation, Autoplay } from 'swiper/modules';
 import Cards from './Cards';
+import discountData from '../../../Json/discount';
 
 // const swiper = new Swiper('.swiper', {
 //   scrollbar: {
@@ -36,10 +37,7 @@ const Discount = () => {
   // const [refresh, setRefresh] = useState(true);
 
   useEffect(()=>{
- axios("http://34.125.216.115:9095/api/product/discounted/all").then((res)=>{
-      console.log(res.data) 
-      setProductData(res.data)
-    })
+    setProductData(discountData)
   },[])
 
   return (

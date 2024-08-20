@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from "axios";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -14,6 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
+import allProductData from '../../../Json/product-all';
 // import 'swiper/css/pagination';
 // import 'swiper/css/autoplay';
 // import 'swiper/css/navigation';
@@ -24,10 +24,7 @@ const New = () => {
   const [productData, setProductData] = useState([]);
   // const [refresh, setRefresh] = useState(true);
   useEffect(()=>{
-    axios("http://34.125.216.115:9095/api/product/new-product/all").then((res)=>{
-        console.log(res.data) 
-        setProductData(res.data)
-      })
+    setProductData(allProductData)
     },[])
   return (
     
