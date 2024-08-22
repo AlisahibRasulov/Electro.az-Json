@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import App from './App';
 import "./styles/main.scss";
+import './index.css';
 
 // // ? "Animate On Scroll.
 // import AOS from 'aos';

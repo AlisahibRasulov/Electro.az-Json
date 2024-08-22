@@ -18,6 +18,20 @@ html {
     // overflow: hidden;
   }
  
+  .line {
+    width: 100%; /* Çizginin genişliği */
+    height: 2px; /* Çizginin yüksekliği */
+    background-color: #f3f3f3; /* Çizgi rengi */
+    margin: 0 auto;
+}
+
+.line2{
+  height: 30px;
+  width: 1px;
+  background-color: #f3f3f3;
+  margin: 0 auto;
+}
+
   
   .dropdown{
     box-sizing: content-box;

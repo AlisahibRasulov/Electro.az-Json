@@ -42,6 +42,7 @@ import Nikon from "./pages/Brands/Nikon/Nikon"
 import Samsung from "./pages/Brands/Samsung/Samsung"
 import Sony from "./pages/Brands/Sony/Sony"
 import Xiaomi from "./pages/Brands/Xaiomi/Xiaomi"
+import Products from "./pages/Products";
 
 //? TestUser
 // import Register from "./pages/TestUser/Register";
@@ -56,7 +57,7 @@ import Xiaomi from "./pages/Brands/Xaiomi/Xiaomi"
 function App() {
   return (
     <div className="app">
-      <Header/>         
+      {/* <Header/>         
   <Routes>
     <Route exact path="/" element={<Navbar />}>
       <Route index={true} element={<Home />} />
@@ -102,7 +103,27 @@ function App() {
   {/* <Route path="/login" element={<Login />} />
   <Route path="/signup" element={<Signup />} />  */}
         
-</Routes>
+{/* </Routes> */} 
+
+<Routes>
+    <Route path="/" element={<Header />}>
+      <Route index={true} element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/products" element={<Products />}>
+        <Route index element={<AllProducts />} />
+        <Route path="computers" element={<Computers />} />
+        <Route path="phones" element={<Phones />} />
+        <Route path="cameras" element={<Cameras />} />
+        <Route path="accessories" element={<Accessories />} />
+        <Route path="games" element={<Games />} />
+      </Route>
+      <Route path="/basket" element={<Basket />} />
+      <Route path="/like" element={<Like />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      {/* <Route path="/products" element={<Products />} /> */}
+    </Route>
+    </Routes>
 {/* <Sidebar/> */}
     {/* ? Test Dropdown peoducts */}
     {/* <ProductList/> */}

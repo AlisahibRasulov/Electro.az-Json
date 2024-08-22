@@ -180,7 +180,7 @@ const Basket = ({data}) => {
                   {data.discounts[0]?.currentPrice ? (
                   <>
                     <del>
-                     <div className='data-price' style={dataPrice}>{(data.price * data.quantity).toLocaleString('az-AZ')} ₼₼</div>
+                     <div className='data-price' style={dataPrice}>{(data.price * data.quantity).toLocaleString('az-AZ')}₼</div>
                     </del>
                      <div className='data-discount-price'>{(data.discounts[0].currentPrice * data.quantity).toLocaleString('az-AZ')}₼</div>
                   </>
