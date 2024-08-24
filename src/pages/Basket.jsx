@@ -124,7 +124,7 @@ const Basket = ({data}) => {
     // }, []);
     
     const orderBtn = () =>{
-      if( localStorage.getItem('isLoggedIn') === 'true'){
+      if( localStorage.getItem('login') === 'true'){
         console.log("here is working")
         // setOrder(true)
         alert("Ugurlu emeliyyat")

@@ -121,6 +121,7 @@ function App() {
       <Route path="/like" element={<Like />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/discount" element={<DiscountPages />} />
       {/* <Route path="/products" element={<Products />} /> */}
     </Route>
     </Routes>

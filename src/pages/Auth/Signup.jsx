@@ -1,11 +1,8 @@
-// import React from 'react';
 import { useState } from 'react';
 import axios from "axios";
 import { useNavigate, } from "react-router-dom";
-// import Input from '../../components/Input';
 import Button from '../../components/library/Button';
 import { Eye, EyeSlash,PlayLogo } from '../../svg';
-
 import signupImage from '../../img/signup-page/Mobile login-pana.png';
 
 const Signup = () => {
@@ -15,36 +12,19 @@ const Signup = () => {
         email: "",
         password: "",
     });
+
     const register = () => {
-      axios.post(`http://35.235.116.163:9095/register`, signupData).then((res)=>{
-          console.log(res)
-          navigate("/login");
-              // setUser(true);
-         
-      })
-      .catch((error) => {
-        if (error.response && error.response.status === 400 ) {
-          // Handle the 400 Bad Request error here
-          // alert("Bu email artiq istifade olunub");
-          if (error.response.data && error.response.data.message) {
-            // Extract and display the error message
-            alert("Bu email artiq istifade olunub");
-          } else {
-            alert("Melumatlari duzgun daxil etdiyinize emin olun");
-          }
-        } else {
-          // Handle other errors here
-          console.error("Error:", error);
-        }
-      })
-     };
+      localStorage.setItem('userData', JSON.stringify(signupData));
+      navigate("/login");
+    };
+    
     const onHandleChange = (e) => {
         setSignupData({...signupData, [e.target.name]:e.target.value});
        };
-       const loginPage = () => {
-        navigate("/login");
-             // setUser(false);
-    };
+
+    const loginPage = () => {
+      navigate("/login");
+    }
 
     const [visible, setVisible] = useState(false);
 
@@ -81,8 +61,7 @@ const Signup = () => {
         </div>
      
       </div>
-            
-            
+
     </div>
   )
 }

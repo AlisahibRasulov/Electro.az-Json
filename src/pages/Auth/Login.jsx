@@ -1,11 +1,18 @@
-// import React from 'react'
-import { useState } from 'react';
-import axios from "axios";
+
+import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import Button from '../../components/library/Button';
 import { Eye, EyeSlash } from '../../svg';
 import loginImage from '../../img/login-page/Mobile login-bro.png';
+
+import alertify from 'alertifyjs';
+import 'alertifyjs/build/css/alertify.css'; // Default theme
+import 'alertifyjs/build/css/themes/bootstrap.css'; // Bootstrap theme
+
+// Customize alertify settings
+alertify.set('notifier', 'position', 'top-right'); // Set the position of the alerts
+alertify.set('notifier', 'delay', 5); // Set the delay time in seconds
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -16,29 +23,21 @@ const Login = () => {
         password: "",
     });
     const login = () => {
-      axios.post(`http://35.235.116.163:9095/login`, loginData).then((res)=>{
-          console.log(res)
-          if(res.data === true){
-            localStorage.setItem('isLoggedIn', 'true');
-            navigate("/");
-            setLoginData(true);
-            window.location.reload();
-            // setUser(true);
-          }else{
-            alert("email ve yaxud password sehvdir")
-          }
-              
-              // sessionStorage.setItem("token", res.data.data.token);
-         
-      });
-     };
+      const storedData = JSON.parse(localStorage.getItem('userData'));
+      if (storedData && storedData.email === loginData.email && storedData.password === loginData.password) {
+        localStorage.setItem('login', 'true');
+        navigate("/");
+      } else {
+        alertify.error('Username or password incorrect!');
+      }
+    };
+    
     const onHandleChange = (e) => {
         setLoginData({...loginData, [e.target.name]:e.target.value});
        };
 
        const signupPage = () => {
        navigate("/signup");
-            // setUser(false);
    };
 
    const [visible, setVisible] = useState(false);
@@ -49,24 +48,6 @@ const Login = () => {
 
   //  ? login == true
      return (
-    // <div className='login'>
-    //         <div className='login-cart'>
-    //           <div className="login-cart_header">Daxil ol</div>
-    //           <div className="login-cart_content">
-    //             <div className="login-cart_top"></div>
-    //             <div className="login-cart_bottom"></div>
-    //           </div>
-    //         <input type="text" onChange={onHandleChange} className="login-email" name="email" placeholder="Email adresinizi daxil edin...."/>
-    //         <input type="password" onChange={onHandleChange} className="login-password" name="password" placeholder="Şifrənizi daxil edin..."/>
-    //         <Button onClick={login} className='login-btn'>Daxil ol</Button>  
-            
-    //         {/* <span>
-    //         <Link to="/signup">Hesab Yarat</Link>
-    //        </span> */}
-    //        <button className='signupPageBtn' onClick={signupPage}>Hesab Yarat</button>
-    //         </div>
-            
-    // </div>
     <div className='login'>
     <div className="container">
       <div className="login-content">
@@ -91,13 +72,10 @@ const Login = () => {
          <button className='signupPageBtn' onClick={signupPage}>Hesab Yarat</button>
          </div>
         </div>
-          </div>
       </div>
-   
     </div>
-          
-          
-  </div>
+  </div>        
+</div>
   )
 }
 

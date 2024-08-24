@@ -7,7 +7,7 @@ const discountData=[
       {
         "id": 2,
         "currentPrice": 900,
-        "discountPercentage": "25%"
+        "discountAmount": "300₼"
       }
     ],
     "rating": {
@@ -25,7 +25,7 @@ const discountData=[
       {
         "id": 3,
         "currentPrice": 2400,
-        "discountPercentage": "17%"
+        "discountAmount": "499₼"
       }
     ],
     "rating": {
@@ -43,7 +43,7 @@ const discountData=[
       {
         "id": 4,
         "currentPrice": 900,
-        "discountPercentage": "25%"
+        "discountAmount": "300₼"
       }
     ],
     "rating": {
@@ -60,8 +60,8 @@ const discountData=[
     "discounts": [
       {
         "id": 5,
-        "currentPrice": 3920,
-        "discountPercentage": "20%"
+        "currentPrice": 3900,
+        "discountAmount": "1000₼"
       }
     ],
     "rating": {
@@ -79,7 +79,7 @@ const discountData=[
       {
         "id": 7,
         "currentPrice": 4099,
-        "discountPercentage": "14%"
+        "discountAmount": "700₼"
       }
     ],
     "rating": {
@@ -97,7 +97,7 @@ const discountData=[
       {
         "id": 10,
         "currentPrice": 1890,
-        "discountPercentage": "10%"
+        "discountAmount": "210₼"
       }
     ],
     "rating": {
@@ -115,7 +115,7 @@ const discountData=[
       {
         "id": 11,
         "currentPrice": 480,
-        "discountPercentage": "20%"
+        "discountAmount": "120₼"
       }
     ],
     "rating": {
@@ -133,7 +133,7 @@ const discountData=[
       {
         "id": 13,
         "currentPrice": 4269.99,
-        "discountPercentage": "25%"
+        "discountAmount": "1430₼"
       }
     ],
     "rating": {
@@ -151,7 +151,7 @@ const discountData=[
       {
         "id": 14,
         "currentPrice": 4849.99,
-        "discountPercentage": "10%"
+        "discountAmount": "550₼"
       }
     ],
     "rating": {
@@ -169,7 +169,7 @@ const discountData=[
       {
         "id": 15,
         "currentPrice": 409.99,
-        "discountPercentage": "18%"
+        "discountAmount": ""
       }
     ],
     "rating": {
@@ -187,7 +187,7 @@ const discountData=[
       {
         "id": 16,
         "currentPrice": 89.99,
-        "discountPercentage": "10%"
+        "discountAmount": "10%"
       }
     ],
     "rating": {
@@ -205,7 +205,7 @@ const discountData=[
       {
         "id": 17,
         "currentPrice": 139.99,
-        "discountPercentage": "6%"
+        "discountAmount": "6%"
       }
     ],
     "rating": {

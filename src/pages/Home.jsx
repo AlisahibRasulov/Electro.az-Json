@@ -12,12 +12,6 @@ import CarouselImg from '../components/CarouselImg';
 // }
 
 const Home = () => {
-  // const navigate = useNavigate();
-  // const logOut = () => {
-  //   navigate("/login");
-  //   // setUser(false);
-  //   // sessionStorage.removeItem("token");
-  // };
   return (
     <div className='home'>
       <>

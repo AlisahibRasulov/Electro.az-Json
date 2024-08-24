@@ -54,12 +54,12 @@ const Cards = ({data}) => {
         setButtonTextColor('#666')
         setIconBasket(<CartCheckout className="card-btn_icon" />); 
         // localStorage.setItem(`basket_product_${data.id}`, JSON.stringify(data));
-        setTimeout(() => {
-        setButtonText('Səbətə at'); // Belirli bir süre sonra metni geri değiştir
-        setButtonColor('#D10024')
-        setButtonTextColor('white')
-        setIconBasket(<CardBasketIcon className="card-btn_icon" />); 
-      }, 1000)
+      //   setTimeout(() => {
+      //   setButtonText('Səbətə at'); // Belirli bir süre sonra metni geri değiştir
+      //   setButtonColor('#D10024')
+      //   setButtonTextColor('white')
+      //   setIconBasket(<CardBasketIcon className="card-btn_icon" />); 
+      // }, 1000)
       }
     }
 
@@ -70,8 +70,8 @@ const Cards = ({data}) => {
     <div className='product-card'>
     
     <div className='card-discount-percentage'>
-        {discounts[0]?.discountPercentage ? (
-        <div className='discount-active'>-{discounts[0].discountPercentage}</div>
+        {discounts[0]?.discountAmount ? (
+        <div className='discount-active'>-{discounts[0].discountAmount}</div>
 ) :     <div className='discount-hidden'></div>}
     </div>
     <button className='like-btn' onClick={()=>handleLikeClick(data.id)}>

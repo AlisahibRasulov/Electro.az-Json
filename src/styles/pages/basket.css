@@ -1,0 +1,189 @@
+.basket {
+  margin-top: 60px !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+.basket .basket-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+  height: 100%;
+  width: 100%;
+}
+.basket .basket-content .basket-top {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px;
+}
+.basket .basket-content .basket-top td {
+  border: none;
+  padding: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+.basket .basket-content .basket-top td .delete-btn {
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+}
+.basket .basket-content .basket-top td .product {
+  display: flex;
+  align-items: center;
+}
+.basket .basket-content .basket-top td .product .data-img {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+}
+.basket .basket-content .basket-top td .counter-quantity {
+  display: flex;
+  justify-content: center;
+}
+.basket .basket-content .basket-top td .counter-quantity .counter-quantity_btn {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.basket .basket-content .basket-top td .counter-quantity .counter-quantity_btn .counter-quantity_btn-text {
+  font-size: 10px;
+  font-weight: 400;
+}
+.basket .basket-content .basket-top td .counter-quantity .data-quantity {
+  border: 1px solid #666;
+  width: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+.basket .basket-content .basket-top td .data-price {
+  color: #666;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+}
+.basket .basket-content .basket-top td .data-discount-price {
+  color: #D10024;
+  font-weight: 600;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+}
+.basket .basket-content .basket-top td .selected-checkbox {
+  accent-color: #D10024;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+.basket .basket-content .basket-top th {
+  border: none;
+  padding: 20px;
+  text-align: center;
+  background-color: #D10024;
+  color: white;
+}
+.basket .basket-content .basket-top tr {
+  background-color: #fff;
+}
+.basket .basket-bottom {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+.basket .basket-bottom .basket-bottom_1 {
+  padding: 20px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+}
+.basket .basket-bottom .basket-bottom_1 .clear-btn, .basket .basket-bottom .basket-bottom_1 .selectall-btn {
+  padding: 10px 12px;
+  background-color: #f3f3f3;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.basket .basket-bottom .basket-bottom_2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+.basket .basket-bottom .basket-bottom_2 .total-quantity {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+.basket .basket-bottom .basket-bottom_2 .total-quantity span {
+  font-size: 18px;
+  font-weight: 500;
+}
+.basket .basket-bottom .basket-bottom_2 .total-price {
+  font-size: 20px;
+  font-weight: 600;
+}
+.basket .basket-bottom .basket-bottom_2 .total-price span {
+  font-size: 18px;
+  font-weight: 500;
+}
+.basket .basket-bottom .basket-bottom_3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+.basket .basket-bottom .basket-bottom_3 .complete-btn {
+  padding: 12px 20px;
+  background-color: #D10024;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.basket p {
+  text-align: center;
+}
+.basket .clear-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin-top: 15rem;
+  width: 500px;
+  height: 300px;
+  gap: 20px;
+}
+.basket .clear-page .clear-emoji {
+  width: 70px;
+  height: auto;
+}
+.basket .clear-page .clear-text {
+  font-weight: 500;
+  font-size: 20px;
+}
+.basket .clear-page .home-btn {
+  padding: 15px 20px;
+  background-color: #f3f3f3;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}/*# sourceMappingURL=basket.css.map */

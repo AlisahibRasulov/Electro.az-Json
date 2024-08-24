@@ -1,0 +1,451 @@
+.new-card_content {
+  padding: 35px 10px;
+}
+.new-card_content .swiper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 1000;
+}
+.new-card_content .swiper-wrapper {
+  z-index: 1000;
+}
+.new-card_content .swiper-slide {
+  position: relative;
+  height: 420px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  border-radius: 5px 5px 0px 0px;
+  margin-bottom: 30px;
+  line-height: 20px;
+}
+.new-card_content .swiper-slide .swiper-slide_card {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  cursor: pointer;
+}
+.new-card_content .swiper-slide .swiper-slide_card .like-btn {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 5px 7px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+}
+.new-card_content .swiper-slide .swiper-slide_card img {
+  display: block;
+  width: 50%;
+  height: auto;
+  border-radius: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.new-card_content .swiper-slide .swiper-slide_card .card-view {
+  position: absolute;
+  bottom: 100px;
+  transform: translateY(70%);
+  width: 100%;
+  padding: 0 0 20px 0;
+  border-top: none;
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s all;
+  background-color: #fff;
+}
+.new-card_content .swiper-slide .swiper-slide_card .card-view .card-btn {
+  display: flex;
+  padding: 10px 35px;
+  background-color: #D10024;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.2s all;
+  border-radius: 10px;
+}
+.new-card_content .swiper-slide .swiper-slide_card .card-view .card-btn .card-btn_basket {
+  display: flex;
+  align-self: center;
+}
+.new-card_content .swiper-slide .swiper-slide_card .card-view .card-btn .card-btn_text {
+  display: flex;
+  align-self: center;
+  margin-left: 10px;
+  margin-bottom: 2px;
+  color: #fff;
+}
+.new-card_content .swiper-slide .swiper-slide_card .card-title {
+  margin: 8px 0;
+  font-size: 15px;
+  padding: 5px;
+  text-align: center;
+}
+.new-card_content .swiper-slide .swiper-slide_card .card-price {
+  color: #666;
+  font-weight: bold;
+  display: flex;
+  justify-self: start;
+}
+.new-card_content .swiper-slide .swiper-slide_card .small-box {
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  border: 2px solid #D10024;
+  background-color: #D10024;
+  color: #fff;
+  padding: 0px 10px;
+}
+.new-card_content .swiper-slide:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.new-card_content .swiper-slide:hover .card-view {
+  opacity: 1;
+  bottom: 0;
+  pointer-events: all;
+}
+.new-card_content .all-card {
+  color: #D10024;
+  display: flex;
+  justify-self: self-end;
+}
+
+@media only screen and (min-width: 560px) and (max-width: 639px) {
+  .swiper-slide {
+    height: 430px !important;
+    line-height: 5px !important;
+  }
+  .swiper-slide .card-view {
+    position: absolute;
+    bottom: 100px;
+    transform: none !important;
+    width: 100%;
+    padding: 0 0 20px 0;
+    border-top: none;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none !important;
+    transition: none !important;
+    background-color: #fff;
+  }
+  .swiper-slide .card-view .card-btn {
+    display: flex;
+    padding: 5px 21px !important;
+    background-color: #D10024;
+    font-size: 70% !important;
+    font-weight: bold;
+    transition: none !important;
+    border-radius: 8px !important;
+  }
+  .swiper-slide .card-view .card-btn .card-btn_basket {
+    display: flex;
+    align-self: center;
+  }
+  .swiper-slide .card-view .card-btn .card-btn_text {
+    display: flex;
+    align-self: center;
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+  .swiper-slide .card-title {
+    margin: 8px 0;
+    font-size: 12px !important;
+    padding: 5px;
+    text-align: center;
+    line-height: 13px !important;
+  }
+  .swiper-slide .card-price-deleted {
+    font-size: 11px !important;
+    font-weight: bold;
+  }
+  .swiper-slide .card-price {
+    color: #666;
+    font-weight: bold;
+    display: flex;
+    justify-self: start;
+    font-size: 13px !important;
+  }
+  .swiper-slide .small-box {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    border: 2px solid #D10024;
+    background-color: #D10024;
+    color: #fff;
+    padding: 0px 10px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 559px) {
+  .swiper-slide {
+    height: 300px !important;
+    line-height: 5px !important;
+  }
+  .swiper-slide .card-btn {
+    display: flex;
+    padding: 5px 21px !important;
+    background-color: #D10024;
+    font-size: 70% !important;
+    font-weight: bold;
+    transition: 0.2s all;
+    border-radius: 8px !important;
+  }
+  .swiper-slide .card-btn .card-btn_basket {
+    display: flex;
+    align-self: center;
+  }
+  .swiper-slide .card-btn .card-btn_text {
+    display: flex;
+    align-self: center;
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+  .swiper-slide .card-title {
+    margin: 8px 0;
+    font-size: 12px !important;
+    padding: 5px;
+    text-align: center;
+    line-height: 13px !important;
+  }
+  .swiper-slide .card-price {
+    color: #666;
+    font-weight: bold;
+    display: flex;
+    justify-self: start;
+    font-size: 13px !important;
+  }
+  .swiper-slide .small-box {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    border: 2px solid #D10024;
+    background-color: #D10024;
+    color: #fff;
+    padding: 0px 10px;
+  }
+}
+@media only screen and (min-width: 560px) and (max-width: 639px) {
+  .swiper-slide {
+    height: 430px !important;
+    line-height: 5px !important;
+  }
+  .swiper-slide .card-btn {
+    display: flex;
+    padding: 5px 21px !important;
+    background-color: #D10024;
+    font-size: 70% !important;
+    font-weight: bold;
+    transition: 0.2s all;
+    border-radius: 8px !important;
+  }
+  .swiper-slide .card-btn .card-btn_basket {
+    display: flex;
+    align-self: center;
+  }
+  .swiper-slide .card-btn .card-btn_text {
+    display: flex;
+    align-self: center;
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+  .swiper-slide .card-title {
+    margin: 8px 0;
+    font-size: 12px !important;
+    padding: 5px;
+    text-align: center;
+    line-height: 13px !important;
+  }
+  .swiper-slide .card-price {
+    color: #666;
+    font-weight: bold;
+    display: flex;
+    justify-self: start;
+    font-size: 13px !important;
+  }
+  .swiper-slide .small-box {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    border: 2px solid #D10024;
+    background-color: #D10024;
+    color: #fff;
+    padding: 0px 10px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .swiper-slide {
+    height: 430px !important;
+    line-height: 5px !important;
+  }
+  .swiper-slide .card-btn {
+    display: flex;
+    padding: 5px 21px !important;
+    background-color: #D10024;
+    font-size: 70% !important;
+    font-weight: bold;
+    transition: 0.2s all;
+    border-radius: 8px !important;
+  }
+  .swiper-slide .card-btn .card-btn_basket {
+    display: flex;
+    align-self: center;
+  }
+  .swiper-slide .card-btn .card-btn_text {
+    display: flex;
+    align-self: center;
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+  .swiper-slide .card-title {
+    margin: 8px 0;
+    font-size: 12px !important;
+    padding: 5px;
+    text-align: center;
+    line-height: 13px !important;
+  }
+  .swiper-slide .card-price {
+    color: #666;
+    font-weight: bold;
+    display: flex;
+    justify-self: start;
+    font-size: 13px !important;
+  }
+  .swiper-slide .small-box {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    border: 2px solid #D10024;
+    background-color: #D10024;
+    color: #fff;
+    padding: 0px 10px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .swiper-slide {
+    height: 430px !important;
+  }
+  .swiper-slide .card-btn {
+    display: flex;
+    padding: 5px 15px !important;
+    background-color: #D10024;
+    font-size: 70% !important;
+    font-weight: bold;
+    transition: 0.2s all;
+    border-radius: 8px !important;
+  }
+  .swiper-slide .card-btn .card-btn_basket {
+    display: flex;
+    align-self: center;
+  }
+  .swiper-slide .card-btn .card-btn_text {
+    display: flex;
+    align-self: center;
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+  .swiper-slide .card-title {
+    margin: 8px 0;
+    font-size: 10px !important;
+    padding: 5px;
+    text-align: center;
+    line-height: 13px !important;
+  }
+  .swiper-slide .card-price {
+    color: #666;
+    font-weight: bold;
+    display: flex;
+    justify-self: start;
+    font-size: 12px !important;
+  }
+  .swiper-slide .small-box {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    border: 2px solid #D10024;
+    background-color: #D10024;
+    color: #fff;
+    padding: 0px 10px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .swiper-slide {
+    height: 320px !important;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 70% !important;
+    height: auto;
+    border-radius: 15px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .swiper-slide .card-btn {
+    display: flex;
+    padding: 5px 21px !important;
+    background-color: #D10024;
+    font-size: 70% !important;
+    font-weight: bold;
+    transition: 0.2s all;
+    border-radius: 8px !important;
+  }
+  .swiper-slide .card-btn .card-btn_basket {
+    display: flex;
+    align-self: center;
+  }
+  .swiper-slide .card-btn .card-btn_text {
+    display: flex;
+    align-self: center;
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+  .swiper-slide .card-title {
+    margin: 8px 0;
+    font-size: 12px !important;
+    padding: 5px;
+    text-align: center;
+    line-height: 13px !important;
+  }
+  .swiper-slide .card-price-deleted {
+    font-size: 11px !important;
+    font-weight: bold;
+  }
+  .swiper-slide .card-price {
+    color: #666;
+    font-weight: bold;
+    display: flex;
+    justify-self: start;
+    font-size: 13px !important;
+  }
+  .swiper-slide .small-box {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    border: 2px solid #D10024;
+    background-color: #D10024;
+    color: #fff;
+    padding: 0px 10px;
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1699px) {
+  .swiper-slide {
+    height: 370px !important;
+  }
+}/*# sourceMappingURL=new-cards.css.map */
