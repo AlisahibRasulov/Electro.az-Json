@@ -1,29 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 import { PlayLogo } from "../svg";
 
 const Header = () => {
   const [isLogin, setLogin] = useState(false);
-  const [username, setUsername] = useState('');
-  const [status, setStatus] = useState('');
+  const [username, setUsername] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const loginStatus = localStorage.getItem('login') === 'true';
-    setStatus(loginStatus);
-    setLogin(true)
-  
-    const userData = JSON.parse(localStorage.getItem('userData'));
-    setUsername(userData?.username || '');
+    const loginStatus = localStorage.getItem("login") === "true";
+    setLogin(loginStatus);
+
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    setUsername(userData?.username || "");
   }, [location]);
-  
 
   const logOut = () => {
-    localStorage.setItem('login', 'false');
+    localStorage.setItem("login", "false");
     setLogin(false);
     navigate("/login");
   };
@@ -41,61 +38,96 @@ const Header = () => {
 
   return (
     <>
-      <div className='header'>
+      <div className="header">
         <div className="header_top">
-          <div className='header_logo'>
-            <PlayLogo className="play-logo"/>
-            <div className='logo-name'><a href="/">Electro</a></div>
+          <div className="header_logo">
+            <PlayLogo className="play-logo" />
+            <div className="logo-name">
+              <a href="/">Electro</a>
+            </div>
           </div>
-          <ul className='header_menu'>
-            <li className='menu_item'>
-              <NavLink className="menu_link" to={'/'}>Əsas Səhifə</NavLink>
+          <ul className="header_menu">
+            <li className="menu_item">
+              <NavLink className="menu_link" to={"/"}>
+                Əsas Səhifə
+              </NavLink>
             </li>
-            <li className='menu_item'>
-              <NavLink className="menu_link" to={'/products'}>Məhsullar</NavLink>
+            <li className="menu_item">
+              <NavLink className="menu_link" to={"/products"}>
+                Məhsullar
+              </NavLink>
             </li>
-            <li className='menu_item'>
-              <NavLink className="menu_link" to={'/about'}>Haqqımızda</NavLink>
+            <li className="menu_item">
+              <NavLink className="menu_link" to={"/about"}>
+                Haqqımızda
+              </NavLink>
             </li>
           </ul>
           <div className="header_user">
-            {isLogin && status && location.pathname !== '/login' && location.pathname !== '/signup' ? (
-              <div className='flex items-center'>
-                {username && <span className="username_display font-[600] mr-[10px]">{username}</span>}
+            {isLogin ? (
+              <div className="flex items-center">
+                {username && (
+                  <span className="username_display font-[600] mr-[10px]">
+                    {username}
+                  </span>
+                )}
                 <button className="login_btn" onClick={logOut}>
                   Çıxış et
                 </button>
               </div>
-            ) : !isLogin && status && location.pathname !== '/login' && location.pathname !== '/signup' ? (
+            ) : (
               <div>
-                <button to="/login" className="login_btn" onClick={() => navigateTo('/login')}>
+                <button
+                  className="login_btn"
+                  onClick={() => navigateTo("/login")}
+                >
                   Daxil ol
                 </button>
               </div>
-            ) : null}
+            )}
           </div>
         </div>
         <div className="line"></div>
         <div className="header_bottom">
           <div className="header_catalog">
-            <img className="menu_img" src="../../images/icons/category.png" alt="" />
+            <img
+              className="menu_img"
+              src="../../images/icons/category.png"
+              alt=""
+            />
             <div className="menu_title">Kataloq</div>
           </div>
           <div className="header_search">
-            <input className="search_input focus:ring-slate-900 " type="text" placeholder="Axtarış..." />
+            <input
+              className="search_input focus:ring-slate-900 "
+              type="text"
+              placeholder="Axtarış..."
+            />
             <button className="search_btn">Axtar</button>
           </div>
           <div className="header_icons">
             <div className="header_like relative">
-              <button to="/like" className="like_header" onClick={() => navigateTo('/like')}>
-                <span className="like_header-counter px-[4px] py-[2px] bg-[#D10024] text-[#fff] text-[10px] rounded-[5px] absolute top-[-5px] right-[-5px]">{like}</span>
+              <button
+                to="/like"
+                className="like_header"
+                onClick={() => navigateTo("/like")}
+              >
+                <span className="like_header-counter px-[4px] py-[2px] bg-[#D10024] text-[#fff] text-[10px] rounded-[5px] absolute top-[-5px] right-[-5px]">
+                  {like}
+                </span>
                 <img src="../images/icons/like.png" alt="" />
               </button>
             </div>
             <div className="line2"></div>
             <div className="header_basket relative">
-              <button to="/basket" className="basket_header" onClick={() => navigateTo('/basket')}>
-                <span className="basket_header-counter px-[4px] py-[2px] bg-[#D10024] text-[#fff] text-[10px] rounded-[5px] absolute top-[-5px] right-[-5px]">{basket}</span>
+              <button
+                to="/basket"
+                className="basket_header"
+                onClick={() => navigateTo("/basket")}
+              >
+                <span className="basket_header-counter px-[4px] py-[2px] bg-[#D10024] text-[#fff] text-[10px] rounded-[5px] absolute top-[-5px] right-[-5px]">
+                  {basket}
+                </span>
                 <img src="../images/icons/cart.png" alt="" />
               </button>
             </div>

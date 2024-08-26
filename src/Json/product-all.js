@@ -327,7 +327,7 @@ const allProductData = [
       "rating": "4.8",
       "count": "312"
     },
-    "previewImage": "../images/products/Fotoaparatlar/Product 5/1.png"
+    "previewImage": "../images/products/Fotoaparatlar/Product 5/1.jpg"
   },
   {
     "id": 31,

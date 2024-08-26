@@ -78,7 +78,7 @@ const About = () => {
                 </div>
             </div>
             <div className="row">
-                <div class="col-lg-6" style={{padding: "0"}}>
+                <div className="col-lg-6" style={{padding: "0"}}>
                     <div className="card-self reverse">
                         <div className="image">
                             <img src={productImage1} alt=""/>
@@ -105,7 +105,7 @@ const About = () => {
                         <div className="image">
                             <img src={productImage1} alt=""/>
                         </div>
-                        <div class="text">
+                        <div className="text">
                             <h2>Rahatlıq</h2>
                             <p>Bir çox illik təcrübə və texnologiya sahəsindəki biliklərimizlə, müştərilərimizə ən yaxşı xidməti təqdim edirik.</p>
                         </div>

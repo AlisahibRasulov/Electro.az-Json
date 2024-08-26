@@ -128,7 +128,7 @@
           left: 7px;
           .discount-active{
             border: 2px solid #D10024;
-             padding: 0 10px;
+            padding: 0 10px;
           }
         }
         
@@ -547,6 +547,87 @@
     // width: 300px !important;
     height: 320px !important;
 
+    img {
+      display: block;
+      width: 70% !important;
+      height: auto;
+      // width: 150px;
+      // height: 150px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+    .card-btn {
+      // width: 210px;
+      display: flex;
+      padding: 5px 21px !important;
+      background-color: #D10024;
+      font-size: 70% !important;
+      font-weight: bold;
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+      border-radius: 8px !important;
+
+    .card-btn_basket{
+      display: flex;
+      align-self: center;
+      
+    }
+    .card-btn_text{
+      display: flex;
+      align-self: center;
+      margin-left: 10px;
+      margin-bottom: 2px;
+    }
+
+  }
+  .card-title {
+    margin: 8px 0;
+    font-size: 12px !important;
+    padding: 5px;
+    text-align: center;
+    line-height: 13px !important;
+  }
+  
+  .card-price-deleted{
+    font-size: 11px !important;
+    font-weight: bold;
+    
+  }
+
+  .card-price {
+    color: #666;
+    font-weight: bold;
+    display: flex;
+    justify-self: start;
+    font-size: 13px !important;
+  }
+  .card-discount-price{
+    color: #D10024;
+    font-weight: bold;
+    font-size: 11px !important;
+    line-height: 15px !important;
+  }
+  
+  .card-discount-percentage{
+    color: #fff;
+    background-color: #D10024;
+    font-weight: bold;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    // border: 1px solid #D10024;
+    .discount-active{
+      border: 2px solid #D10024;
+       padding: 0 10px;
+    }
+  }
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1699px){
+  .swiper-slide{
+    // width: 300px !important;
+    height: 370px !important;
 
     img {
       display: block;
@@ -605,12 +686,13 @@
   .card-discount-price{
     color: #D10024;
     font-weight: bold;
-    font-size: 13px !important;
+    font-size: 11px !important;
     line-height: 15px !important;
   }
   
   .card-discount-percentage{
-    color: #666;
+    color: #fff;
+    background-color: #D10024;
     font-weight: bold;
     position: absolute;
     top: 7px;
@@ -621,13 +703,6 @@
        padding: 0 10px;
     }
   }
-  }
-}
-
-@media only screen and (min-width: 1400px) and (max-width: 1699px){
-  .swiper-slide{
-    // width: 300px !important;
-    height: 370px !important;
   }
 }
 
