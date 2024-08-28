@@ -6,20 +6,27 @@ import accessoriesData from '../../../Json/category/ACCESSORIES';
 
 const Accessories = () => {
   const [productData, setProductData] = useState([]);
-  // const [refresh, setRefresh] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(()=>{
-     setProductData(accessoriesData)
+    setTimeout(() => {
+      setProductData(accessoriesData)
+      setLoading(false)
+    }, 1000);
     },[])
   return (
     <div className='accessories'>
-      <div className="container">
-      <div className="card-content">
-      {productData.map((item) => (
-         <Cards key={item.id} data={item}/>
-))}
-    </div>
-    </div>
+    <div className="container flex justify-center items-center">
+        {loading ? (
+          <div className="spinner2"></div> // Loading indicator inside the container
+        ) : (
+          <div className="card-content">
+            {productData.map((item) => (
+              <Cards key={item.id} data={item} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   )
 }

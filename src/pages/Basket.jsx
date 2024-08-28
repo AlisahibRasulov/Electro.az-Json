@@ -51,7 +51,10 @@ const Basket = ({ data }) => {
   };
 
   const handleAllDeletedToBasket = () => {
-    dispatch(removeBasketAll());
+    selectedItems.forEach((productId) => {
+      dispatch(removeBasket(productId));
+    });
+    setSelectedItems([]); // Clear the selection after deletion
   };
   const handleDeletedToBasket = (productId) => {
     dispatch(removeBasket(productId));
