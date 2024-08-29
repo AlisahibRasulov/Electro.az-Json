@@ -42,7 +42,6 @@ const Login = () => {
   };
 
   const [visible, setVisible] = useState(false);
-
   const togglePasswordVisibility = () => {
     setVisible(!visible);
   };

@@ -16,9 +16,10 @@ const Phones = () => {
   }, []);
   return (
 <div className='phones'>
-<div className="container flex justify-center items-center">
         {loading ? (
-          <div className="spinner2"></div> // Loading indicator inside the container
+      <div className="container flex justify-center items-center">
+          <div className="spinner2"></div>
+      </div>
         ) : (
           <div className="card-content">
             {productData.map((item) => (
@@ -26,7 +27,6 @@ const Phones = () => {
             ))}
           </div>
         )}
-      </div>
 </div>
   )
 }
