@@ -460,19 +460,7 @@ const allProductData = [
       "count": "312"
     },
     "previewImage": "../images/products/Aksesuarlar/Product4/1.png"
-  },
- 
- 
- 
- 
- 
-
-  
-  
-  
-  
-  
-  
+  },  
 ]
 
 export default allProductData

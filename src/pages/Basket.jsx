@@ -114,7 +114,7 @@ const Basket = ({ data }) => {
             <tbody>
               {basketItems.map((data) => {
                 return (
-                  <tr key={data.id}>
+                  <tr className="sm:flex sm:flex-col" key={data.id}>
                     <td>
                       <input
                         className="selected-checkbox"

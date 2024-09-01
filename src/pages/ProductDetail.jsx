@@ -38,34 +38,39 @@
 
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import DetailCard from '../components/DetailCard';
-
+import productIdData from '../Json/product-deail/product-by-id';
 
 const ProductDetail = () => {
   const [cardDetails, setCardDetails] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
-    axios(`http://34.125.216.115:9095/api/product/${id}`)
-      .then((res) => {
-        console.log(res.data);
-        setCardDetails([res.data]); // Wrap the response data in an array
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // Ürün ID'sine göre veriyi filtrele
+    const product = productIdData.find(item => item.id === parseInt(id)); // id'nin doğru formatta olduğunu doğrula
+
+    if (product) {
+      setCardDetails([product]); // Detayları bir dizi olarak ayarla
+    } else {
+      setCardDetails([]); // Ürün bulunamazsa boş bir dizi döndür
+    }
+    
+    setLoading(false); // Yükleme durumunu güncelle
   }, [id]);
 
   return (
     <div className="card-detail">
       <div className="container">
         <div className="card-content">
-          {cardDetails.map((item) => (
-            <DetailCard key={item.id} data={item} />
-          ))}
-           {/* <DetailCard card={cardDetails} /> */}
+          {loading ? (
+            <p>Loading...</p> // Yükleme durumunu göster
+          ) : (
+            cardDetails.map((item) => (
+              <DetailCard key={item.id} data={item} />
+            ))
+          )}
         </div>
       </div>
     </div>

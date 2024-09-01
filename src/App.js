@@ -122,7 +122,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/discount" element={<DiscountPages />} />
-
+      <Route path="product-detail/:id" element={<ProductDetail />} />
       
       {/* <Route path="/products" element={<Products />} /> */}
     </Route>
