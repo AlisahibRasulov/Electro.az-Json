@@ -99,6 +99,8 @@ const Basket = ({ data }) => {
 
   return (
     <div className="basket">
+      <div className="container">
+
       {basketItems.length > 0 ? (
         <div className="basket-content">
           <table className="basket-top">
@@ -231,6 +233,7 @@ const Basket = ({ data }) => {
           </button>
         </div>
       )}
+      </div>
     </div>
   );
 };

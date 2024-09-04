@@ -21,10 +21,10 @@ module.exports = {
       'lg': {'min': '1200px', 'max': '1399px'},
       // => @media (min-width: 1081px and max-width: 1299px) { ... }
 
-      'xl': {'min': '1400px'},
+      'xl': {'min': '1400px', 'max': '1699px'},
       // => @media (min-width: 1300px) { ... }
 
-      // '2xl': {'min': '1881px'},
+      '2xl': {'min': '1700px'},
       // // => @media (min-width: 1880px) { ... }
 
 

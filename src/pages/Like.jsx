@@ -1,100 +1,238 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import "../styles/pages/products/products.scss";
-import { useDispatch,  useSelector } from 'react-redux';  
-import { removeLike,removeLikeAll } from '../redux/slices/addToLikeSlice';
-import { removeCard,removeAllCard } from '../redux/slices/addToCardSlice';
-import Button from '../components/library/Button';
-import { DeletedIcon } from '../svg';
+import { useDispatch, useSelector } from "react-redux";
+import {
+  removeLike,
+
+} from "../redux/slices/addToLikeSlice";
+import { DecrementMinusIcon, DeletedIcon, IncrementPlusIcon } from "../svg";
+
 import SadEmoji from "../img/products/free-sad-face-icon-2691-thumb.png";
 
-
-
-const Like = ({data}) => {
+const Basket = ({ data }) => {
   const navigate = useNavigate();
-    const counter=useSelector((state)=> state.counter);
-    const likeItems=useSelector((state)=>state.like);
-    const dispatch=useDispatch();
 
-   
-    const handleAllDeletedToLike=()=>{
-      dispatch(removeLikeAll());
-      // dispatch(removeAllCard())
+  const likeItems = useSelector((state) => state.like);
+  const likeCount = useSelector((state) => state.like.length);
+  const [totalPrices, setTotalPrices] = useState(0);
+  const [selectedItems, setSelectedItems] = useState(
+    likeItems.map((data) => data.id)
+  );
+
+  const dispatch = useDispatch();
+
+  const handleCheckboxChange = (productId) => {
+    // Check if the item is already selected
+    const isSelected = selectedItems.includes(productId);
+
+    if (isSelected) {
+      // If selected, remove it from the list
+      setSelectedItems(selectedItems.filter((id) => id !== productId));
+    } else {
+      // If not selected, add it to the list
+      setSelectedItems([...selectedItems, productId]);
     }
-    const handleDeletedToLike=(productId)=>{
+  };
+
+  const handleSelectAll = () => {
+    // Tüm ürün kimliklerini içeren bir dizi
+    const allProductIds = likeItems.map((data) => data.id);
+
+    // Eğer tüm ürünler zaten seçiliyse, hepsini seçmek yerine hepsini kaldır
+    if (selectedItems.length === allProductIds.length) {
+      setSelectedItems([]);
+    } else {
+      // Değilse, tüm ürünleri seç
+      setSelectedItems(allProductIds);
+    }
+  };
+
+  const handleAllDeletedToBasket = () => {
+    selectedItems.forEach((productId) => {
       dispatch(removeLike(productId));
-      // dispatch(removeCard());
+    });
+    setSelectedItems([]); // Clear the selection after deletion
+  };
+  const handleDeletedToBasket = (productId) => {
+    dispatch(removeLike(productId));
+  };
+
+  // const handleIncrement = (productId) => {
+  //   dispatch(incrementQuantity(productId));
+  // };
+
+  // const handleDecrement = (productId) => {
+  //   dispatch(decrementQuantity(productId));
+  // };
+  useEffect(() => {
+    let sumOfPrice = 0;
+
+    likeItems.map((data) => {
+      let checkBoxId = data.id;
+      if (selectedItems.includes(checkBoxId)) {
+        if (data.discounts && data.discounts.length > 0) {
+          sumOfPrice += data.discounts[0].currentPrice * data.quantity;
+        } else {
+          sumOfPrice += data.price * data.quantity;
+        }
+      }
+    });
+
+    let sumOfPrices = sumOfPrice.toLocaleString("az-AZ");
+    setTotalPrices(sumOfPrices);
+  }, [likeItems, selectedItems]);
+
+  const orderBtn = () => {
+    if (localStorage.getItem("login") === "true") {
+      console.log("here is working");
+      alert("Ugurlu emeliyyat");
+    } else {
+      navigate("/login");
     }
+  };
+  const dataPrice = {
+    fontSize: "14px",
+  };
 
   return (
-    <div className='like'>
-       {likeItems.length > 0 ? (
-<div className="products">
-<table id="customers">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Məhsul</th>
-            <th>Qiymət</th>
-          </tr>
-        </thead>
-        <tbody> 
-          {likeItems.map((data)=>{
-              return(
-              <tr key={data.id}>
-                <td><button className='delete-btn' onClick={()=>handleDeletedToLike(data.id)}><DeletedIcon /></button></td>
-                {/* <td>
-                  <div className='product'>
-                    <img className='data-img' src={data.previewImage} alt="" />
-                    <p className='data-title'>{data.title}</p>
-                </div> 
-                </td> */}
-                <td>
-                  <div className='product'>
-                    <img className='data-img' src={data.previewImage ? data.previewImage : (data.images && data.images[0] ? data.images[0].imagePath : '')} alt="" />
-                    <p className='data-title'>{data.title}</p>
-                  </div>
-                </td>
-                <td>
-                  {data.discounts[0]?.currentPrice ? (
-                  <>
-                  <del>
-                    <div className='card-price'>{data.price} ₼</div>
-                  </del>
-                  <div className='card-discount-price'>{data.discounts[0].currentPrice} ₼</div>
-                  </>
-                ) : (
-                  <div className='card-price'>{data.price} ₼</div>
-                )}
-                </td>
-               <td></td>
-                {/* <td> <p>Toplam Fiyat: {data.price * data.quantity} ₼</p></td> */}
-                {/* <td><button onClick={()=>navigate(`/product-detail/${item.id}`)}>Details</button></td>
-                <td><button onClick={()=>deletedItem(item.id)}>Delete</button></td>  */}
+    <div className="like">
+      <div className="container">
+
+      {likeItems.length > 0 ? (
+        <div className="like-content">
+          <table className="like-top">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Məhsul</th>
+                {/* <th>Say</th> */}
+                <th>Qiymət</th>
+                <th></th>
               </tr>
-              )
-          })}
-          
-        </tbody> 
-      </table>
-      <Button className='clear-btn' onClick={handleAllDeletedToLike}>Seçilənləri sil</Button>
-      {/* <p>Toplam Fiyat: {totalPrice} ₼</p> */}
-</div>
-) : (
-  <div className='clear-page'>
-    <img className='clear-emoji' src={SadEmoji} alt="" />
-    <p className='clear-text'>Heç bir məhsulu bəyənməmisiniz</p>
-    <button className='home-btn' onClick={()=>navigate(`/`)}>Əsas səhifəyə qayıt</button>
-  </div>
-  
-  
+            </thead>
+            <tbody>
+              {likeItems.map((data) => {
+                return (
+                  <tr className="sm:flex sm:flex-col" key={data.id}>
+                    <td>
+                      <input
+                        className="selected-checkbox"
+                        type="checkbox"
+                        checked={selectedItems.includes(data.id)}
+                        onChange={() => handleCheckboxChange(data.id)}
+                      />
+                    </td>
 
-)}
+                    <td>
+                      <div className="product">
+                        <img
+                          className="data-img"
+                          src={
+                            data.previewImage
+                              ? data.previewImage
+                              : data.images && data.images[0]
+                              ? data.images[0].imagePath
+                              : ""
+                          }
+                          alt=""
+                        />
+                        <p className="data-title">{data.title}</p>
+                      </div>
+                    </td>
+                    {/* <td>
+                      <div className="counter-quantity">
+                        <button
+                          className="counter-quantity_btn"
+                          onClick={() => handleDecrement(data.id)}
+                        >
+                          <DecrementMinusIcon />
+                        </button>
+                        <div className="data-quantity">{data.quantity}</div>
+                        <button
+                          className="counter-quantity_btn"
+                          onClick={() => handleIncrement(data.id)}
+                        >
+                          {" "}
+                          <IncrementPlusIcon />
+                        </button>
+                      </div>
+                    </td> */}
+                    <td>
+                      {data.discounts[0]?.currentPrice ? (
+                        <>
+                          <del>
+                            <div className="data-price" style={dataPrice}>
+                              {(data.price * data.quantity).toLocaleString(
+                                "az-AZ"
+                              )}
+                              ₼
+                            </div>
+                          </del>
+                          <div className="data-discount-price">
+                            {(
+                              data.discounts[0].currentPrice * data.quantity
+                            ).toLocaleString("az-AZ")}
+                            ₼
+                          </div>
+                        </>
+                      ) : (
+                        <div className="data-price">
+                          {(data.price * data.quantity).toLocaleString("az-AZ")}{" "}
+                          ₼
+                        </div>
+                      )}
+                    </td>
+                    <td>
+                      <button
+                        className="delete-btn"
+                        onClick={() => handleDeletedToBasket(data.id)}
+                      >
+                        <DeletedIcon />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <div className="like-bottom">
+            <div className="like-bottom_1">
+              <button className="selectall-btn" onClick={handleSelectAll}>
+                Hamısını Seç
+              </button>
+              <button className="clear-btn" onClick={handleAllDeletedToBasket}>
+                Seçilənləri sil
+              </button>
+            </div>
+            <div className="like-bottom_2">
+              <div className="total-quantity">
+                Səbət <span>({likeCount} məhsul)</span>
+              </div>
+              <div className="total-price">
+                Yekun məbləğ: <span>{totalPrices} ₼</span>
+              </div>
+            </div>
+            <div className="like-bottom_3">
+              <div className="complete-order">
+                <button onClick={orderBtn} className="complete-btn">
+                  Sifarişi yekunlaşdır
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="clear-page">
+          <img className="clear-emoji" src={SadEmoji} alt="" />
+          <p className="clear-text">Səbətinizdə məhsul yoxdur</p>
+          <button className="home-btn" onClick={() => navigate(`/`)}>
+            Alış-verişə Başla
+          </button>
+        </div>
+      )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Like
-
-
-// src={data.images[0]?.imagePath}
+export default Basket;

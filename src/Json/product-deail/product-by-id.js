@@ -312,7 +312,8 @@ const productIdData = [
       "count": "312"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 2/1.png" }
+      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 2/1.png" },
+      { "id": 2, "imagePath": "../images/products/Smartfonlar/Product 2/2.png" }
     ]
   },
   {
