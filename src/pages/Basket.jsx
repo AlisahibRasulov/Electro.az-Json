@@ -99,37 +99,50 @@ const Basket = ({ data }) => {
 
   return (
     <div className="basket">
-      <div className="container">
+      <div className="container flex justify-center items-center">
 
       {basketItems.length > 0 ? (
         <div className="basket-content">
-          <table className="basket-top">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Məhsul</th>
-                <th>Say</th>
-                <th>Qiymət</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {basketItems.map((data) => {
-                return (
-                  <tr className="sm:flex sm:flex-col" key={data.id}>
-                    <td>
+          <div className="basket-top w-full">
+            <div>
+              <div className="flex justify-around py-[10px] text-[#fff] bg-red-700">
+                {/* <li></li> */}
+                <li>Məhsul</li>
+                <li>Say</li>
+                <li>Qiymət</li>
+                {/* <li></li> */}
+              </div>
+            </div>
+            {/* <tbody> */}
+              {basketItems.map((data) => (
+                <div>
+                <div className="hidden 2xs:flex xs:flex sm:flex justify-between bg-[#fff] border-b-[1px] p-[20px]">
+                <input
+                    className="selected-checkbox"
+                    type="checkbox"
+                    checked={selectedItems.includes(data.id)}
+                    onChange={() => handleCheckboxChange(data.id)}
+                  />
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleDeletedToBasket(data.id)}
+                  >
+                    <DeletedIcon />
+                  </button>
+                </div>
+                  <div className="flex justify-between border-b px-[10px] py-[10px] mb-3 shadow-sm bg-[#fff]" key={data.id}>
+                    <div className="flex items-center 2xs:hidden xs:hidden sm:hidden">
                       <input
                         className="selected-checkbox"
                         type="checkbox"
                         checked={selectedItems.includes(data.id)}
                         onChange={() => handleCheckboxChange(data.id)}
                       />
-                    </td>
-
-                    <td>
-                      <div className="product">
+                    </div>
+                    {/* <td> */}
+                      <div className="product-image flex flex-[1] items-center ml-[30px] w-[600px] 2xs:flex-[2] xs:flex-[3] sm:flex-[3]">
                         <img
-                          className="data-img"
+                          className="data-img w-[100px]"
                           src={
                             data.previewImage
                               ? data.previewImage
@@ -139,11 +152,11 @@ const Basket = ({ data }) => {
                           }
                           alt=""
                         />
-                        <p className="data-title">{data.title}</p>
+                        <p className="data-title 2xs:text-[14px] xs:text-[14px] sm:text-[15px]">{data.title}</p>
                       </div>
-                    </td>
-                    <td>
-                      <div className="counter-quantity">
+                    {/* </td> */}
+                    {/* <td> */}
+                      <div className="counter-quantity flex items-center justify-center flex-1">
                         <button
                           className="counter-quantity_btn"
                           onClick={() => handleDecrement(data.id)}
@@ -159,45 +172,46 @@ const Basket = ({ data }) => {
                           <IncrementPlusIcon />
                         </button>
                       </div>
-                    </td>
-                    <td>
+                    {/* </td> */}
+                    {/* <td> */}
                       {data.discounts[0]?.currentPrice ? (
-                        <>
+                        <div className="flex flex-col items-center justify-center flex-1">
                           <del>
-                            <div className="data-price" style={dataPrice}>
+                            <div className="data-price text-[#666] font-[600]" style={dataPrice}>
                               {(data.price * data.quantity).toLocaleString(
                                 "az-AZ"
                               )}
                               ₼
                             </div>
                           </del>
-                          <div className="data-discount-price">
+                          <div className="data-discount-price text-[#D10024] font-[600]">
                             {(
                               data.discounts[0].currentPrice * data.quantity
                             ).toLocaleString("az-AZ")}
                             ₼
                           </div>
-                        </>
+                        </div>
                       ) : (
-                        <div className="data-price">
+                        <div className="data-price flex items-center justify-center flex-1 text-[#666] font-[600]">
                           {(data.price * data.quantity).toLocaleString("az-AZ")}{" "}
                           ₼
                         </div>
                       )}
-                    </td>
-                    <td>
+                    {/* </td> */}
+                    <div className="flex items-center justify-center 2xs:hidden xs:hidden sm:hidden">
                       <button
                         className="delete-btn"
                         onClick={() => handleDeletedToBasket(data.id)}
                       >
                         <DeletedIcon />
                       </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                    </div>
+                  </div>
+                </div>
+                
+              ))}
+            {/* </tbody> */}
+          </div>
           <div className="basket-bottom">
             <div className="basket-bottom_1">
               <button className="selectall-btn" onClick={handleSelectAll}>

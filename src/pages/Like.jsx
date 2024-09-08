@@ -96,7 +96,7 @@ const Basket = ({ data }) => {
 
   return (
     <div className="like">
-      <div className="container">
+      <div className="container flex justify-center items-center">
 
       {likeItems.length > 0 ? (
         <div className="like-content">
