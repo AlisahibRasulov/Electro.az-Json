@@ -99,7 +99,7 @@ const Basket = ({ data }) => {
 
   return (
     <div className="basket">
-      <div className="container flex justify-center items-center">
+      <div className="container-fluid flex justify-center items-center">
 
       {basketItems.length > 0 ? (
         <div className="basket-content">
@@ -130,6 +130,9 @@ const Basket = ({ data }) => {
                     <DeletedIcon />
                   </button>
                 </div>
+                <div className="hidden 2xs:flex xs:flex sm:flex justify-center bg-[#fff]">
+                  <p className="data-title font-[600] xs:text-[13px]">{data.title}</p>
+                </div>
                   <div className="flex justify-between border-b px-[10px] py-[10px] mb-3 shadow-sm bg-[#fff]" key={data.id}>
                     <div className="flex items-center 2xs:hidden xs:hidden sm:hidden">
                       <input
@@ -140,7 +143,7 @@ const Basket = ({ data }) => {
                       />
                     </div>
                     {/* <td> */}
-                      <div className="product-image flex flex-[1] items-center ml-[30px] w-[600px] 2xs:flex-[2] xs:flex-[3] sm:flex-[3]">
+                      <div className="product-image flex flex-[1] items-center ml-[30px] w-[600px]  md:flex-[3] lg:flex-[2] xl:flex-[2]">
                         <img
                           className="data-img w-[100px]"
                           src={
@@ -152,7 +155,7 @@ const Basket = ({ data }) => {
                           }
                           alt=""
                         />
-                        <p className="data-title 2xs:text-[14px] xs:text-[14px] sm:text-[15px]">{data.title}</p>
+                        <p className="data-title  2xs:hidden xs:hidden sm:hidden">{data.title}</p>
                       </div>
                     {/* </td> */}
                     {/* <td> */}
