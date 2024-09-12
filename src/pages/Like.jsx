@@ -47,13 +47,13 @@ const Basket = ({ data }) => {
     }
   };
 
-  const handleAllDeletedToBasket = () => {
+  const handleAllDeletedToLike = () => {
     selectedItems.forEach((productId) => {
       dispatch(removeLike(productId));
     });
     setSelectedItems([]); // Clear the selection after deletion
   };
-  const handleDeletedToBasket = (productId) => {
+  const handleDeletedToLike = (productId) => {
     dispatch(removeLike(productId));
   };
 
@@ -96,111 +96,127 @@ const Basket = ({ data }) => {
 
   return (
     <div className="like">
-      <div className="container flex justify-center items-center">
+      <div className="container-fluid flex justify-center items-center">
 
       {likeItems.length > 0 ? (
         <div className="like-content">
-          <table className="like-top">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Məhsul</th>
-                {/* <th>Say</th> */}
-                <th>Qiymət</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
+          <div className="like-top w-full">
+          <div className="flex justify-around py-[20px] text-[#fff] bg-red-700">
+                {/* <li></li> */}
+                <li>Məhsul</li>
+                <li>Say</li>
+                <li>Qiymət</li>
+                {/* <li></li> */}
+              </div>
+            {/* <tbody> */}
               {likeItems.map((data) => {
                 return (
-                  <tr className="sm:flex sm:flex-col" key={data.id}>
-                    <td>
-                      <input
-                        className="selected-checkbox"
-                        type="checkbox"
-                        checked={selectedItems.includes(data.id)}
-                        onChange={() => handleCheckboxChange(data.id)}
-                      />
-                    </td>
-
-                    <td>
-                      <div className="product">
-                        <img
-                          className="data-img"
-                          src={
-                            data.previewImage
-                              ? data.previewImage
-                              : data.images && data.images[0]
-                              ? data.images[0].imagePath
-                              : ""
-                          }
-                          alt=""
+                  <div>
+                  <div className="hidden 2xs:flex xs:flex sm:flex justify-between bg-[#fff] border-b-[1px] p-[20px]">
+                  <input
+                      className="selected-checkbox"
+                      type="checkbox"
+                      checked={selectedItems.includes(data.id)}
+                      onChange={() => handleCheckboxChange(data.id)}
+                    />
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDeletedToLike(data.id)}
+                    >
+                      <DeletedIcon />
+                    </button>
+                  </div>
+                  <div className="hidden 2xs:flex xs:flex sm:flex justify-center bg-[#fff]">
+                    <p className="data-title font-[600] xs:text-[13px]">{data.title}</p>
+                  </div>
+                    <div className="flex justify-between border-b px-[10px] py-[10px] mb-3 shadow-sm bg-[#fff]" key={data.id}>
+                      <div className="flex items-center 2xs:hidden xs:hidden sm:hidden">
+                        <input
+                          className="selected-checkbox"
+                          type="checkbox"
+                          checked={selectedItems.includes(data.id)}
+                          onChange={() => handleCheckboxChange(data.id)}
                         />
-                        <p className="data-title">{data.title}</p>
                       </div>
-                    </td>
-                    {/* <td>
-                      <div className="counter-quantity">
-                        <button
-                          className="counter-quantity_btn"
-                          onClick={() => handleDecrement(data.id)}
-                        >
-                          <DecrementMinusIcon />
-                        </button>
-                        <div className="data-quantity">{data.quantity}</div>
-                        <button
-                          className="counter-quantity_btn"
-                          onClick={() => handleIncrement(data.id)}
-                        >
-                          {" "}
-                          <IncrementPlusIcon />
-                        </button>
-                      </div>
-                    </td> */}
-                    <td>
-                      {data.discounts[0]?.currentPrice ? (
-                        <>
-                          <del>
-                            <div className="data-price" style={dataPrice}>
-                              {(data.price * data.quantity).toLocaleString(
-                                "az-AZ"
-                              )}
+                      {/* <td> */}
+                        <div className="product-image flex flex-[1] items-center ml-[30px] w-[600px]  md:flex-[3] lg:flex-[2] xl:flex-[2]">
+                          <img
+                            className="data-img w-[100px]"
+                            src={
+                              data.previewImage
+                                ? data.previewImage
+                                : data.images && data.images[0]
+                                ? data.images[0].imagePath
+                                : ""
+                            }
+                            alt=""
+                          />
+                          <p className="data-title  2xs:hidden xs:hidden sm:hidden">{data.title}</p>
+                        </div>
+                      {/* </td> */}
+                      {/* <td> */}
+                        {/* <div className="counter-quantity flex items-center justify-center flex-1">
+                          <button
+                            className="counter-quantity_btn"
+                            onClick={() => handleDecrement(data.id)}
+                          >
+                            <DecrementMinusIcon />
+                          </button>
+                          <div className="data-quantity">{data.quantity}</div>
+                          <button
+                            className="counter-quantity_btn"
+                            onClick={() => handleIncrement(data.id)}
+                          >
+                            {" "}
+                            <IncrementPlusIcon />
+                          </button>
+                        </div> */}
+                      {/* </td> */}
+                      {/* <td> */}
+                        {data.discounts[0]?.currentPrice ? (
+                          <div className="flex flex-col items-center justify-center flex-1">
+                            <del>
+                              <div className="data-price text-[#666] font-[600]" style={dataPrice}>
+                                {(data.price * data.quantity).toLocaleString(
+                                  "az-AZ"
+                                )}
+                                ₼
+                              </div>
+                            </del>
+                            <div className="data-discount-price text-[#D10024] font-[600]">
+                              {(
+                                data.discounts[0].currentPrice * data.quantity
+                              ).toLocaleString("az-AZ")}
                               ₼
                             </div>
-                          </del>
-                          <div className="data-discount-price">
-                            {(
-                              data.discounts[0].currentPrice * data.quantity
-                            ).toLocaleString("az-AZ")}
+                          </div>
+                        ) : (
+                          <div className="data-price flex items-center justify-center flex-1 text-[#666] font-[600]">
+                            {(data.price * data.quantity).toLocaleString("az-AZ")}{" "}
                             ₼
                           </div>
-                        </>
-                      ) : (
-                        <div className="data-price">
-                          {(data.price * data.quantity).toLocaleString("az-AZ")}{" "}
-                          ₼
-                        </div>
-                      )}
-                    </td>
-                    <td>
-                      <button
-                        className="delete-btn"
-                        onClick={() => handleDeletedToBasket(data.id)}
-                      >
-                        <DeletedIcon />
-                      </button>
-                    </td>
-                  </tr>
+                        )}
+                      {/* </td> */}
+                      <div className="flex items-center justify-center 2xs:hidden xs:hidden sm:hidden">
+                        <button
+                          className="delete-btn"
+                          onClick={() => handleDeletedToLike(data.id)}
+                        >
+                          <DeletedIcon />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 );
               })}
-            </tbody>
-          </table>
+            {/* </tbody> */}
+          </div>
           <div className="like-bottom">
             <div className="like-bottom_1">
               <button className="selectall-btn" onClick={handleSelectAll}>
                 Hamısını Seç
               </button>
-              <button className="clear-btn" onClick={handleAllDeletedToBasket}>
+              <button className="clear-btn" onClick={handleAllDeletedToLike}>
                 Seçilənləri sil
               </button>
             </div>

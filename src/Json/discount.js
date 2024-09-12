@@ -15,7 +15,7 @@ const discountData=[
       "rating": "4.5",
       "count": "332"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/6"
+    "previewImage": "../images/products/Notebook/Product 2/1.png"
   },
   {
     "id": 5,
@@ -33,7 +33,7 @@ const discountData=[
       "rating": "4.9",
       "count": "554"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/12"
+    "previewImage": "../images/products/Notebook/Product 4/1.png"
   },
   {
     "id": 8,
@@ -51,7 +51,7 @@ const discountData=[
       "rating": "4.5",
       "count": "332"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/21"
+    "previewImage": "../images/products/Fotoaparatlar/Product 1/1.png"
   },
   {
     "id": 11,
@@ -69,7 +69,7 @@ const discountData=[
       "rating": "3.9",
       "count": "329"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/30"
+    "previewImage": "../images/products/Fotoaparatlar/Product 3/1.png"
   },
   {
     "id": 13,
@@ -87,7 +87,7 @@ const discountData=[
       "rating": "3.9",
       "count": "329"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/36"
+    "previewImage": "../images/products/Fotoaparatlar/Product 6/1.png"
   },
   {
     "id": 19,
@@ -105,7 +105,7 @@ const discountData=[
       "rating": "4.8",
       "count": "312"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/49"
+    "previewImage": "../images/products/Smartfonlar/Product 2/1.png"
   },
   {
     "id": 25,
@@ -123,7 +123,7 @@ const discountData=[
       "rating": "4.8",
       "count": "312"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/68"
+    "previewImage": "../images/products/Smartfonlar/Product 4/1.png"
   },
   {
     "id": 31,
@@ -141,7 +141,7 @@ const discountData=[
       "rating": "4.9",
       "count": "554"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/83"
+    "previewImage": "../images/products/Notebook/Product 7/1.png"
   },
   {
     "id": 32,
@@ -159,17 +159,17 @@ const discountData=[
       "rating": "4.8",
       "count": "312"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/86"
+    "previewImage": "../images/products/Notebook/Product 8/1.png"
   },
   {
-    "id": 33,
-    "title": "Sony INZONE H9 Wireless Gaming NC / WH-G900N",
-    "price": 499.99,
+    "id": 28,
+    "title": "SBS Charging Station 200W GaN",
+    "price": 249.99,
     "discounts": [
       {
         "id": 15,
-        "currentPrice": 409.99,
-        "discountAmount": ""
+        "currentPrice": 199.99,
+        "discountAmount": "50₼"
       }
     ],
     "rating": {
@@ -177,17 +177,17 @@ const discountData=[
       "rating": "4.9",
       "count": "554"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/90"
+    "previewImage": "../images/products/Aksesuarlar/Product2/1.png"
   },
   {
-    "id": 41,
-    "title": "Stray - PlayStation 5",
+    "id": 22,
+    "title": "Disk Playstation 5 (Call Of Duty Modern Warfare 3)",
     "price": 99.99,
     "discounts": [
       {
         "id": 16,
         "currentPrice": 89.99,
-        "discountAmount": "10%"
+        "discountAmount": "10₼"
       }
     ],
     "rating": {
@@ -195,7 +195,7 @@ const discountData=[
       "rating": "4.8",
       "count": "312"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/114"
+    "previewImage": "../images/products/Oyunlar/Product2/1.png"
   },
   {
     "id": 43,
@@ -213,7 +213,25 @@ const discountData=[
       "rating": "4.9",
       "count": "554"
     },
-    "previewImage": "http://34.125.216.115:9095/api/image/122"
+    "previewImage": "../images/products/Oyunlar/Product4/1.png"
+  },
+  {
+    "id": 32,
+    "title": "Lens Canon RF 70-200MM F4 L IS USM",
+    "price": 4499.99,
+    "discounts": [
+      {
+        "id": 15,
+        "currentPrice": 3999.99,
+        "discountAmount": "500₼"
+      }
+    ],
+    "rating": {
+      "id": 3,
+      "rating": "4.8",
+      "count": "312"
+    },
+    "previewImage": "../images/products/Aksesuarlar/Product6/1.png"
   }
 ]
 

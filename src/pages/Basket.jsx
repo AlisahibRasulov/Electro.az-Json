@@ -104,15 +104,15 @@ const Basket = ({ data }) => {
       {basketItems.length > 0 ? (
         <div className="basket-content">
           <div className="basket-top w-full">
-            <div>
-              <div className="flex justify-around py-[10px] text-[#fff] bg-red-700">
+            
+              <div className="flex justify-around py-[20px] text-[#fff] bg-red-700">
                 {/* <li></li> */}
                 <li>Məhsul</li>
                 <li>Say</li>
                 <li>Qiymət</li>
                 {/* <li></li> */}
               </div>
-            </div>
+           
             {/* <tbody> */}
               {basketItems.map((data) => (
                 <div>
