@@ -106,82 +106,125 @@
 
 
 
-// import React from 'react'
-import React, {useRef, useState, useEffect } from 'react';
-import axios from 'axios';
+// // import React from 'react'
+// import React, {useRef, useState, useEffect } from 'react';
+// import axios from 'axios';
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+// // Import Swiper React components
+// import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// // Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/effect-fade';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
 
-// import required modules
-import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+// // import required modules
+// import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
 
+
+// const CarouselImg = () => {
+
+//   const [cardCarousel, setCardCarousel] = useState([]);
+
+// useEffect(() => {
+//   axios(`http://35.235.116.163:9093/api/slider/all`)
+//     .then((res) => {
+//       console.log(res.data);
+//       setCardCarousel(res.data); // Wrap the response data in an array
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// },[]);
+//   return (
+//     <div className="carousel-item" >
+//       {/* <div className="container"> */}
+//         {/* <div className="carousel-content"> */}
+//         <Swiper
+//           loop = {true}
+//           spaceBetween={30}
+//           effect={'fade'}
+//           // navigation={true}
+//           // pagination={{
+//           //   clickable: true,
+//           // }}
+//            autoplay={{
+//           delay:5000,
+//           disableOnInteraction:false,
+//         } }
+//           modules={[EffectFade, Navigation, Pagination, Autoplay]}
+//           className="mySwiper"
+//         >
+
+// {cardCarousel.map((item) => (
+//     <SwiperSlide>
+//      <img className='carousel-image' src={item.imageUrl} alt="" />
+//   </SwiperSlide>
+// ))}
+        
+//           {/* <SwiperSlide>
+//             <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+//           </SwiperSlide>
+//           <SwiperSlide>
+//             <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+//           </SwiperSlide>
+//           <SwiperSlide>
+//             <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+//           </SwiperSlide> */}
+//         </Swiper>
+//         {/* </div> */}
+      
+//       {/* </div> */}
+      
+//         </div>
+//     );
+// }
+
+// export default CarouselImg
+
+
+
+import React, { useState, useEffect } from 'react';
+// import './CarouselImg.scss'; // CSS dosyanızı buraya dahil edin
+
+const images = [
+  "../images/carousel/1.png",
+  "../images/carousel/2.png",
+  "../images/carousel/50_aze_1__1.png"
+];
 
 const CarouselImg = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [cardCarousel, setCardCarousel] = useState([]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // 5 saniyede bir resim değiştirir
 
-useEffect(() => {
-  axios(`http://35.235.116.163:9093/api/slider/all`)
-    .then((res) => {
-      console.log(res.data);
-      setCardCarousel(res.data); // Wrap the response data in an array
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-},[]);
+    return () => clearInterval(interval); // Temizlik işlemi
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
   return (
-    <div className="carousel-item" >
-      {/* <div className="container"> */}
-        {/* <div className="carousel-content"> */}
-        <Swiper
-          loop = {true}
-          spaceBetween={30}
-          effect={'fade'}
-          // navigation={true}
-          // pagination={{
-          //   clickable: true,
-          // }}
-           autoplay={{
-          delay:5000,
-          disableOnInteraction:false,
-        } }
-          modules={[EffectFade, Navigation, Pagination, Autoplay]}
-          className="mySwiper"
-        >
-
-{cardCarousel.map((item) => (
-    <SwiperSlide>
-     <img className='carousel-image' src={item.imageUrl} alt="" />
-  </SwiperSlide>
-))}
-        
-          {/* <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-          </SwiperSlide> */}
-        </Swiper>
-        {/* </div> */}
+    <div className="carousel">
+      <button className="carousel__button carousel__button--prev" onClick={goToPrevious}>{"<"}</button>
       
-      {/* </div> */}
+      <div className="carousel__slide">
+        <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
+      </div>
       
-        </div>
-    );
-}
+      <button className="carousel__button carousel__button--next" onClick={goToNext}>{">"}</button>
+    </div>
+  );
+};
 
-export default CarouselImg
-
-
+export default CarouselImg;

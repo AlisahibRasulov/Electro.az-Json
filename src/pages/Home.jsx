@@ -4,6 +4,7 @@ import Brands from '../components/Brands'
 import Discount from '../components/products/DiscountCards/Discount';
 import New from '../components/products/NewCards/New';
 import CarouselImg from '../components/CarouselImg';
+import SliderCart from '../components/SliderCart';
 
 // const logoutBtn = {
 //   marginLeft: "90%",
@@ -21,8 +22,9 @@ const Home = () => {
       <Outlet/>
       </>
        
-      <div className="container">
+      <div className="container flex justify-evenly items-center mb-[20px]">
         <CarouselImg/>
+        <SliderCart/>
       </div>
        <Brands/>
       <Discount/>
