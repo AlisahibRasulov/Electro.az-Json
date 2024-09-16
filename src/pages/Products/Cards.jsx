@@ -46,12 +46,12 @@ const Cards = ({ data }) => {
       setButtonText("Səbətdə");
       setButtonColor("#eee");
       setButtonTextColor("#666");
-      setIconBasket(<CartCheckout className="card-btn_icon" />);
+      setIconBasket(<CartCheckout className="text-[#fff]" />);
     } else {
       setButtonText("Səbətə at");
       setButtonColor("#D10024");
       setButtonTextColor("white");
-      setIconBasket(<CardBasketIcon className="card-btn_icon" />);
+      setIconBasket(<CardBasketIcon className="text-[green]" />);
     }
   }, [isInBasket]);
 

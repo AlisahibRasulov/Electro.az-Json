@@ -1,338 +1,161 @@
-// import React, { useState, useEffect } from 'react';
-// import discountData from '../Json/discount';
-// // import './SliderCart.scss'; // CSS dosyanızı buraya dahil edin
-// const products = [
-//     {
-//         "id": 3,
-//         "title": "Notbuk Acer Aspire 3 A315-59 Slim (NX.K6SER.00P)",
-//         "price": 1200,
-//         "discounts": [
-//           {
-//             "id": 2,
-//             "currentPrice": 900,
-//             "discountAmount": "300₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 2,
-//           "rating": "4.5",
-//           "count": "332"
-//         },
-//         "previewImage": "../images/products/Notebook/Product 2/1.png"
-//       },
-//       {
-//         "id": 5,
-//         "title": "Notbuk Dell Latitude 5530 210-BDJK_I7",
-//         "price": 2899,
-//         "discounts": [
-//           {
-//             "id": 3,
-//             "currentPrice": 2400,
-//             "discountAmount": "499₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 4,
-//           "rating": "4.9",
-//           "count": "554"
-//         },
-//         "previewImage": "../images/products/Notebook/Product 4/1.png"
-//       },
-//       {
-//         "id": 8,
-//         "title": "Nikon D3500 + AF-P 18-55 VR Kit",
-//         "price": 1200,
-//         "discounts": [
-//           {
-//             "id": 4,
-//             "currentPrice": 900,
-//             "discountAmount": "300₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 2,
-//           "rating": "4.5",
-//           "count": "332"
-//         },
-//         "previewImage": "../images/products/Fotoaparatlar/Product 1/1.png"
-//       },
-//       {
-//         "id": 11,
-//         "title": "Canon EOS R8+Lens RF24-50 F4.5-6.3 IS STM (5803C016)",
-//         "price": 4900,
-//         "discounts": [
-//           {
-//             "id": 5,
-//             "currentPrice": 3900,
-//             "discountAmount": "1000₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 5,
-//           "rating": "3.9",
-//           "count": "329"
-//         },
-//         "previewImage": "../images/products/Fotoaparatlar/Product 3/1.png"
-//       },
-//       {
-//         "id": 13,
-//         "title": "Sony Alpha ILCE-7C",
-//         "price": 4799,
-//         "discounts": [
-//           {
-//             "id": 7,
-//             "currentPrice": 4099,
-//             "discountAmount": "700₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 5,
-//           "rating": "3.9",
-//           "count": "329"
-//         },
-//         "previewImage": "../images/products/Fotoaparatlar/Product 6/1.png"
-//       },
-//       {
-//         "id": 19,
-//         "title": "Samsung Galaxy S23 (SM-S911B) 8/256 GB Green",
-//         "price": 2100,
-//         "discounts": [
-//           {
-//             "id": 10,
-//             "currentPrice": 1890,
-//             "discountAmount": "210₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 3,
-//           "rating": "4.8",
-//           "count": "312"
-//         },
-//         "previewImage": "../images/products/Smartfonlar/Product 2/1.png"
-//       },
-//       {
-//         "id": 25,
-//         "title": "Xiaomi Redmi Note 12 8/256 GB Ice Blue",
-//         "price": 600,
-//         "discounts": [
-//           {
-//             "id": 11,
-//             "currentPrice": 480,
-//             "discountAmount": "120₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 3,
-//           "rating": "4.8",
-//           "count": "312"
-//         },
-//         "previewImage": "../images/products/Smartfonlar/Product 4/1.png"
-//       },
-//       {
-//         "id": 31,
-//         "title": "Noutbuk Apple MacBook Pro 16 MK183RU/A Space Gray",
-//         "price": 5699.99,
-//         "discounts": [
-//           {
-//             "id": 13,
-//             "currentPrice": 4269.99,
-//             "discountAmount": "1430₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 4,
-//           "rating": "4.9",
-//           "count": "554"
-//         },
-//         "previewImage": "../images/products/Notebook/Product 7/1.png"
-//       },
-//       {
-//         "id": 32,
-//         "title": "Notbuk Apple Macbook Pro 14 MPHH3RU/A Silver",
-//         "price": 5399.99,
-//         "discounts": [
-//           {
-//             "id": 14,
-//             "currentPrice": 4849.99,
-//             "discountAmount": "550₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 3,
-//           "rating": "4.8",
-//           "count": "312"
-//         },
-//         "previewImage": "../images/products/Notebook/Product 8/1.png"
-//       },
-//       {
-//         "id": 28,
-//         "title": "SBS Charging Station 200W GaN",
-//         "price": 249.99,
-//         "discounts": [
-//           {
-//             "id": 15,
-//             "currentPrice": 199.99,
-//             "discountAmount": "50₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 4,
-//           "rating": "4.9",
-//           "count": "554"
-//         },
-//         "previewImage": "../images/products/Aksesuarlar/Product2/1.png"
-//       },
-//       {
-//         "id": 22,
-//         "title": "Disk Playstation 5 (Call Of Duty Modern Warfare 3)",
-//         "price": 99.99,
-//         "discounts": [
-//           {
-//             "id": 16,
-//             "currentPrice": 89.99,
-//             "discountAmount": "10₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 3,
-//           "rating": "4.8",
-//           "count": "312"
-//         },
-//         "previewImage": "../images/products/Oyunlar/Product2/1.png"
-//       },
-//       {
-//         "id": 43,
-//         "title": "Sony PlayStation 5 DualSense White",
-//         "price": 149.99,
-//         "discounts": [
-//           {
-//             "id": 17,
-//             "currentPrice": 139.99,
-//             "discountAmount": "6%"
-//           }
-//         ],
-//         "rating": {
-//           "id": 4,
-//           "rating": "4.9",
-//           "count": "554"
-//         },
-//         "previewImage": "../images/products/Oyunlar/Product4/1.png"
-//       },
-//       {
-//         "id": 32,
-//         "title": "Lens Canon RF 70-200MM F4 L IS USM",
-//         "price": 4499.99,
-//         "discounts": [
-//           {
-//             "id": 15,
-//             "currentPrice": 3999.99,
-//             "discountAmount": "500₼"
-//           }
-//         ],
-//         "rating": {
-//           "id": 3,
-//           "rating": "4.8",
-//           "count": "312"
-//         },
-//         "previewImage": "../images/products/Aksesuarlar/Product6/1.png"
-//       }
-// ];
-
-
-
-// const SliderCart = () => {
-//   const [currentIndex, setCurrentIndex] = useState(0);
-//   const [productData, setProductData] = useState([]);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
-//     }, 5000); // 5 saniyede bir resim değiştirir
-
-//     return () => clearInterval(interval); // Temizlik işlemi
-//   }, []);
-
-//   // const goToPrevious = () => {
-//   //   setCurrentIndex((prevIndex) => (prevIndex - 1 + products.length) % products.length);
-//   // };
-
-//   // const goToNext = () => {
-//   //   setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
-//   // };
-
-//   return (
-//     <div className="slider-cart bg-[#fff] border-[1px] border-[#ccc] divide-solid w-[300px] max-w-[100%] max-h-[100%] h-[450px]">
-//       {/* <button className="slider-cart__button slider-cart__button--prev" onClick={goToPrevious}>{"<"}</button> */}
-//       <div className="slider-cart__slide w-[100%] h-[100%] flex flex-col items-center justify-evenly">
-//         <div className="slider-cart__info flex flex-col items-center">
-//           <div className='text-[#666] font-[500] text-center'>{products[currentIndex].title}</div>
-//           <div className="flex items-center">
-//             <div className='font-[600] text-[#D10024]'>{products[currentIndex].discounts[0].currentPrice} ₼</div>
-//             <del>
-//               <div className='text-[14px] font-[600] text-[#888]'>{products[currentIndex].price} ₼</div>
-//             </del>
-//           </div>
-//           {/* <div className=''>{products[currentIndex].brand}</div> */}
-//         </div>
-//         <div className="slider-cart__image w-[160px]">   
-//             <img src={products[currentIndex].previewImage} alt={`Slide ${currentIndex}`} />
-//         </div>
-//         <button className='bg-[#D10024] text-[#fff] rounded-[10px] py-[13px] px-[60px]'>Səbətə at</button>
-//       </div>
-      
-//       {/* <button className="slider-cart__button slider-cart__button--next" onClick={goToNext}>{">"}</button> */}
-//     </div>
-//   );
-// };
-
-// export default SliderCart;
-
-
-import React, { useState, useEffect } from 'react';
-import discountData from '../Json/discount';
+import React, { useState, useEffect } from "react";
+import discountData from "../Json/discount";
 import { useNavigate } from "react-router-dom";
-// import './SliderCart.scss'; // Include CSS file here if needed
+import { useDispatch, useSelector } from "react-redux";
+import { addToBasket } from "../redux/slices/addToBasketSlice";
+import { CardBasketIcon, CartCheckout } from "../svg";
 
 const SliderCart = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const basketItems = useSelector((state) => state.basket);
+
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(0);
+
+  // Get the current item
+  const currentItem = discountData[currentIndex];
+
+  // Check if the current item is in the basket
+  const isInBasket = basketItems.some((item) => item.id === currentItem?.id);
+
+  // Button state
+  const [buttonText, setButtonText] = useState(
+    isInBasket ? "Səbətdə" : "Səbətə at"
+  );
+  const [buttonColor, setButtonColor] = useState(
+    isInBasket ? "#eee" : "#D10024"
+  );
+  const [buttonTextColor, setButtonTextColor] = useState(
+    isInBasket ? "#666" : "white"
+  );
+  const [iconBasket, setIconBasket] = useState(
+    isInBasket ? (
+      <CartCheckout className="card-btn_icon" />
+    ) : (
+      <CardBasketIcon className="card-btn_icon" />
+    )
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % discountData.length);
-    }, 5000); // Change image every 5 seconds
+    }, 5000);
 
-    return () => clearInterval(interval); // Clean up interval on unmount
+    return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (currentItem) {
+      setButtonText(isInBasket ? "Səbətdə" : "Səbətə at");
+      setButtonColor(isInBasket ? "#eee" : "#D10024");
+      setButtonTextColor(isInBasket ? "#666" : "white");
+      setIconBasket(
+        isInBasket ? (
+          <CartCheckout className="card-btn_icon" />
+        ) : (
+          <CardBasketIcon className="card-btn_icon" />
+        )
+      );
+      // Set initial time left for the countdown (for example, 11 hours, 47 minutes, 23 seconds)
+      const endTime =
+        new Date().getTime() + 11 * 60 * 60 * 1000 + 47 * 60 * 1000 + 23 * 1000;
+      const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+
+        if (distance < 0) {
+          clearInterval(countdownInterval);
+          setTimeLeft("Kampanya sona erdi");
+          return;
+        }
+
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        setTimeLeft({ hours, minutes, seconds });
+      };
+
+      const countdownInterval = setInterval(updateCountdown, 1000);
+      return () => clearInterval(countdownInterval);
+    }
+  }, [currentItem, isInBasket]);
+
+  const handleAddToBasket = (item) => {
+    setLoading(true);
+    setTimeout(() => {
+      if (!isInBasket) {
+        dispatch(addToBasket(item));
+      }
+      setLoading(false);
+    }, 1000); // Adjust the timeout duration as needed
+  };
+
   return (
-    <div className="slider-cart bg-[#fff] border-[1px] border-[#ccc] divide-solid w-[300px] max-w-[100%] max-h-[100%] h-[450px]">
-      {/* <div className="slider-cart__slide w-[100%] h-[100%] "> */}
-        {discountData.map((item, index) => (
-          index === currentIndex && (
-            <div key={item.id} className="slider-cart__slide w-[100%] h-[100%] flex flex-col items-center justify-evenly">
-              {/* Product Information */}
-              <div className="slider-cart__info flex flex-col items-center">
-                <div className="text-[#666] font-[500] text-center">{item.title}</div>
-                <div className="flex items-center">
-                  <div className="font-[600] text-[#D10024]">{item.discounts[0].currentPrice} ₼</div>
-                  <del>
-                    <div className="text-[14px] font-[600] text-[#888] ml-2">{item.price} ₼</div>
-                  </del>
-                </div>
+    <div className="slider-cart bg-[#fff] border-[1px] shadow border-[#eee] rounded-[10px] divide-solid w-[350px] max-w-[100%] max-h-[100%] h-[550px]">
+      {currentItem && (
+        <div
+          key={currentItem.id}
+          className="slider-cart__slide w-[100%] h-[100%] flex flex-col items-center justify-evenly"
+        >
+          <div className="countdown-timer flex flex-col justify-center font-[600] text-center mb-2 border-b-[1px] w-[100%]">
+            <div className="timer_title text-[20px]">Günün təklifi</div>
+            <div className="timer_info flex justify-around">
+              <div className="timer_hours flex flex-col text-[#666]">
+                <div className="text-[#D10024]">{timeLeft.minutes}</div> saat
               </div>
-
-              {/* Product Image */}
-              <div className="slider-cart__image w-[160px]">
-                <img src={item.previewImage} alt={`Slide ${index}`}  onClick={() => navigate(`/product-detail/${item.id}`)}/>
+              <div className="timer_minutes flex flex-col text-[#666]">
+                <div className="text-[#D10024]">{timeLeft.minutes}</div> dəqiqə
               </div>
-
-              {/* Add to Cart Button */}
-              <button className="bg-[#D10024] text-[#fff] rounded-[10px] py-[13px] px-[60px]">Səbətə at</button>
+              <div className="timer_seconds flex flex-col text-[#666]">
+                <div className="text-[#D10024]">{timeLeft.seconds}</div> saniyə
+              </div>
             </div>
-          )
-        ))}
-      {/* </div> */}
+          </div>
+          <div className="slider-cart__info flex flex-col items-center">
+            <div className="text-[#666] font-[500] text-center">
+              {currentItem.title}
+            </div>
+            <div className="flex items-center">
+              <div className="font-[600] text-[#D10024]">
+                {currentItem.discounts[0].currentPrice} ₼
+              </div>
+              <del>
+                <div className="text-[14px] font-[600] text-[#888] ml-2">
+                  {currentItem.price} ₼
+                </div>
+              </del>
+            </div>
+          </div>
+
+          <div className="slider-cart__image w-[160px]">
+            <img
+              src={currentItem.previewImage}
+              alt={`Slide ${currentIndex}`}
+              onClick={() => navigate(`/product-detail/${currentItem.id}`)}
+            />
+          </div>
+
+          <button
+            className="px-[50px] py-[15px] rounded-[10px] flex items-center"
+            onClick={() => handleAddToBasket(currentItem)}
+            style={{ backgroundColor: buttonColor, color: buttonTextColor }}
+          >
+            {loading ? (
+              <div className="spinner"></div>
+            ) : (
+              <>
+                {iconBasket}
+                <div className="font-[500]">{buttonText}</div>
+              </>
+            )}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
