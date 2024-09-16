@@ -144,7 +144,7 @@ const discountData=[
     "previewImage": "../images/products/Notebook/Product 7/1.png"
   },
   {
-    "id": 32,
+    "id": 7,
     "title": "Notbuk Apple Macbook Pro 14 MPHH3RU/A Silver",
     "price": 5399.99,
     "discounts": [
