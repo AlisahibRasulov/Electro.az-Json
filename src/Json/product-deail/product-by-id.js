@@ -15,7 +15,9 @@ const productIdData = [
       "count": "332"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Notebook/Product 1/1.png" }
+      { "id": 1, "imagePath": "../images/products/Notebook/Product 1/1.png" },
+      { "id": 2, "imagePath": "../images/products/Notebook/Product 1/2.png" },
+      { "id": 3, "imagePath": "../images/products/Notebook/Product 1/3.png" },
     ]
   },
   {
@@ -55,7 +57,9 @@ const productIdData = [
       "count": "554"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 1/1.png" }
+      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 1/1.png" },
+      { "id": 2, "imagePath": "../images/products/Smartfonlar/Product 1/2.png" },
+      { "id": 3, "imagePath": "../images/products/Smartfonlar/Product 1/3.png" },
     ]
   },
   {
@@ -76,7 +80,9 @@ const productIdData = [
       "count": "332"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Notebook/Product 2/1.png" }
+      { "id": 1, "imagePath": "../images/products/Notebook/Product 2/1.png" },
+      { "id": 2, "imagePath": "../images/products/Notebook/Product 2/2.png" },
+      { "id": 3, "imagePath": "../images/products/Notebook/Product 2/3.png" }
     ]
   },
   {
@@ -97,7 +103,9 @@ const productIdData = [
       "count": "332"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 1/1.png" }
+      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 1/1.png" },
+      { "id": 2, "imagePath": "../images/products/Fotoaparatlar/Product 1/2.png" },
+      { "id": 3, "imagePath": "../images/products/Fotoaparatlar/Product 1/3.png" },
     ]
   },
   {
@@ -116,7 +124,9 @@ const productIdData = [
       "count": "312"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Oyunlar/Product3/1.png" }
+      { "id": 1, "imagePath": "../images/products/Oyunlar/Product3/1.png" },
+      { "id": 2, "imagePath": "../images/products/Oyunlar/Product3/2.png" },
+      { "id": 3, "imagePath": "../images/products/Oyunlar/Product3/3.png" },
     ]
   },
   {
@@ -154,7 +164,9 @@ const productIdData = [
       "count": "554"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Notebook/Product 3/1.png" }
+      { "id": 1, "imagePath": "../images/products/Notebook/Product 3/1.png" },
+      { "id": 2, "imagePath": "../images/products/Notebook/Product 3/2.png" },
+      { "id": 3, "imagePath": "../images/products/Notebook/Product 3/3.png" },
     ]
   },
   {
@@ -173,7 +185,9 @@ const productIdData = [
       "count": "329"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 3/1.png" }
+      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 3/1.png" },
+      { "id": 2, "imagePath": "../images/products/Fotoaparatlar/Product 3/2.png" },
+      { "id": 3, "imagePath": "../images/products/Fotoaparatlar/Product 3/3.png" }
     ]
   },
   {
@@ -194,7 +208,9 @@ const productIdData = [
       "count": "554"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Notebook/Product 4/1.png" }
+      { "id": 1, "imagePath": "../images/products/Notebook/Product 4/1.png" },
+      { "id": 2, "imagePath": "../images/products/Notebook/Product 4/2.png" },
+      { "id": 3, "imagePath": "../images/products/Notebook/Product 4/3.png" }
     ]
   },
   {
@@ -213,7 +229,9 @@ const productIdData = [
       "count": "312"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Aksesuarlar/Product1/1.png" }
+      { "id": 1, "imagePath": "../images/products/Aksesuarlar/Product1/1.png" },
+      { "id": 2, "imagePath": "../images/products/Aksesuarlar/Product1/2.png" },
+      { "id": 3, "imagePath": "../images/products/Aksesuarlar/Product1/3.png" }
     ]
   },
   {
@@ -232,7 +250,9 @@ const productIdData = [
       "count": "312"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Notebook/Product 5/1.png" }
+      { "id": 1, "imagePath": "../images/products/Notebook/Product 5/1.png" },
+      { "id": 2, "imagePath": "../images/products/Notebook/Product 5/2.png" },
+      { "id": 3, "imagePath": "../images/products/Notebook/Product 5/3.png" }
     ]
   },
   {
@@ -251,7 +271,9 @@ const productIdData = [
       "count": "329"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 6/1.png" }
+      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 6/1.png" },
+      { "id": 2, "imagePath": "../images/products/Smartfonlar/Product 6/2.png" },
+      { "id": 3, "imagePath": "../images/products/Smartfonlar/Product 6/3.png" }
     ]
   },
   {
@@ -272,7 +294,9 @@ const productIdData = [
       "count": "329"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 4/1.png" }
+      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 4/1.png" },
+      { "id": 2, "imagePath": "../images/products/Fotoaparatlar/Product 4/2.png" },
+      { "id": 3, "imagePath": "../images/products/Fotoaparatlar/Product 4/3.png" }
     ]
   },
   {
@@ -291,7 +315,9 @@ const productIdData = [
       "count": "329"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Notebook/Product 6/1.png" }
+      { "id": 1, "imagePath": "../images/products/Notebook/Product 6/1.png" },
+      { "id": 2, "imagePath": "../images/products/Notebook/Product 6/2.png" },
+      { "id": 3, "imagePath": "../images/products/Notebook/Product 6/3.png" }
     ]
   },
   {
@@ -313,7 +339,8 @@ const productIdData = [
     },
     "images": [
       { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 2/1.png" },
-      { "id": 2, "imagePath": "../images/products/Smartfonlar/Product 2/2.png" }
+      { "id": 2, "imagePath": "../images/products/Smartfonlar/Product 2/2.png" },
+      { "id": 3, "imagePath": "../images/products/Smartfonlar/Product 2/3.png" }
     ]
   },
   {
@@ -334,7 +361,9 @@ const productIdData = [
       "count": "554"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Oyunlar/Product4/1.png" }
+      { "id": 1, "imagePath": "../images/products/Oyunlar/Product4/1.png" },
+      { "id": 2, "imagePath": "../images/products/Oyunlar/Product4/2.png" },
+      { "id": 3, "imagePath": "../images/products/Oyunlar/Product4/3.png" }
     ]
   },
   {
@@ -353,7 +382,9 @@ const productIdData = [
       "count": "554"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 5/1.png" }
+      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 5/1.png" },
+      { "id": 2, "imagePath": "../images/products/Smartfonlar/Product 5/2.png" },
+      { "id": 3, "imagePath": "../images/products/Smartfonlar/Product 5/3.png" }
     ]
   },
   {
@@ -372,7 +403,9 @@ const productIdData = [
       "count": "554"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 2/1.png" }
+      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 2/1.png" },
+      { "id": 2, "imagePath": "../images/products/Fotoaparatlar/Product 2/2.png" },
+      { "id": 3, "imagePath": "../images/products/Fotoaparatlar/Product 2/3.png" }
     ]
   },
   {
@@ -393,7 +426,9 @@ const productIdData = [
       "count": "554"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Notebook/Product 7/1.png" }
+      { "id": 1, "imagePath": "../images/products/Notebook/Product 7/1.png" },
+      { "id": 2, "imagePath": "../images/products/Notebook/Product 7/2.png" },
+      { "id": 3, "imagePath": "../images/products/Notebook/Product 7/3.png" }
     ]
   },
   {
@@ -412,7 +447,9 @@ const productIdData = [
       "count": "312"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Oyunlar/Product5/1.png" }
+      { "id": 1, "imagePath": "../images/products/Oyunlar/Product5/1.png" },
+      { "id": 2, "imagePath": "../images/products/Oyunlar/Product5/2.png" },
+      { "id": 3, "imagePath": "../images/products/Oyunlar/Product5/3.png" }
     ]
   },
   {
@@ -452,7 +489,9 @@ const productIdData = [
       "count": "312"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 5/1.jpg" }
+      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 5/1.jpg" },
+      { "id": 2, "imagePath": "../images/products/Fotoaparatlar/Product 5/2.jpg" },
+      { "id": 3, "imagePath": "../images/products/Fotoaparatlar/Product 5/3.jpg" }
     ]
   },
   {
@@ -471,7 +510,9 @@ const productIdData = [
       "count": "554"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Aksesuarlar/Product5/1.png" }
+      { "id": 1, "imagePath": "../images/products/Aksesuarlar/Product5/1.png" },
+      { "id": 2, "imagePath": "../images/products/Aksesuarlar/Product5/2.png" },
+      { "id": 3, "imagePath": "../images/products/Aksesuarlar/Product5/3.png" }
     ]
   },
   {
@@ -490,7 +531,9 @@ const productIdData = [
       "count": "332"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 3/1.png" }
+      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 3/1.png" },
+      { "id": 2, "imagePath": "../images/products/Smartfonlar/Product 3/2.png" },
+      { "id": 3, "imagePath": "../images/products/Smartfonlar/Product 3/3.png" }
     ]
   },
   {
@@ -540,7 +583,7 @@ const productIdData = [
     "price": 4499.99,
     "description": "Canon RF 70-200MM F4 L IS USM lens with 20% discount.",
     "createDate": "2024-07-28T13:00:00",
-    "categories": "CAMERAS",
+    "categories": "ACCESSORIES",
     "brand": "Canon",
     "discounts": [
       { "id": 15, "currentPrice": 3999.99, "discountAmount": "20%" }
@@ -551,7 +594,9 @@ const productIdData = [
       "count": "312"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Aksesuarlar/Product6/1.png" }
+      { "id": 1, "imagePath": "../images/products/Aksesuarlar/Product6/1.png" },
+      { "id": 2, "imagePath": "../images/products/Aksesuarlar/Product6/2.png" },
+      { "id": 3, "imagePath": "../images/products/Aksesuarlar/Product6/3.png" }
     ]
   },
   {
@@ -572,7 +617,9 @@ const productIdData = [
       "count": "312"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 4/1.png" }
+      { "id": 1, "imagePath": "../images/products/Smartfonlar/Product 4/1.png" },
+      { "id": 2, "imagePath": "../images/products/Smartfonlar/Product 4/2.png" },
+      { "id": 3, "imagePath": "../images/products/Smartfonlar/Product 4/3.png" },
     ]
   },
   {
@@ -582,7 +629,7 @@ const productIdData = [
     "price": 1199.99,
     "description": "Sony PlayStation 5 console with 825 GB storage.",
     "createDate": "2024-07-30T15:00:00",
-    "categories": "GAMING",
+    "categories": "GAMES",
     "brand": "Sony",
     "discounts": [],
     "rating": {
@@ -612,7 +659,9 @@ const productIdData = [
       "count": "329"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 6/1.png" }
+      { "id": 1, "imagePath": "../images/products/Fotoaparatlar/Product 6/1.png" },
+      { "id": 2, "imagePath": "../images/products/Fotoaparatlar/Product 6/2.png" },
+      { "id": 3, "imagePath": "../images/products/Fotoaparatlar/Product 6/3.png" },
     ]
   },
 
@@ -623,7 +672,7 @@ const productIdData = [
     "price": 99.99,
     "description": "High-capacity powerbank with magnetic attachment, compatible with various devices. Provides fast charging and durable performance.",
     "brand": "Anker",
-    "category": "Electronics",
+    "categories": "ACCESSORIES",
     "createDate": "2024-08-30",
     "discounts": [
       {
@@ -638,7 +687,7 @@ const productIdData = [
       "count": "312"
     },
     "images": [
-      { "id": 1, "imagePath": "../images/products/Aksesuarlar/Product4/1.png" },
+      { "id": 1, "imagePath": "../images/products/Aksesuarlar/Product4/1.png" }
     ],
     // "specifications": {
     //   "capacity": "10000mAh",

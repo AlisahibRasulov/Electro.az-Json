@@ -1,0 +1,113 @@
+.acer, .asus, .apple, .canon, .dell, .hp, .huawei, .lenovo, .nikon, .samsung, .sony, .xiaomi {
+  margin-top: 60px;
+}
+.acer .card-content, .asus .card-content, .apple .card-content, .canon .card-content, .dell .card-content, .hp .card-content, .huawei .card-content, .lenovo .card-content, .nikon .card-content, .samsung .card-content, .sony .card-content, .xiaomi .card-content {
+  padding: 35px 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.acer .card-content .product-card, .asus .card-content .product-card, .apple .card-content .product-card, .canon .card-content .product-card, .dell .card-content .product-card, .hp .card-content .product-card, .huawei .card-content .product-card, .lenovo .card-content .product-card, .nikon .card-content .product-card, .samsung .card-content .product-card, .sony .card-content .product-card, .xiaomi .card-content .product-card {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 420px;
+  border: 1px solid #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+  border: 1px solid #bbb;
+  background-color: #fff;
+  border-radius: 5px 5px 5px 5px;
+  line-height: 20px;
+}
+.acer .card-content .product-card:hover, .asus .card-content .product-card:hover, .apple .card-content .product-card:hover, .canon .card-content .product-card:hover, .dell .card-content .product-card:hover, .hp .card-content .product-card:hover, .huawei .card-content .product-card:hover, .lenovo .card-content .product-card:hover, .nikon .card-content .product-card:hover, .samsung .card-content .product-card:hover, .sony .card-content .product-card:hover, .xiaomi .card-content .product-card:hover {
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.acer .card-content .product-card:hover .card-view, .asus .card-content .product-card:hover .card-view, .apple .card-content .product-card:hover .card-view, .canon .card-content .product-card:hover .card-view, .dell .card-content .product-card:hover .card-view, .hp .card-content .product-card:hover .card-view, .huawei .card-content .product-card:hover .card-view, .lenovo .card-content .product-card:hover .card-view, .nikon .card-content .product-card:hover .card-view, .samsung .card-content .product-card:hover .card-view, .sony .card-content .product-card:hover .card-view, .xiaomi .card-content .product-card:hover .card-view {
+  opacity: 1;
+  bottom: 0;
+  pointer-events: all;
+}
+.acer .card-content .product-card .like-btn, .asus .card-content .product-card .like-btn, .apple .card-content .product-card .like-btn, .canon .card-content .product-card .like-btn, .dell .card-content .product-card .like-btn, .hp .card-content .product-card .like-btn, .huawei .card-content .product-card .like-btn, .lenovo .card-content .product-card .like-btn, .nikon .card-content .product-card .like-btn, .samsung .card-content .product-card .like-btn, .sony .card-content .product-card .like-btn, .xiaomi .card-content .product-card .like-btn {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 5px 7px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+}
+.acer .card-content .product-card img, .asus .card-content .product-card img, .apple .card-content .product-card img, .canon .card-content .product-card img, .dell .card-content .product-card img, .hp .card-content .product-card img, .huawei .card-content .product-card img, .lenovo .card-content .product-card img, .nikon .card-content .product-card img, .samsung .card-content .product-card img, .sony .card-content .product-card img, .xiaomi .card-content .product-card img {
+  width: 160px;
+  height: auto;
+  border-radius: 10px;
+}
+.acer .card-content .product-card .card-view, .asus .card-content .product-card .card-view, .apple .card-content .product-card .card-view, .canon .card-content .product-card .card-view, .dell .card-content .product-card .card-view, .hp .card-content .product-card .card-view, .huawei .card-content .product-card .card-view, .lenovo .card-content .product-card .card-view, .nikon .card-content .product-card .card-view, .samsung .card-content .product-card .card-view, .sony .card-content .product-card .card-view, .xiaomi .card-content .product-card .card-view {
+  position: absolute;
+  bottom: -100%;
+  width: 250px;
+  height: 20%;
+  z-index: 1;
+  border-top: none;
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s all;
+  z-index: 2;
+}
+.acer .card-content .product-card .card-view .card-btn, .asus .card-content .product-card .card-view .card-btn, .apple .card-content .product-card .card-view .card-btn, .canon .card-content .product-card .card-view .card-btn, .dell .card-content .product-card .card-view .card-btn, .hp .card-content .product-card .card-view .card-btn, .huawei .card-content .product-card .card-view .card-btn, .lenovo .card-content .product-card .card-view .card-btn, .nikon .card-content .product-card .card-view .card-btn, .samsung .card-content .product-card .card-view .card-btn, .sony .card-content .product-card .card-view .card-btn, .xiaomi .card-content .product-card .card-view .card-btn {
+  width: 210px;
+  background-color: #D10024;
+  border: none;
+  font-size: 18px;
+  transition: 0.2s all;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.acer .card-content .product-card .card-view .card-btn .card-btn_icon, .asus .card-content .product-card .card-view .card-btn .card-btn_icon, .apple .card-content .product-card .card-view .card-btn .card-btn_icon, .canon .card-content .product-card .card-view .card-btn .card-btn_icon, .dell .card-content .product-card .card-view .card-btn .card-btn_icon, .hp .card-content .product-card .card-view .card-btn .card-btn_icon, .huawei .card-content .product-card .card-view .card-btn .card-btn_icon, .lenovo .card-content .product-card .card-view .card-btn .card-btn_icon, .nikon .card-content .product-card .card-view .card-btn .card-btn_icon, .samsung .card-content .product-card .card-view .card-btn .card-btn_icon, .sony .card-content .product-card .card-view .card-btn .card-btn_icon, .xiaomi .card-content .product-card .card-view .card-btn .card-btn_icon {
+  display: flex;
+  align-self: center;
+}
+.acer .card-content .product-card .card-view .card-btn .card-btn_text, .asus .card-content .product-card .card-view .card-btn .card-btn_text, .apple .card-content .product-card .card-view .card-btn .card-btn_text, .canon .card-content .product-card .card-view .card-btn .card-btn_text, .dell .card-content .product-card .card-view .card-btn .card-btn_text, .hp .card-content .product-card .card-view .card-btn .card-btn_text, .huawei .card-content .product-card .card-view .card-btn .card-btn_text, .lenovo .card-content .product-card .card-view .card-btn .card-btn_text, .nikon .card-content .product-card .card-view .card-btn .card-btn_text, .samsung .card-content .product-card .card-view .card-btn .card-btn_text, .sony .card-content .product-card .card-view .card-btn .card-btn_text, .xiaomi .card-content .product-card .card-view .card-btn .card-btn_text {
+  display: flex;
+  align-self: center;
+  margin-left: 10px;
+  margin-bottom: 2px;
+}
+.acer .card-content .product-card .card-title, .asus .card-content .product-card .card-title, .apple .card-content .product-card .card-title, .canon .card-content .product-card .card-title, .dell .card-content .product-card .card-title, .hp .card-content .product-card .card-title, .huawei .card-content .product-card .card-title, .lenovo .card-content .product-card .card-title, .nikon .card-content .product-card .card-title, .samsung .card-content .product-card .card-title, .sony .card-content .product-card .card-title, .xiaomi .card-content .product-card .card-title {
+  margin: 8px 0;
+  font-size: 14px;
+  padding: 5px;
+  text-align: center;
+}
+.acer .card-content .product-card .card-price, .asus .card-content .product-card .card-price, .apple .card-content .product-card .card-price, .canon .card-content .product-card .card-price, .dell .card-content .product-card .card-price, .hp .card-content .product-card .card-price, .huawei .card-content .product-card .card-price, .lenovo .card-content .product-card .card-price, .nikon .card-content .product-card .card-price, .samsung .card-content .product-card .card-price, .sony .card-content .product-card .card-price, .xiaomi .card-content .product-card .card-price {
+  color: #666;
+  font-weight: bold;
+  display: flex;
+  justify-self: start;
+  font-size: 17px;
+}
+.acer .card-content .product-card .card-discount-price, .asus .card-content .product-card .card-discount-price, .apple .card-content .product-card .card-discount-price, .canon .card-content .product-card .card-discount-price, .dell .card-content .product-card .card-discount-price, .hp .card-content .product-card .card-discount-price, .huawei .card-content .product-card .card-discount-price, .lenovo .card-content .product-card .card-discount-price, .nikon .card-content .product-card .card-discount-price, .samsung .card-content .product-card .card-discount-price, .sony .card-content .product-card .card-discount-price, .xiaomi .card-content .product-card .card-discount-price {
+  color: #D10024;
+  font-weight: bold;
+}
+.acer .card-content .product-card .card-discount-percentage, .asus .card-content .product-card .card-discount-percentage, .apple .card-content .product-card .card-discount-percentage, .canon .card-content .product-card .card-discount-percentage, .dell .card-content .product-card .card-discount-percentage, .hp .card-content .product-card .card-discount-percentage, .huawei .card-content .product-card .card-discount-percentage, .lenovo .card-content .product-card .card-discount-percentage, .nikon .card-content .product-card .card-discount-percentage, .samsung .card-content .product-card .card-discount-percentage, .sony .card-content .product-card .card-discount-percentage, .xiaomi .card-content .product-card .card-discount-percentage {
+  color: #666;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+}
+.acer .card-content .product-card .card-discount-percentage .discount-active, .asus .card-content .product-card .card-discount-percentage .discount-active, .apple .card-content .product-card .card-discount-percentage .discount-active, .canon .card-content .product-card .card-discount-percentage .discount-active, .dell .card-content .product-card .card-discount-percentage .discount-active, .hp .card-content .product-card .card-discount-percentage .discount-active, .huawei .card-content .product-card .card-discount-percentage .discount-active, .lenovo .card-content .product-card .card-discount-percentage .discount-active, .nikon .card-content .product-card .card-discount-percentage .discount-active, .samsung .card-content .product-card .card-discount-percentage .discount-active, .sony .card-content .product-card .card-discount-percentage .discount-active, .xiaomi .card-content .product-card .card-discount-percentage .discount-active {
+  border: 2px solid #D10024;
+  padding: 0 10px;
+}/*# sourceMappingURL=brand-products.css.map */

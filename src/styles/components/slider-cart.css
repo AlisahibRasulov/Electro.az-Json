@@ -1,0 +1,25 @@
+/* SliderCart.scss */
+.slider-cart {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-cart__slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-cart__slide-active {
+  left: 0;
+  opacity: 1;
+}
+
+.slider-cart__slide-exit {
+  left: -100%;
+  opacity: 0;
+}/*# sourceMappingURL=slider-cart.css.map */
