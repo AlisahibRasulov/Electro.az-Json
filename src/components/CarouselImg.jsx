@@ -215,7 +215,7 @@ const CarouselImg = () => {
   };
 
   return (
-    <div className="carousel">
+    <div className="carousel rounded-[12px] shadow">
       <button className="carousel__button carousel__button--prev" onClick={goToPrevious}>{"<"}</button>
       
       <div className="carousel__slide">

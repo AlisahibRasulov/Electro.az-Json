@@ -9,8 +9,9 @@ import {
   decrementQuantity,
 } from "../redux/slices/addToBasketSlice";
 import { DecrementMinusIcon, DeletedIcon, IncrementPlusIcon } from "../svg";
-
+import Alert from "../components/library/Alert";
 import SadEmoji from "../img/products/free-sad-face-icon-2691-thumb.png";
+import { BasketAlert } from "../components/alerts/alerts";
 
 const Basket = ({ data }) => {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ const Basket = ({ data }) => {
   const [selectedItems, setSelectedItems] = useState(
     basketItems.map((data) => data.id)
   );
+  
 
   const dispatch = useDispatch();
 
@@ -88,8 +90,16 @@ const Basket = ({ data }) => {
   const orderBtn = () => {
     if (localStorage.getItem("login") === "true") {
       console.log("here is working");
-      alert("Ugurlu emeliyyat");
+      // alert("Ugurlu emeliyyat");
+      BasketAlert.fire({
+        icon: "success",
+        title: "Uğurlu əməliyyat"
+      });
     } else {
+      BasketAlert.fire({
+        icon: "error",
+        title: "Zəhmət olmasa qeydiyyatdan keçin"
+      });
       navigate("/login");
     }
   };

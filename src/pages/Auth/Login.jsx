@@ -7,6 +7,7 @@ import loginImage from "../../img/login-page/Mobile login-bro.png";
 import alertify from "alertifyjs";
 import "alertifyjs/build/css/alertify.css"; // Default theme
 import "alertifyjs/build/css/themes/bootstrap.css"; // Bootstrap theme
+import { LoginAlert } from "../../components/alerts/alerts";
 
 // Customize alertify settings
 alertify.set("notifier", "position", "top-right"); // Set the position of the alerts
@@ -29,7 +30,10 @@ const Login = () => {
       localStorage.setItem("login", "true");
       navigate("/");
     } else {
-      alertify.error("Username or password incorrect!");
+      LoginAlert.fire({
+        icon: "error",
+        title: "Email və ya Şifrə yanlışdır"
+      });
     }
   };
 

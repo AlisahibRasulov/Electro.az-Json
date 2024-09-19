@@ -96,7 +96,7 @@ const SliderCart = () => {
   };
 
   return (
-    <div className="slider-cart bg-[#fff] border-[1px] shadow border-[#eee] rounded-[10px] divide-solid w-[350px] max-w-[100%] max-h-[100%] h-[550px]">
+    <div className="slider-cart bg-[#fff] border-[1px] shadow border-[#eee] rounded-[10px] divide-solid flex col justify-center w-[100%] h-[600px]">
       {currentItem && (
         <div
           key={currentItem.id}

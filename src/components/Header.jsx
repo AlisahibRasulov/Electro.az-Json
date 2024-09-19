@@ -188,18 +188,18 @@ const Header = () => {
             </div>
           </div>
           <ul className="header_menu">
-            <li className="menu_item">
-              <NavLink className="menu_link" to={"/"}>
+            <li className="menu_item hover-navbar">
+              <NavLink className="menu_link hover:text-[#D10024]" to={"/"}>
                 Əsas Səhifə
               </NavLink>
             </li>
-            <li className="menu_item">
-              <NavLink className="menu_link" to={"/products"}>
+            <li className="menu_item hover-navbar">
+              <NavLink className="menu_link hover:text-[#D10024]" to={"/products"}>
                 Məhsullar
               </NavLink>
             </li>
-            <li className="menu_item">
-              <NavLink className="menu_link" to={"/about"}>
+            <li className="menu_item hover-navbar">
+              <NavLink className="menu_link hover:text-[#D10024]" to={"/about"}>
                 Haqqımızda
               </NavLink>
             </li>
@@ -278,23 +278,22 @@ const Header = () => {
       </div>
 
       {/* Sidebar with Transition */}
-      <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+      {/* <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
         <h2 className="text-xl font-semibold mb-4">Kataloq</h2>
         <ul>
           <li>Kategori 1</li>
           <li>Kategori 2</li>
           <li>Kategori 3</li>
-          {/* Add more categories as needed */}
         </ul>
-      </div>
+      </div> */}
 
       {/* Overlay with Transition */}
-      {isSidebarOpen && (
+      {/* {isSidebarOpen && (
         <div
           className={`sidebar-overlay ${isSidebarOpen ? "open" : ""}`}
           onClick={() => setSidebarOpen(false)}
         ></div>
-      )}
+      )} */}
 
       <Outlet />
     </>
