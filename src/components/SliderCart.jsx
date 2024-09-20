@@ -141,7 +141,7 @@ const SliderCart = () => {
           </div>
 
           <button
-            className="px-[50px] py-[15px] rounded-[10px] flex items-center"
+            className="px-[50px] py-[15px] rounded-[10px] flex justify-center items-center lg:w-[100%]  md:w-[100%] sm:w-[100%] xs:w-[100%] 2xs:w-[100%]"
             onClick={() => handleAddToBasket(currentItem)}
             style={{ backgroundColor: buttonColor, color: buttonTextColor }}
           >
