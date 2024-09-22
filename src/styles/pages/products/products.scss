@@ -1,10 +1,10 @@
 .accessories,.all-products,.cameras,.computers,.games,.phones{
   margin-top: 60px;
   .card-content{
-    padding: 35px 60px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    // padding: 35px 60px;
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
     .product-card {
       position: relative;
       overflow: hidden;
@@ -171,21 +171,59 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .card-content{
+    padding: 35px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .card-content{
+    padding: 35px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;}
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .card-content{
+    padding: 35px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;}
+}
+
+@media (min-width: 1400px) and (max-width: 1699px) {
+  .card-content{
+    padding: 35px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;}
+}
+
+@media (min-width: 1700px) {
+  .card-content{
+    padding: 35px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;}
+}
 
   
-  @media (min-width: 1400px) {
-    // .card-content{
-    //   display: flex;
-    //   // justify-content: space-between;
-    //   flex-wrap: wrap;
-    //   // .product-card{
-    //   //   display: flex;
-    //   //   justify-self: left;
-    //   // }
-    .discount-active{
-      border: 2px solid blue;
-       padding: 0 10px;
-    }
-    }
+  // @media (min-width: 1400px) {
+  //   // .card-content{
+  //   //   display: flex;
+  //   //   // justify-content: space-between;
+  //   //   flex-wrap: wrap;
+  //   //   // .product-card{
+  //   //   //   display: flex;
+  //   //   //   justify-self: left;
+  //   //   // }
+  //   .discount-active{
+  //     border: 2px solid blue;
+  //      padding: 0 10px;
+  //   }
+  //   }
 
   // }

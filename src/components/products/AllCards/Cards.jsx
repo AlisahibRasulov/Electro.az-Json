@@ -49,7 +49,7 @@ const Cards = ({ data }) => {
     }
   };
 
-  const { previewImage, title, price } = data;
+  const { discounts,previewImage, title, price } = data;
   return (
     <div className="swiper-slide_card">
       <div className="small-box">New</div>
@@ -58,7 +58,18 @@ const Cards = ({ data }) => {
       </button>
       <img src={previewImage} alt="" />
       <div className="card-title">{title}</div>
-      <div className="card-price">{price.toLocaleString("az-AZ")} ₼</div>
+      {data.discounts[0]?.currentPrice ? (
+        <>
+          <del>
+            <div className="card-price">{price.toLocaleString("az-AZ")} ₼</div>
+          </del>
+          <div className="card-discount-price">
+            {discounts[0].currentPrice.toLocaleString("az-AZ")} ₼
+          </div>
+        </>
+      ) : (
+        <div className="card-price">{price.toLocaleString("az-AZ")} ₼</div>
+      )}
       <div className="card-view">
         <button className="card-btn" onClick={handleAddToBasket}>
           <CardBasketIcon className="card-btn_basket" />{" "}

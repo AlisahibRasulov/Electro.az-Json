@@ -131,7 +131,7 @@ function App() {
     {/* ? Test Dropdown peoducts */}
     {/* <ProductList/> */}
     {/* <ProductList selectedCategory={selectedCategory} /> */}
-     <ScrollToTop smooth color="#D10024" />
+     <ScrollToTop smooth color="#D10024" className="z-[555555555px]"/>
       <p style={{ marginTop: "50vh" }}>bottom</p>
     <Footer/>
     </div>

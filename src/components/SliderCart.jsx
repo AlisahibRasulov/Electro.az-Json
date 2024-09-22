@@ -96,7 +96,7 @@ const SliderCart = () => {
   };
 
   return (
-    <div className="slider-cart bg-[#fff] border-[1px] shadow border-[#eee] rounded-[10px] divide-solid flex col justify-center w-[100%] h-[600px]">
+    <div className="slider-cart bg-[#fff] border-[1px] shadow border-[#eee] rounded-[10px] divide-solid flex justify-center w-[100%] h-[100%] xl:h-[100%] xl:mb-[20px] lg:h-[600px] lg:mb-[20px] lg:px-[20px] md:h-[500px] md:px-[20px] sm:px-[20px] sm:mb-[20px] sm:h-[500px] 2xs:h-[400px] 2xs:mb-[20px] 2xs:px-[20px] xs:h-[400px] xs:mb-[20px] xs:px-[20px]">
       {currentItem && (
         <div
           key={currentItem.id}
@@ -137,6 +137,7 @@ const SliderCart = () => {
               src={currentItem.previewImage}
               alt={`Slide ${currentIndex}`}
               onClick={() => navigate(`/product-detail/${currentItem.id}`)}
+              className="w-[100%]"
             />
           </div>
 

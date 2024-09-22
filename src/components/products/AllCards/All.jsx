@@ -11,7 +11,7 @@ import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
 import allProductData from '../../../Json/product-all';
 
-const New = () => {
+const All = () => {
   const [productData, setProductData] = useState([]);
   useEffect(()=>{
     setProductData(allProductData)
@@ -75,4 +75,4 @@ const New = () => {
   )
 }
 
-export default New
+export default All
