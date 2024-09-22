@@ -208,7 +208,7 @@ const Header = () => {
             {isLogin ? (
               <div className="flex items-center">
                 {username && (
-                  <span className="username_display font-[600] mr-[10px]">
+                  <span className="username_display font-[600] mr-[10px] 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[15px] sm:text-[15px] 2xs:text-[15px] xs:text-[12px]">
                     {username}
                   </span>
                 )}
