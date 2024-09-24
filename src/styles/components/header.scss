@@ -431,7 +431,7 @@
               margin-right: 1rem;
       
               .play-logo{
-                  width: 15px;
+                //   width: 20px;
                   background-color: #fff;
                   // overflow: hidden;
                   border-radius: 50%;
@@ -472,9 +472,10 @@
                   align-items: center;  
                   a{
                       color: #222;
-                      font-size: 15px;
+                      font-size: 18px;
                       font-weight: 700;
-                  text-decoration: none;
+                      text-decoration: none;
+                      display: none;
                   }
               }
           }
@@ -486,7 +487,7 @@
               .menu_item{
                   margin-right: 10px;
                   .menu_link{
-                      font-size: 8px;
+                      font-size: 15px;
                   }
               }
           }
@@ -498,9 +499,10 @@
           .header_user{
               .login_btn{
                   background-color: #f3f3f3;
-                  padding: 0px 10px;
+                //   padding: 0px 10px;
+                  padding: 5px 15px;
                   border-radius: 8px;
-                  font-size: 9px;
+                  font-size: 10px;
                   display: block;
               }
           }
@@ -665,7 +667,7 @@
               .menu_item{
                   margin-right: 10px;
                   .menu_link{
-                      font-size: 13px;
+                      font-size: 15px;
                   }
               }
           }

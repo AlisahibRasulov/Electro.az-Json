@@ -189,17 +189,17 @@ const Header = () => {
           </div>
           <ul className="header_menu">
             <li className="menu_item hover-navbar">
-              <NavLink className="menu_link hover:text-[#D10024]" to={"/"}>
+              <NavLink className="menu_link font-[500] hover:text-[#D10024]" to={"/"}>
                 Əsas Səhifə
               </NavLink>
             </li>
-            <li className="menu_item hover-navbar">
+            {/* <li className="menu_item hover-navbar">
               <NavLink className="menu_link hover:text-[#D10024]" to={"/products"}>
                 Məhsullar
               </NavLink>
-            </li>
+            </li> */}
             <li className="menu_item hover-navbar">
-              <NavLink className="menu_link hover:text-[#D10024]" to={"/about"}>
+              <NavLink className="menu_link font-[500] hover:text-[#D10024]" to={"/about"}>
                 Haqqımızda
               </NavLink>
             </li>
@@ -208,7 +208,7 @@ const Header = () => {
             {isLogin ? (
               <div className="flex items-center">
                 {username && (
-                  <span className="username_display font-[600] mr-[10px] 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[15px] sm:text-[15px] 2xs:text-[15px] xs:text-[12px]">
+                  <span className="username_display text-[#D10024] font-[600] mr-[10px] 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[15px] sm:text-[15px] 2xs:text-[15px] xs:text-[15px]">
                     {username}
                   </span>
                 )}
