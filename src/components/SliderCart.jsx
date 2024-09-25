@@ -132,7 +132,7 @@ const SliderCart = () => {
             </div>
           </div>
 
-          <div className="slider-cart__image w-[160px]">
+          <div className="slider-cart__image 2xl:w-[160px] xl:w-[160px] lg:w-[160px] md:w-[140px] sm:w-[140px] 2xs:w-[120px] xs:w-[120px]">
             <img
               src={currentItem.previewImage}
               alt={`Slide ${currentIndex}`}
@@ -142,7 +142,7 @@ const SliderCart = () => {
           </div>
 
           <button
-            className="px-[50px] py-[15px] rounded-[10px] flex justify-center items-center lg:w-[100%]  md:w-[100%] sm:w-[100%] xs:w-[100%] 2xs:w-[100%]"
+            className="px-[50px] py-[15px] rounded-[10px] flex justify-center items-center lg:w-[100%]  md:w-[100%] sm:w-[100%] 2xs:w-[100%] xs:w-[10S0%]"
             onClick={() => handleAddToBasket(currentItem)}
             style={{ backgroundColor: buttonColor, color: buttonTextColor }}
           >
