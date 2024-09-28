@@ -150,6 +150,7 @@ import { Outlet } from "react-router-dom";
 import { PlayLogo } from "../svg";
 
 const Header = () => {
+  const [click, setClick]= useState(null)
   const [isLogin, setLogin] = useState(false);
   const [username, setUsername] = useState("");
   const [isSidebarOpen, setSidebarOpen] = useState(false); // State for sidebar
@@ -189,7 +190,7 @@ const Header = () => {
           </div>
           <ul className="header_menu">
             <li className="menu_item hover-navbar">
-              <NavLink className="menu_link font-[500] hover:text-[#D10024]" to={"/"}>
+              <NavLink className={`menu_link font-[500] hover:text-[#D10024] ${click === 'home' ? "text-[#D10024]" :"text-[#323232]" }`} onClick={()=>setClick('home')}  to={"/"}>
                 Əsas Səhifə
               </NavLink>
             </li>
@@ -199,7 +200,7 @@ const Header = () => {
               </NavLink>
             </li> */}
             <li className="menu_item hover-navbar">
-              <NavLink className="menu_link font-[500] hover:text-[#D10024]" to={"/about"}>
+              <NavLink className={`menu_link font-[500] hover:text-[#D10024] ${click === 'about' ? "text-[#D10024]" :"text-[#323232]" }`} onClick={()=>setClick('about')}  to={"/about"}>
                 Haqqımızda
               </NavLink>
             </li>
