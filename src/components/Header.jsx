@@ -144,10 +144,11 @@
 
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import {useDispatch,useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { PlayLogo } from "../svg";
+import { removeBasketAll } from "../redux/slices/addToBasketSlice";
 
 const Header = () => {
   const [click, setClick]= useState(null)
@@ -157,6 +158,8 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const loginStatus = localStorage.getItem("login") === "true";
     setLogin(loginStatus);
@@ -165,10 +168,11 @@ const Header = () => {
     setUsername(userData?.username || "");
   }, [location]);
 
-  const logOut = () => {
+  const logOut = (productId) => {
     localStorage.setItem("login", "false");
     setLogin(false);
     navigate("/login");
+    dispatch(removeBasketAll(productId));
   };
 
   const navigateTo = (path) => {
@@ -178,6 +182,7 @@ const Header = () => {
   const like = useSelector((state) => state.like.length);
   const basket = useSelector((state) => state.basket.length);
 
+ 
   return (
     <>
       <div className="header">
@@ -190,7 +195,7 @@ const Header = () => {
           </div>
           <ul className="header_menu">
             <li className="menu_item hover-navbar">
-              <NavLink className={`menu_link font-[500] hover:text-[#D10024] ${click === 'home' ? "text-[#D10024]" :"text-[#323232]" }`} onClick={()=>setClick('home')}  to={"/"}>
+              <NavLink className={`menu_link font-[500] hover:text-[#D10024] ${click === '' ? "text-[#D10024]" :"text-[#323232]" }`} onClick={()=>setClick('')}  to={"/"}>
                 Əsas Səhifə
               </NavLink>
             </li>

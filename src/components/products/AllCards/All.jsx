@@ -18,9 +18,9 @@ const All = () => {
     },[])
   return (
     
-    <div className='new-card'>
+    <div className='all-card'>
          <div className="container-fluid">
-      <div className="new-card_content">
+      <div className="all-card_content">
         <h1>Yeni Məhsullar</h1>
       <Swiper
          slidesPerView={1}

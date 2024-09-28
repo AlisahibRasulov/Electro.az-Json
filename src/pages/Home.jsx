@@ -24,8 +24,8 @@ const Home = () => {
       </> */}
       
       <div className="container-fluid flex justify-evenly items-center mb-[100px] lg:flex-col md:flex-col sm:flex-col xs:flex-col 2xs:flex-col">
-        <div className="col-2xl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-2xs-12 col-xs-12 flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col md:mb-[20px] sm:flex-col sm:mb-[20px] 2xs:flex-col 2xs:mb-[20px] xs:flex-col xs:mb-[20px]">
-          <div className="col-2xl-3 col-xl-3 col-lg-4 col-md-12 col-sm-12 col-2xs-12 col-xs-12  md:mb-[20px] sm:mb-[20px] 2xs:mb-[20px] xs:mb-[20px]">
+        <div className="col-2xl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-2xs-12 col-xs-12 flex 2xl:flex-row xl:flex-row lg:flex-row lg:mb-[20px] md:flex-col md:mb-[20px] sm:flex-col sm:mb-[20px] 2xs:flex-col 2xs:mb-[20px] xs:flex-col xs:mb-[20px]">
+          <div className="col-2xl-3 col-xl-3 col-lg-4 col-md-12 col-sm-12 col-2xs-12 col-xs-12 md:mb-[20px] sm:mb-[20px] 2xs:mb-[20px] xs:mb-[20px]">
             <Sidebar />
           </div>
           <div className="col-2xl-6 col-xl-6 col-lg-8 col-md-12 col-sm-12 col-2xs-12 col-xs-12">
