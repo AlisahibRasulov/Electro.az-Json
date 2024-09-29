@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { PlayLogo } from '../svg'
 import productImage1 from '../img/about-page/cyber-monday-shopping-sales.jpg'; // İlk ürün resminin yolunu düzenleyin
 import productImage2 from '../img/about-page/seller-man-mobile-phone-professional-consultant-tech-store-shop-check-new-smart-watches.jpg';
+import productImage3 from '../images/about-page/blog-image-2.png'
+import productImage4 from '../images/about-page/adv-image-2.png'
 
 const logoutBtn = {
     marginLeft: "90%",
@@ -67,10 +69,12 @@ const About = () => {
       </button> */}
         <div className="container-self">
             <div className="row">
-                <div className="col-lg-6 title">
+                <div className="col-12 title">
+                    <div className="flex items-center">
                     <h2>niyə</h2>
                     {/* <h1>Code Academy?</h1> */}
                     <PlayLogo className="play-logo"/>
+                    </div>
                      {/* <img src={Logo} alt="Logo" /> */}
                     <h1 className='logo-name'>Electro.<span>az</span></h1>
                     <img src="" alt=""/>
@@ -78,10 +82,10 @@ const About = () => {
                 </div>
             </div>
             <div className="row">
-                <div className="col-lg-6" style={{padding: "0"}}>
+                <div className="col-12" style={{padding: "0"}}>
                     <div className="card-self reverse">
                         <div className="image">
-                            <img src={productImage1} alt=""/>
+                            <img src={productImage3} alt=""/>
                         </div>
                         <div className="text">
                         <h2>Nələr Təqdim Edirik?</h2>
@@ -89,7 +93,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-6" style={{padding: "0"}}>
+                <div className="col-12" style={{padding: "0"}}>
                     <div className="card-self ">
                         <div className="image">
                             <img src={productImage1} alt=""/>
@@ -100,7 +104,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-6" style={{padding: "0"}}>
+                <div className="col-12" style={{padding: "0"}}>
                     <div className="card-self reverse">
                         <div className="image">
                             <img src={productImage1} alt=""/>
@@ -111,7 +115,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-6" style={{padding: "0"}}>
+                <div className="col-12" style={{padding: "0"}}>
                     <div className="card-self">
                         <div className="image">
                             <img src={productImage1} alt=""/>
@@ -122,7 +126,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-6" style={{padding: "0"}}>
+                <div className="col-12" style={{padding: "0"}}>
                     <div className="card-self reverse">
                         <div className="image">
                             <img src={productImage1} alt=""/>
