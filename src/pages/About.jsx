@@ -83,7 +83,7 @@ const About = () => {
             </div>
             <div className="row">
                 <div className="col-12" style={{padding: "0"}}>
-                    <div className="card-self reverse">
+                    <div className="card-self f_row-reverse f_column-reverse">
                         <div className="image">
                             <img src={productImage3} alt=""/>
                         </div>
@@ -94,7 +94,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="col-12" style={{padding: "0"}}>
-                    <div className="card-self ">
+                    <div className="card-self f_row f_column">
                         <div className="image">
                             <img src={productImage1} alt=""/>
                         </div>
@@ -105,7 +105,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="col-12" style={{padding: "0"}}>
-                    <div className="card-self reverse">
+                    <div className="card-self f_row-reverse f_column-reverse">
                         <div className="image">
                             <img src={productImage1} alt=""/>
                         </div>
@@ -116,7 +116,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="col-12" style={{padding: "0"}}>
-                    <div className="card-self">
+                    <div className="card-self f_row f_column">
                         <div className="image">
                             <img src={productImage1} alt=""/>
                         </div>
@@ -127,7 +127,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="col-12" style={{padding: "0"}}>
-                    <div className="card-self reverse">
+                    <div className="card-self f_row-reverse f_column-reverse">
                         <div className="image">
                             <img src={productImage1} alt=""/>
                         </div>

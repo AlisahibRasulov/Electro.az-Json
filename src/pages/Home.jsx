@@ -7,6 +7,7 @@ import CarouselImg from "../components/CarouselImg";
 import SliderCart from "../components/SliderCart";
 import Sidebar from "../components/Sidebar";
 import All from "../components/products/AllCards/All";
+import Blogs from '../components/Blogs';
 
 
 const Home = () => {
@@ -67,12 +68,21 @@ const Home = () => {
     </>
       )}
         {loading ? (
-        <div className="container flex justify-center items-center mb-[150px]">
+        <div className="container flex justify-center items-center mb-[250px]">
           <div className="spinner2"></div>
         </div>
       ) : (
     <>  
     <New />
+    </>
+      )}
+  {loading ? (
+        <div className="container flex justify-center items-center mb-[150px]">
+          <div className="spinner2"></div>
+        </div>
+      ) : (
+    <>  
+    <Blogs />
     </>
       )}
     </div>

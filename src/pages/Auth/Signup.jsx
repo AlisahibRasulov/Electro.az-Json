@@ -13,17 +13,58 @@ const Signup = () => {
     password: "",
   });
 
+  const [signupError, setSignupError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [pswError, setPswError] = useState("");
   const [visible, setVisible] = useState(false);
+  const emailRegex = /^(.+)@(.+)$/;
+  const pswRegex = /^(?=.*[a-z])(?=.*[A-Z]).{8,16}$/;
+
+  const validateInputs = () => {
+    const { username, email, password } = signupData;
+
+    if (!username || !email || !password) {
+      setSignupError("Xanaları boş saxlamayın");
+      return false;
+    }
+    
+    if (!emailRegex.test(email)) {
+      setEmailError("@ və . simvolu olmalıdır");
+      return false;
+    }
+
+    if (!pswRegex.test(password)) {
+      setPswError("Şifrə 8-16 simvoldan ibarət olmalı, böyük və kiçik hərflər ehtiva etməlidir.");
+      return false;
+    }
+
+    return true;
+  };
 
   const handleChange = (e) => {
     setSignupData({ ...signupData, [e.target.name]: e.target.value });
+    setSignupError("");
   };
+
+
 
   const register = () => {
     localStorage.setItem("userData", JSON.stringify(signupData));
+    if (!validateInputs()) {
+      setTimeout(() => {
+        setSignupError("");
+        setEmailError("");
+        // setPswError("");
+      }, 3000);
+      return;
+    }
     navigate("/login");
+
+
   };
 
+
+  
   const togglePasswordVisibility = () => {
     setVisible(!visible);
   };
@@ -39,6 +80,7 @@ const Signup = () => {
             <div className="signup-cart_header">Qeydiyyat</div>
             <div className="signup-cart_content">
               <div className="signup-cart_top">
+                {signupError && <span className="text-red-500 text-[12px] font-[600]">{signupError}</span>}
                 <input
                   type="text"
                   onChange={handleChange}
@@ -46,6 +88,8 @@ const Signup = () => {
                   name="username"
                   placeholder="İstifadəçi adını daxil edin..."
                 />
+                {signupError && <span className="text-red-500 text-[12px] font-[600]">{signupError}</span>}
+                {emailError && <span className="text-red-500 text-[12px] font-[600]">{emailError}</span>}
                 <input
                   type="email"
                   onChange={handleChange}
@@ -53,6 +97,8 @@ const Signup = () => {
                   name="email"
                   placeholder="Email adresinizi daxil edin..."
                 />
+                {signupError && <span className="text-red-500 text-[12px] font-[600]">{signupError}</span>}
+                {pswError && <span className="text-red-500 text-[12px] font-[600]">{pswError}</span>}
                 <div className="password-content">
                   <input
                     type={visible ? "text" : "password"}
