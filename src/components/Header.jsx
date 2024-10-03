@@ -148,7 +148,7 @@ import {useDispatch,useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { PlayLogo } from "../svg";
-import { removeBasketAll } from "../redux/slices/addToBasketSlice";
+// import { removeBasketAll } from "../redux/slices/addToBasketSlice";
 
 const Header = () => {
   const [click, setClick]= useState(null)
@@ -158,7 +158,7 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     const loginStatus = localStorage.getItem("login") === "true";
@@ -172,7 +172,7 @@ const Header = () => {
     localStorage.setItem("login", "false");
     setLogin(false);
     navigate("/login");
-    dispatch(removeBasketAll(productId));
+    // dispatch(removeBasketAll(productId));
   };
 
   const navigateTo = (path) => {

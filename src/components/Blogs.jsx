@@ -36,7 +36,7 @@ const Blogs = () => {
 
   return (
     <div className='blogs'>
-      <div className='container'>
+      <div className='container-fluid'>
         <div className="blogs-content">     
         {blogData.map((blog) => (
           <div className='blog-card' key={blog.id}>
