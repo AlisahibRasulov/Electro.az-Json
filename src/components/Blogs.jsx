@@ -2,12 +2,12 @@ import React from 'react';
 
 const Blogs = () => {
   const blogData = [
-    // {
-    //   id: 1,
-    //   title: 'Nələr Təqdim Edirik?',
-    //   description: 'Geniş Məhsul Çeşidliyi: Elektron.az, müxtəlif sahələrdən olan elektronika məhsullarını bir araya gətirir.',
-    //   image: '../images/about-page/adv-image-2.png', // Replace with your image URL
-    // },
+    {
+      id: 1,
+      title: 'Nələr Təqdim Edirik?',
+      description: 'Geniş Məhsul Çeşidliyi: Elektron.az, müxtəlif sahələrdən olan elektronika məhsullarını bir araya gətirir.',
+      image: '../images/about-page/adv-image-2.png', // Replace with your image URL
+    },
     {
       id: 2,
       title: 'Yüksək Keyfiyyətli Məhsullar',
@@ -39,12 +39,13 @@ const Blogs = () => {
       <div className='container-fluid'>
         <div className="blogs-content">     
         {blogData.map((blog) => (
-          <div className='blog-card' key={blog.id}>
+          <div className='blog-card 2xl:w-[22%] xl:w-[25%] lg:w-[100%]' key={blog.id}>
             <img src={blog.image} alt={blog.title} />
             <div className='cart-content'>
               <h2>{blog.title}</h2>
               <p>{blog.description}</p>
             </div>
+            <button className='mt-[40px] px-[40px] py-[10px] rounded-[10px] font-[500] bg-red-800 text-cyan-50'>Daha çox</button>
           </div>
         ))}
         </div>
