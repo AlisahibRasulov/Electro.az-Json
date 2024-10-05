@@ -92,14 +92,19 @@ const About = () => {
     <div className="container-self">
       <div className="row">
         <div className="col-lg-6 title">
-          <h2>niyə</h2>
-          <h1>Code Academy?</h1>
-          <img src="img/sep-line.png" alt="" />
+          <div className="flex items-center">
+            <PlayLogo className="play-logo w-[]"/>
+            <div className="flex flex-col">
+              <h2>niyə</h2>
+              <h1 className='logo-name'>Electro.<span>az</span></h1>
+            </div>
+          </div>
+          {/* <img src="img/sep-line.png" alt="" /> */}
           <p>
-            Biz dərsləri Zəmanətli Təhsil Sistemi ilə Beynəlxalq Sertifikasiya
-            imtahanlarının kurrikulumu əsasında keçirik. Talant Mərkəzi, Mentor
-            Sistemi kimi özəlliklər və müasir tədris metodları ilə onlara
-            praktiki məşğələlər təklif edirik.
+            Biz Electro.az kimi, elektronika dünyasında bir adım ataraq, sizi innovativ məhsullarla tanış etmək və  
+            bu dünyada öz yerinizi tapmağınızı dəstəkləmək üçün buradayıq. Əsas missiyamız, sizə texnologiya dünyasının ən 
+            sonuncu və maraqli məhsullarını təqdim etmək və onları asanlıqla əldə etməyinizə kömək etməkdir.Bizim üçün ən önəmlisi, 
+            müştərilərimizin tələblərinə uyğun məhsullar təmin etmək və onlara yüksək səviyyəli xidmət göstərməkdir.
           </p>
         </div>
       </div>
