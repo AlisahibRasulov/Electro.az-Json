@@ -109,7 +109,7 @@ const About = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-6" style={{ padding: 0 }}>
+        <div className="col-2xl-6 col-xl-6 col-lg-6 col-md-6" style={{ padding: 0 }}>
           <div className="card-self">
             <div className="image">
              <img src={productImage2} alt=""/>
@@ -123,7 +123,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-6" style={{ padding: 0 }}>
+        <div className="col-2xl-6 col-xl-6 col-lg-6 col-md-6" style={{ padding: 0 }}>
           <div className="card-self">
             <div className="image">
             <img src={productImage3} alt=""/>
@@ -137,7 +137,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-6" style={{ padding: 0 }}>
+        <div className="col-2xl-6 col-xl-6 col-lg-6 col-md-6" style={{ padding: 0 }}>
           <div className="card-self">
             <div className="image">
             <img src={productImage4} alt=""/>
@@ -151,7 +151,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-6" style={{ padding: 0 }}>
+        <div className="col-2xl-6 col-xl-6 col-lg-6 col-md-6" style={{ padding: 0 }}>
           <div className="card-self">
             <div className="image">
             <img src={productImage1} alt=""/>
@@ -166,7 +166,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-6" style={{ padding: 0 }}>
+        <div className="col-2xl-6 col-xl-6 col-lg-6 col-md-6" style={{ padding: 0 }}>
           <div className="card-self">
             <div className="image">
             <img src={productImage5} alt=""/>

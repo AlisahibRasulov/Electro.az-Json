@@ -39,7 +39,7 @@ const Blogs = () => {
       <div className='container-fluid'>
         <div className="blogs-content">     
         {blogData.map((blog) => (
-          <div className='blog-card w-[30%]' key={blog.id}>
+          <div className='blog-card 2xl:w-[30%] xl:w-[30%] lg:w-[30%] md:w-[80%] sm:w-[80%] 2xs:w-[80%] xs:w-[100%]' key={blog.id}>
             <img src={blog.image} alt={blog.title} />
             <div className='cart-content'>
               <h2>{blog.title}</h2>
