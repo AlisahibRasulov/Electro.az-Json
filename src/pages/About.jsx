@@ -12,7 +12,7 @@ const About = () => {
   return (
     
 <section id="aboutus">
-    <div className="container-self">
+    <div className="container-fluid">
       <div className="row">
         <div className="col-2xl-6 col-xl-6 col-lg-6 col-md-6 title">
           <div className="flex items-center">
