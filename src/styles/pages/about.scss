@@ -796,11 +796,12 @@
 
 
 
-.container-self {
-	width: 1200px;
-	margin: 0 auto;
-}
+// .container-self {
+// 	width: 1200px;
+// 	margin: 0 auto;
+// }
 #aboutus {
+	margin-bottom: 150px;
 	.title {
 		padding: 20px 30px;
 		h2 {
@@ -836,7 +837,7 @@
 			}
 		}
 		.text {
-			width: 50%;
+			width: 60%;
 			display: flex;
 			flex-wrap: wrap;
 			align-content: flex-end;

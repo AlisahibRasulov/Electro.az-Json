@@ -28,7 +28,7 @@ const Login = () => {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
   const gmailRegex = /^[^\s@]+@gmail\.com$/;
-  const pswRegex = /^(?=.*[a-z])(?=.*[A-Z]).{8,16}$/;
+  // const pswRegex = /^(?=.*[a-z])(?=.*[A-Z]).{8,16}$/;
 
   const validateInputs = () => {
     const {email, password } = loginData;
@@ -56,11 +56,12 @@ const Login = () => {
     if (!password) {
       errorObj.password = "Şifrə boş ola bilməz";
       isValid = false;
-    } else if (!pswRegex.test(password)) {
-      errorObj.password =
-        "Şifrə 8-16 simvoldan ibarət olmalı, böyük və kiçik hərflər ehtiva etməlidir.";
-      isValid = false;
-    }
+    } 
+    // else if (!pswRegex.test(password)) {
+    //   errorObj.password =
+    //     "Şifrə 8-16 simvoldan ibarət olmalı, böyük və kiçik hərflər ehtiva etməlidir.";
+    //   isValid = false;
+    // }
 
     setLoginError(errorObj);
     return isValid;

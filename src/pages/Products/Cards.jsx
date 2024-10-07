@@ -10,6 +10,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket, removeBasket } from "../../redux/slices/addToBasketSlice";
 import { addToLike, removeLike } from "../../redux/slices/addToLikeSlice";
+import { BasketAlert } from "../../components/alerts/alerts";
 
 const Cards = ({ data }) => {
   const navigate = useNavigate();
@@ -71,6 +72,10 @@ const Cards = ({ data }) => {
       }
       setLoading(false);
     }, 1000);
+    // BasketAlert.fire({
+    //   icon: "success",
+    //   title: "Məhsul səbətə əlavə olundu",
+    // });
   };
 
   const { discounts, previewImage, title, price } = data;

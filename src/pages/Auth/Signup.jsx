@@ -370,7 +370,7 @@ const Signup = () => {
 
     // Validate password
     if (!password) {
-      errorObj.password = "! Şifrə boş ola bilməz";
+      errorObj.password = "Şifrə boş ola bilməz";
       isValid = false;
     } else if (!pswRegex.test(password)) {
       errorObj.password =

@@ -1,5 +1,6 @@
 .blogs {
     margin-top: 150px;
+    margin-bottom: 150px;
     .blogs-content {
       display: flex;
       justify-content: center;
@@ -11,7 +12,7 @@
         border: 1px solid #ddd;
         padding: 15px;
         // width: 22%;
-        height: 500px;
+        height: 600px;
         text-align: center;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
@@ -39,11 +40,12 @@
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 10px;
-            word-break: break-all;
+           
           }
   
           p {
             color: #555;
+            word-break: break-all;
           }
         }
       }
