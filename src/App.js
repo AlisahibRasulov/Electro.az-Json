@@ -122,6 +122,20 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/discount" element={<DiscountPages />} />
+      
+      <Route path="/acer" element={<Acer />} />
+      <Route path="/asus" element={<Asus />} />
+      <Route path="/apple" element={<Apple />} />
+      <Route path="/Canon" element={<Canon />} />
+      <Route path="/dell" element={<Dell />} />
+      <Route path="/hp" element={<HP />} />
+      <Route path="/huawei" element={<Huawei />} />
+      <Route path="/lenovo" element={<Lenovo />} />
+      <Route path="/nikon" element={<Nikon />} />
+      <Route path="/samsung" element={<Samsung />} />
+      <Route path="/sony" element={<Sony />} />
+      <Route path="/xiaomi" element={<Xiaomi />} />
+
       <Route path="product-detail/:id" element={<ProductDetail />} />
       
       {/* <Route path="/products" element={<Products />} /> */}

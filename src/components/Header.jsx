@@ -43,7 +43,7 @@ const Header = () => {
  
   return (
     <>
-      <div className="header">
+      <div className="header sticky top-0 z-50">
         <div className="header_top">
           <div className="header_logo">
             <PlayLogo className="play-logo" />
