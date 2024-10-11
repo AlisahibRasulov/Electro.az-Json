@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Brands from "../components/Brands";
 import Discount from "../components/products/DiscountCards/Discount";
 import New from "../components/products/NewCards/New";
@@ -7,23 +6,17 @@ import CarouselImg from "../components/CarouselImg";
 import SliderCart from "../components/SliderCart";
 import Sidebar from "../components/Sidebar";
 import All from "../components/products/AllCards/All";
-import Blogs from '../components/Blogs';
-
+import Blogs from "../components/Blogs";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    // Simulate a delay to fetch data
     setTimeout(() => {
-      setLoading(false); // Set loading to false once data is fetched
-    }, 3000); // Adjust the delay as needed
+      setLoading(false);
+    }, 3000);
   }, []);
   return (
     <div className="home">
-      {/* <>
-        <Outlet />
-      </> */}
-      
       <div className="container-fluid flex justify-evenly items-center mb-[100px] lg:flex-col md:flex-col sm:flex-col xs:flex-col 2xs:flex-col">
         <div className="col-2xl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-2xs-12 col-xs-12 flex 2xl:flex-row xl:flex-row lg:flex-row lg:mb-[20px] md:flex-col md:mb-[20px] sm:flex-col sm:mb-[20px] 2xs:flex-col 2xs:mb-[20px] xs:flex-col xs:mb-[20px]">
           <div className="col-2xl-3 col-xl-3 col-lg-4 col-md-12 col-sm-12 col-2xs-12 col-xs-12 md:mb-[20px] sm:mb-[20px] 2xs:mb-[20px] xs:mb-[20px]">
@@ -45,45 +38,45 @@ const Home = () => {
           <div className="spinner2"></div>
         </div>
       ) : (
-    <>  
-    <Brands />
-    </>
+        <>
+          <Brands />
+        </>
       )}
-        {loading ? (
+      {loading ? (
         <div className="container flex justify-center items-center mb-[150px]">
           <div className="spinner2"></div>
         </div>
       ) : (
-    <>  
-    <All/>
-    </>
+        <>
+          <All />
+        </>
       )}
-        {loading ? (
+      {loading ? (
         <div className="container bg-[#fff] flex justify-center items-center mb-[150px]">
           <div className="spinner2"></div>
         </div>
       ) : (
-    <>  
-    <Discount />
-    </>
+        <>
+          <Discount />
+        </>
       )}
-        {loading ? (
+      {loading ? (
         <div className="container flex justify-center items-center mb-[250px]">
           <div className="spinner2"></div>
         </div>
       ) : (
-    <>  
-    <New />
-    </>
+        <>
+          <New />
+        </>
       )}
-  {loading ? (
+      {loading ? (
         <div className="container flex justify-center items-center mb-[150px]">
           <div className="spinner2"></div>
         </div>
       ) : (
-    <>  
-    <Blogs />
-    </>
+        <>
+          <Blogs />
+        </>
       )}
     </div>
   );
