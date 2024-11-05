@@ -12,44 +12,8 @@ import { addToLike, removeLike } from "../../../redux/slices/addToLikeSlice";
 import  Button  from "../../library/Button";
 
 const Cards = ({ data }) => {
-  // const navigate = useNavigate();
-  // const [buttonText, setButtonText] = useState("Səbətə at");
-  // const [buttonColor, setButtonColor] = useState("#D10024");
-  // const [buttonTextColor, setButtonTextColor] = useState("white");
-  // const [iconBasket, setIconBasket] = useState(
-  //   <CardBasketIcon className="card-btn_icon" />
-  // );
-  // const dispatch = useDispatch();
 
-  // const likedProducts = useSelector((state) => state.like);
-  // const isProductLiked = likedProducts.some(
-  //   (product) => product.id === data.id
-  // );
-
-  // const handleLikeClick = (productId) => {
-  //   if (isProductLiked) {
-  //     dispatch(removeLike(productId));
-  //   } else {
-  //     dispatch(addToLike(data));
-  //   }
-  // };
-
-  // const handleAddToBasket = () => {
-  //   if (buttonText === "Səbətə at") {
-  //     dispatch(addToBasket(data));
-  //     setButtonText("Səbətdə");
-  //     setButtonColor("#eee");
-  //     setButtonTextColor("#666");
-  //     setIconBasket(<CartCheckout className="card-btn_icon" />);
-  //     setTimeout(() => {
-  //       setButtonText("Səbətə at");
-  //       setButtonColor("#D10024");
-  //       setButtonTextColor("white");
-  //       setIconBasket(<CardBasketIcon className="card-btn_icon" />);
-  //     }, 1000);
-  //   }
-  // };
-  const navigate = useNavigate();
+const navigate = useNavigate();
   const dispatch = useDispatch();
   const basketItems = useSelector((state) => state.basket);
   const likedProducts = useSelector((state) => state.like);
@@ -124,7 +88,7 @@ const Cards = ({ data }) => {
           <del>
             <div className="card-price">{price.toLocaleString("az-AZ")} ₼</div>
           </del>
-          <div className="card-discount-price">
+          <div className="card-discount-price text-[#D10024] font-[700]">
             {discounts[0].currentPrice.toLocaleString("az-AZ")} ₼
           </div>
         </>
